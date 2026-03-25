@@ -1,0 +1,8 @@
+export const lengthUnits = {
+  meter: 1,
+  kilometer: 1000,
+  centimeter: 0.01,
+  millimeter: 0.001,
+  inch: 0.0254,
+  foot: 0.3048
+};

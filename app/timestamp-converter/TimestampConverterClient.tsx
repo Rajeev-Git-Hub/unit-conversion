@@ -1,0 +1,302 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { FiCopy, FiShare2, FiRefreshCw, FiClock } from 'react-icons/fi';
+import { useLocalization } from '../../lib/LocalizationContext';
+
+export default function TimestampConverterClient() {
+  const { t } = useLocalization();
+  const [timestamp, setTimestamp] = useState<string>('');
+  const [dateTime, setDateTime] = useState<string>('');
+  const [currentTime, setCurrentTime] = useState<number>(Math.floor(Date.now() / 1000));
+  const [timezone, setTimezone] = useState<string>('UTC');
+  const [copySuccess, setCopySuccess] = useState(false);
+  const [shareSuccess, setShareSuccess] = useState(false);
+
+  // Update current time every second
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(Math.floor(Date.now() / 1000));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Auto-convert timestamp to date
+  useEffect(() => {
+    if (timestamp && !isNaN(parseFloat(timestamp))) {
+      const ts = parseFloat(timestamp);
+      // Convert to milliseconds if it looks like seconds
+      const ms = ts > 1000000000000 ? ts : ts * 1000;
+      const date = new Date(ms);
+      setDateTime(date.toISOString().slice(0, 16));
+    } else {
+      setDateTime('');
+    }
+  }, [timestamp]);
+
+  // Auto-convert date to timestamp
+  useEffect(() => {
+    if (dateTime) {
+      try {
+        const date = new Date(dateTime);
+        if (!isNaN(date.getTime())) {
+          setTimestamp(Math.floor(date.getTime() / 1000).toString());
+        }
+      } catch (error) {
+        // Invalid date format
+      }
+    } else {
+      setTimestamp('');
+    }
+  }, [dateTime]);
+
+  const handleCopy = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopySuccess(true);
+      setTimeout(() => setCopySuccess(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
+
+  const handleShare = async () => {
+    const shareText = `Timestamp: ${timestamp}\nDate: ${dateTime}`;
+    const shareUrl = window.location.href;
+    
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: t('timestamp.title'),
+          text: shareText,
+          url: shareUrl,
+        });
+      } else {
+        await navigator.clipboard.writeText(shareUrl);
+        setShareSuccess(true);
+        setTimeout(() => setShareSuccess(false), 2000);
+      }
+    } catch (err) {
+      console.error('Failed to share:', err);
+    }
+  };
+
+  const setCurrentTimestamp = () => {
+    setTimestamp(currentTime.toString());
+  };
+
+  const handleClear = () => {
+    setTimestamp('');
+    setDateTime('');
+  };
+
+  const loadExample = (type: string) => {
+    const examples = {
+      now: currentTime.toString(),
+      yesterday: (currentTime - 86400).toString(),
+      lastWeek: (currentTime - 604800).toString(),
+      custom: '1609459200', // January 1, 2021
+    };
+    setTimestamp(examples[type as keyof typeof examples] || '');
+  };
+
+  const formatDateForDisplay = (dateString: string) => {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    return date.toLocaleString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      timeZone: timezone
+    });
+  };
+
+  return (
+    <div className="max-w-6xl mx-auto px-4 py-8">
+      {/* SEO Content */}
+      <div className="text-center mb-8">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+          {t('timestamp.title')}
+        </h1>
+        <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
+          {t('timestamp.subtitle')}
+        </p>
+        <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-6">
+          <p className="text-blue-800 dark:text-blue-200 font-medium">
+            💡 <strong>{t('timestamp.smart_features')}:</strong> {t('timestamp.smart_desc')}
+          </p>
+        </div>
+      </div>
+
+      {/* Current Time Display */}
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-6">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <FiClock className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+            <span className="font-medium text-blue-800 dark:text-blue-200">{t('timestamp.current_time')}:</span>
+            <span className="font-mono text-blue-800 dark:text-blue-200">{currentTime}</span>
+          </div>
+          <button
+            onClick={setCurrentTimestamp}
+            className="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded text-sm transition-colors"
+          >
+            {t('timestamp.now')}
+          </button>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Timestamp Input */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            Unix Timestamp (seconds)
+          </label>
+          <div className="relative">
+            <input
+              type="number"
+              value={timestamp}
+              onChange={(e) => setTimestamp(e.target.value)}
+              placeholder={t('converter.placeholder')}
+              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-gray-100 text-lg font-mono"
+            />
+            {timestamp && (
+              <button
+                onClick={() => handleCopy(timestamp)}
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                title={t('converter.copy')}
+              >
+                <FiCopy className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Date Input */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            Date & Time
+          </label>
+          <div className="relative">
+            <input
+              type="datetime-local"
+              value={dateTime}
+              onChange={(e) => setDateTime(e.target.value)}
+              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-gray-100 text-lg"
+            />
+            {dateTime && (
+              <button
+                onClick={() => handleCopy(dateTime)}
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                title={t('converter.copy')}
+              >
+                <FiCopy className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Timezone Selector */}
+      <div className="mt-6">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+          {t('timestamp.timezone')}
+        </label>
+        <select
+          value={timezone}
+          onChange={(e) => setTimezone(e.target.value)}
+          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-gray-100"
+        >
+          <option value="UTC">UTC</option>
+          <option value="America/New_York">Eastern Time</option>
+          <option value="America/Chicago">Central Time</option>
+          <option value="America/Denver">Mountain Time</option>
+          <option value="America/Los_Angeles">Pacific Time</option>
+          <option value="Europe/London">London</option>
+          <option value="Europe/Paris">Paris</option>
+          <option value="Asia/Tokyo">Tokyo</option>
+          <option value="Asia/Shanghai">Shanghai</option>
+          <option value="Asia/Kolkata">India</option>
+        </select>
+      </div>
+
+      {/* Formatted Display */}
+      {dateTime && (
+        <div className="mt-6 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
+            Formatted Date ({timezone})
+          </h3>
+          <div className="text-gray-700 dark:text-gray-300">
+            {formatDateForDisplay(dateTime)}
+          </div>
+        </div>
+      )}
+
+      {/* Action Buttons */}
+      <div className="flex flex-wrap gap-3 mt-6">
+        <button
+          onClick={handleShare}
+          className="flex items-center space-x-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors"
+        >
+          <FiShare2 className="w-4 h-4" />
+          <span>{shareSuccess ? t('base64.link_copied') : t('timestamp.share')}</span>
+        </button>
+        
+        <button
+          onClick={handleClear}
+          className="px-4 py-2 bg-red-100 dark:bg-red-900/20 hover:bg-red-200 dark:hover:bg-red-900/40 text-red-700 dark:text-red-300 rounded-lg transition-colors"
+        >
+          {t('timestamp.clear')}
+        </button>
+      </div>
+
+      {/* Examples */}
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mt-6">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
+          {t('timestamp.load_examples')}
+        </h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <button
+            onClick={() => loadExample('now')}
+            className="p-3 text-sm bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded transition-colors text-left"
+          >
+            <div className="font-medium">{t('timestamp.now')}</div>
+            <div className="text-xs text-gray-600 dark:text-gray-400">Current timestamp</div>
+          </button>
+          <button
+            onClick={() => loadExample('yesterday')}
+            className="p-3 text-sm bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded transition-colors text-left"
+          >
+            <div className="font-medium">{t('timestamp.yesterday')}</div>
+            <div className="text-xs text-gray-600 dark:text-gray-400">24 hours ago</div>
+          </button>
+          <button
+            onClick={() => loadExample('lastWeek')}
+            className="p-3 text-sm bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded transition-colors text-left"
+          >
+            <div className="font-medium">{t('timestamp.last_week')}</div>
+            <div className="text-xs text-gray-600 dark:text-gray-400">7 days ago</div>
+          </button>
+          <button
+            onClick={() => loadExample('custom')}
+            className="p-3 text-sm bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded transition-colors text-left"
+          >
+            <div className="font-medium">{t('timestamp.custom')}</div>
+            <div className="text-xs text-gray-600 dark:text-gray-400">January 1, 2021</div>
+          </button>
+        </div>
+      </div>
+
+      {/* Copy Success Message */}
+      {copySuccess && (
+        <div className="p-3 bg-green-100 dark:bg-green-900/20 border border-green-300 dark:border-green-700 rounded-lg mt-6">
+          <p className="text-green-800 dark:text-green-200 text-sm">
+            ✅ {t('timestamp.title')} {t('converter.copied').toLowerCase()}!
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
