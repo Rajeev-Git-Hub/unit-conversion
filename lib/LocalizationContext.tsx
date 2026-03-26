@@ -350,6 +350,14 @@ const TRANSLATIONS: Record<Language, Record<string, string>> = {
     'unit.marla': 'Marla',
     'unit.ground': 'Ground',
     'unit.cent': 'Cent',
+    // Analytics MVP
+    'analytics.mvp.title': 'Analytics Dashboard',
+    'analytics.mvp.subtitle': 'Track your conversion patterns, analyze usage trends, and optimize your workflow with powerful insights',
+    'analytics.mvp.conversions': 'Conversions Tracked',
+    'analytics.mvp.avg_time': 'Average Response Time',
+    'analytics.mvp.accuracy': 'Accuracy Rate',
+    'analytics.mvp.cta': 'Explore Analytics',
+    'analytics.mvp.cta_desc': 'Get detailed insights about your conversion patterns',
     // Converter Interface
     'converter.title': 'Converter',
     'converter.from': 'From',
@@ -776,6 +784,14 @@ const TRANSLATIONS: Record<Language, Record<string, string>> = {
     'unit.marla': 'मरला',
     'unit.ground': 'ग्राउंड',
     'unit.cent': 'सेंट',
+    // Analytics MVP
+    'analytics.mvp.title': 'विश्लेषण डैशबोर्ड',
+    'analytics.mvp.subtitle': 'अपने रूपांतरण पैटर्न को ट्रैक करें, उपयोग प्रवृत्तियों का विश्लेषण करें, और शक्तिशाली अंतर्दृष्टि के साथ अपने वर्कफ़्लो को अनुकूलित करें',
+    'analytics.mvp.conversions': 'रूपांतरण ट्रैक किए गए',
+    'analytics.mvp.avg_time': 'औसत प्रतिक्रिया समय',
+    'analytics.mvp.accuracy': 'सटीकता दर',
+    'analytics.mvp.cta': 'विश्लेषण देखें',
+    'analytics.mvp.cta_desc': 'अपने रूपांतरण पैटर्न के बारे में विस्तृत अंतर्दृष्टि प्राप्त करें',
     // Converter Interface
     'converter.title': 'कन्वर्टर',
     'converter.from': 'से',
