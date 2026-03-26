@@ -211,10 +211,10 @@ function HomeContent() {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {categories.slice(0, 8).map((c) => (
+            {categories.map((c) => (
               <Link
                 key={c.key}
-                href={`/${c.key}`}
+                href={`/${c.key}/`}
                 className={`group block p-6 rounded-2xl bg-white dark:bg-gray-900 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-200 dark:border-gray-700
                          ${c.key === 'dev-tools' || c.key === 'utilities' ? 'ring-2 ring-blue-500' : ''}`}
               >
