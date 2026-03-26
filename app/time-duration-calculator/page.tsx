@@ -27,7 +27,25 @@ export default function TimeDurationCalculatorLandingPage() {
               Calculate time differences, work hours, and project durations
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="time-duration" />
+              <div className="text-center py-8">
+                <div className="text-6xl mb-4">⏱️</div>
+                <p className="text-gray-600 dark:text-gray-400">Calculate time differences and durations</p>
+                <div className="mt-6 space-y-4">
+                  <div className="grid grid-cols-2 gap-4">
+                    <input 
+                      type="datetime-local" 
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                    />
+                    <input 
+                      type="datetime-local" 
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                    />
+                  </div>
+                  <button className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    Calculate Duration
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

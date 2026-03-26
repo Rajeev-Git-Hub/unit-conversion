@@ -27,7 +27,25 @@ export default function PercentageCalculatorLandingPage() {
               Calculate percentages, discounts, tips, and financial calculations
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="percentage" />
+              <div className="text-center py-8">
+                <div className="text-6xl mb-4">%</div>
+                <p className="text-gray-600 dark:text-gray-400">Enter values below to calculate percentages</p>
+                <div className="mt-6 space-y-4">
+                  <input 
+                    type="number" 
+                    placeholder="Enter value..." 
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                  />
+                  <select className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+                    <option>What is X% of Y?</option>
+                    <option>X is what % of Y?</option>
+                    <option>Percentage increase/decrease</option>
+                  </select>
+                  <button className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    Calculate
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
