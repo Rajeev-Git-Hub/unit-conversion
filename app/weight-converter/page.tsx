@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import ConverterCard from '../../components/ConverterCard';
 
 export const metadata: Metadata = {
@@ -16,13 +17,13 @@ export default function WeightConverterLandingPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="bg-linear-to-r from-green-600 to-green-800 text-white py-16">
+      <section className="bg-white dark:bg-gray-800 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Weight Converter - Free Online Tool
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-green-100">
+            <p className="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-400">
               Convert between kilograms, pounds, ounces, grams, and tons
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
@@ -243,12 +244,20 @@ export default function WeightConverterLandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-linear-to-r from-green-600 to-emerald-600 text-white">
+      <section className="py-16 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Convert Weight Units Now</h2>
-          <p className="text-xl mb-8">Use our free online weight converter for instant, accurate results</p>
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-            <ConverterCard category="weight" />
+          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Ready to Convert More Units?</h2>
+          <p className="text-xl mb-8 text-gray-600 dark:text-gray-400">Explore our other free conversion tools for all your measurement needs</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/length-converter/" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
+              Length Converter
+            </Link>
+            <Link href="/temperature-converter/" className="inline-flex items-center px-6 py-3 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 transition-colors">
+              Temperature Converter
+            </Link>
+            <Link href="/" className="inline-flex items-center px-6 py-3 bg-gray-600 text-white font-medium rounded-lg hover:bg-gray-700 transition-colors">
+              All Converters
+            </Link>
           </div>
         </div>
       </section>

@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { FiHome, FiFileText, FiLock, FiLink, FiClock, FiUser, FiPercent } from 'react-icons/fi';
+import { FiHome, FiFileText, FiLock, FiLink, FiClock, FiUser, FiPercent, FiTrendingUp } from 'react-icons/fi';
 import { CategoryMenu } from '../lib/CategoryMenu';
 import { LocalizationProvider, useLocalization } from '../lib/LocalizationContext';
 import { CategoryKey } from '../lib';
@@ -22,9 +22,10 @@ const developerToolsSidebar = [
 
 // Individual utility tools for sidebar
 const utilityToolsSidebar = [
-  { key: 'age-calculator', title: 'Age Calculator', icon: FiUser, color: 'text-violet-600' },
-  { key: 'time-duration-calculator', title: 'Time Duration Calculator', icon: FiClock, color: 'text-blue-600' },
+  { key: 'time-duration-calculator', title: 'Time Duration Calculator', icon: FiClock, color: 'text-violet-600' },
   { key: 'percentage-calculator', title: 'Percentage Calculator', icon: FiPercent, color: 'text-green-600' },
+  { key: 'age-calculator', title: 'Age Calculator', icon: FiUser, color: 'text-violet-600' },
+  { key: 'tip-calculator', title: 'Tip Calculator', icon: FiTrendingUp, color: 'text-orange-600' },
 ];
 
 function LayoutContent({ children }: { children: React.ReactNode }) {
@@ -44,7 +45,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
               {sidebarCategories.map((c) => (
                 <li key={c.key}>
                   <Link
-                    href={`/${c.key}`}
+                    href={`/${c.key}-converter`}
                     className={`flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors duration-150 ${
                       category === c.key
                         ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400'

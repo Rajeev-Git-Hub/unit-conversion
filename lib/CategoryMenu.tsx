@@ -63,12 +63,12 @@ export const CategoryMenu: React.FC<CategoryMenuProps> = ({
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-300 supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-gray-900/60" ref={menuRef}>
+    <nav className="sticky top-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-300 supports-backdrop-filter:bg-white/60 dark:supports-backdrop-filter:bg-gray-900/60" ref={menuRef}>
       <div className="w-full px-6 sm:px-8 lg:px-12">
         <div className="flex h-16 items-center">
           <div className="flex items-center gap-24">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="flex items-center justify-center h-10 w-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-md group-hover:shadow-lg transition-all duration-200 shrink-0">
+              <div className="flex items-center justify-center h-10 w-10 rounded-xl bg-linear-to-br from-blue-600 to-indigo-600 text-white shadow-md group-hover:shadow-lg transition-all duration-200 shrink-0">
                 <FiLayers className="h-6 w-6" />
               </div>
               <span className="font-bold text-xl tracking-tight text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors whitespace-nowrap">
@@ -150,7 +150,7 @@ export const CategoryMenu: React.FC<CategoryMenuProps> = ({
                           return (
                             <Link
                               key={catKey}
-                              href={`/${catKey}`}
+                              href={`/${catKey}-converter`}
                               onClick={() => setActiveGroup(null)}
                               className={`flex items-center px-4 py-2.5 text-sm text-left rounded-lg transition-colors ${
                                 isSelected
