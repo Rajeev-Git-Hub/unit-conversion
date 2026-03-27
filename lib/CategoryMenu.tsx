@@ -90,6 +90,20 @@ export const CategoryMenu: React.FC<CategoryMenuProps> = ({
               All Converters
             </Link>
 
+            <Link
+              href="/engineering-calculators"
+              className="inline-flex items-center px-4 py-2 text-lg font-bold text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-150 focus:outline-none whitespace-nowrap"
+            >
+              Engineering
+            </Link>
+
+            <Link
+              href="/blog"
+              className="inline-flex items-center px-4 py-2 text-lg font-bold text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-150 focus:outline-none whitespace-nowrap"
+            >
+              Blog
+            </Link>
+
             {(Object.keys(CATEGORY_GROUPS) as GroupName[]).map((group) => (
               <div key={group} className="relative">
                 <button
