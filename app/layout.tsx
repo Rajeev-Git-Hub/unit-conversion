@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     description: "Simple, fast, and accurate unit converter for all your needs.",
   },
   verification: {
-    google: "RU31v4UBF5dTJdQmLa4WuZ9Io3pi5fGw3G-MOa9ymks",
+    google: "",
   },
 };
 
