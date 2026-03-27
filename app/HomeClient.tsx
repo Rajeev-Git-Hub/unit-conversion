@@ -60,7 +60,7 @@ function HomeContent() {
             {/* Badge */}
             <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold rounded-full mb-6 shadow-lg">
               <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>
-              Used by 50,000+ Engineers, Students & Developers
+              Free & Open Source — Built for Engineers, Students & Developers
             </div>
             
             {/* Main Heading */}
@@ -83,7 +83,7 @@ function HomeContent() {
                 <FiSearch className="absolute left-5 top-1/2 -translate-y-1/2 h-6 w-6 text-gray-400 group-hover:text-blue-600 transition-colors z-10" />
                 <input
                   type="text"
-                  placeholder="Search for any converter..."
+                  placeholder={t('home.search.placeholder')}
                   className="relative w-full pl-14 pr-6 py-5 text-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-2xl border-2 border-gray-200 dark:border-gray-600 focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 focus:outline-none shadow-lg transition-all z-10"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
@@ -100,12 +100,12 @@ function HomeContent() {
                 <span className="text-gray-600 dark:text-gray-400">Converters</span>
               </div>
               <div className="flex items-center">
-                <span className="text-3xl font-bold text-green-600 mr-2">2.3s</span>
-                <span className="text-gray-600 dark:text-gray-400">Avg Time</span>
+                <span className="text-3xl font-bold text-green-600 mr-2">⚡</span>
+                <span className="text-gray-600 dark:text-gray-400">Instant Results</span>
               </div>
               <div className="flex items-center">
-                <span className="text-3xl font-bold text-purple-600 mr-2">98%</span>
-                <span className="text-gray-600 dark:text-gray-400">Accuracy</span>
+                <span className="text-3xl font-bold text-purple-600 mr-2">100%</span>
+                <span className="text-gray-600 dark:text-gray-400">Free</span>
               </div>
             </div>
           </div>
@@ -242,16 +242,16 @@ function HomeContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">10M+</div>
-              <div className="text-gray-600 dark:text-gray-400">Conversions Completed</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
+              <div className="text-gray-600 dark:text-gray-400">Converters Available</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-green-600 mb-2">150+</div>
-              <div className="text-gray-600 dark:text-gray-400">Countries Served</div>
+              <div className="text-4xl font-bold text-green-600 mb-2">Free</div>
+              <div className="text-gray-600 dark:text-gray-400">Always & Forever</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-purple-600 mb-2">4.9★</div>
-              <div className="text-gray-600 dark:text-gray-400">User Rating</div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">0</div>
+              <div className="text-gray-600 dark:text-gray-400">Sign-up Required</div>
             </div>
           </div>
         </div>

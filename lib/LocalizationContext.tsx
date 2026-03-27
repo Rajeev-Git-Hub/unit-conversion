@@ -370,9 +370,11 @@ const TRANSLATIONS: Record<Language, Record<string, string>> = {
     'converter.copied': 'Copied!',
     'converter.swap': 'Swap',
     'converter.select_unit': 'Select Unit',
-    'converter.placeholder': 'Enter value...',
-    'converter.result_placeholder': 'Result will appear here...',
+    'converter.placeholder': '100',
+    'converter.result_placeholder': '👉 Enter a value above and click Convert',
     'converter.error': 'Error',
+    'converter.validation.empty': 'Please enter a value',
+    'converter.validation.invalid': 'Numbers only',
     'url.encode_error': 'Invalid input for encoding',
     'url.decode_error': 'Invalid input for decoding',
     // SEO Content

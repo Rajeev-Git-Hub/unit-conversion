@@ -36,6 +36,7 @@ export default function ConverterCard({ category }: Props) {
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
   const [result, setResult] = useState<number | null>(null);
+  const [validationError, setValidationError] = useState<string | null>(null);
   const [copySuccess, setCopySuccess] = useState(false);
   const [shareSuccess, setShareSuccess] = useState(false);
   const { addConversion } = useConversionHistory();
@@ -78,25 +79,52 @@ export default function ConverterCard({ category }: Props) {
 
   // Auto-convert when input changes
   useEffect(() => {
+    if (!value) {
+      setResult(null);
+      setValidationError(null);
+      return;
+    }
+
     const val = parseFloat(value);
-    if (!isNaN(val) && from && to) {
+    if (isNaN(val)) {
+      setResult(null);
+      setValidationError(t('converter.validation.invalid'));
+      return;
+    }
+
+    if (from && to) {
       try {
         const conversionResult = convert(category, val, from, to);
         setResult(conversionResult);
+        setValidationError(null);
       } catch (error) {
         setResult(null);
+        setValidationError(t('converter.error'));
       }
     } else {
       setResult(null);
     }
-  }, [value, from, to, category]);
+  }, [value, from, to, category, t]);
 
   const handleConvert = () => {
+    if (!value) {
+      setValidationError(t('converter.validation.empty'));
+      setResult(null);
+      return;
+    }
+
     const val = parseFloat(value);
-    if (!isNaN(val) && from && to) {
+    if (isNaN(val)) {
+      setValidationError(t('converter.validation.invalid'));
+      setResult(null);
+      return;
+    }
+
+    if (from && to) {
       try {
         const conversionResult = convert(category, val, from, to);
         setResult(conversionResult);
+        setValidationError(null);
         addConversion({
           category,
           value: val,
@@ -106,6 +134,7 @@ export default function ConverterCard({ category }: Props) {
         });
       } catch (error) {
         setResult(null);
+        setValidationError(t('converter.error'));
       }
     } else {
       setResult(null);
@@ -221,10 +250,18 @@ export default function ConverterCard({ category }: Props) {
       </button>
 
       {/* --- Result Display --- */}
-      <div className="p-6 rounded-lg text-center border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+      <div className="p-6 rounded-lg text-center border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 overflow-hidden">
         <span className="text-gray-500 dark:text-gray-400 text-sm font-bold uppercase tracking-wider">Result</span>
-        <div className={`text-4xl font-extrabold text-blue-600 mt-2 wrap-break-word min-h-12.5`}>
-          {result !== null ? result : '-'}
+        <div className={`text-2xl md:text-3xl font-extrabold mt-2 wrap-break-word min-h-12.5 flex items-center justify-center`}>
+          {result !== null ? (
+            <span className="text-blue-600">{result}</span>
+          ) : validationError ? (
+            <span className="text-red-500 text-lg">{validationError}</span>
+          ) : (
+            <span className="text-gray-400 text-sm md:text-base font-normal italic">
+              {t('converter.result_placeholder')}
+            </span>
+          )}
         </div>
 
         {/* Copy and Share Buttons */}

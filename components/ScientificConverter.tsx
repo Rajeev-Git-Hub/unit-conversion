@@ -19,6 +19,7 @@ export default function ScientificConverter() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<ScientificUnit[]>([]);
   const [history, setHistory] = useState<ScientificConversion[]>([]);
+  const [validationError, setValidationError] = useState<string | null>(null);
 
   useEffect(() => {
     setHistory(scientificConverter.getConversionHistory());
@@ -42,14 +43,28 @@ export default function ScientificConverter() {
   }, [searchQuery]);
 
   const handleConvert = () => {
-    if (!fromValue || !fromUnit || !toUnit) return;
+    if (!fromValue) {
+      setValidationError('Please enter a value');
+      setResult(null);
+      return;
+    }
+
+    const value = parseFloat(fromValue);
+    if (isNaN(value)) {
+      setValidationError('Numbers only');
+      setResult(null);
+      return;
+    }
+
+    if (!fromUnit || !toUnit) return;
     
     try {
-      const value = parseFloat(fromValue);
       const conversion = scientificConverter.convert(value, fromUnit, toUnit, selectedCategory);
       setResult(conversion);
+      setValidationError(null);
       setHistory(scientificConverter.getConversionHistory());
     } catch (error) {
+      setValidationError('Conversion error');
       console.error('Conversion error:', error);
     }
   };
@@ -207,8 +222,8 @@ export default function ScientificConverter() {
                       type="number"
                       value={fromValue}
                       onChange={(e) => setFromValue(e.target.value)}
-                      placeholder="Enter value"
-                      className="w-full px-3 py-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800"
+                      placeholder="100"
+                      className="w-full px-3 py-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-purple-500 outline-none"
                     />
                   </div>
 
@@ -282,21 +297,27 @@ export default function ScientificConverter() {
                   </button>
 
                   {/* Result */}
-                  {result && (
-                    <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-4">
-                      <div className="text-green-700 dark:text-green-300">
-                        <div className="text-sm">Result:</div>
-                        <div className="text-lg font-semibold">
+                  <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-4 min-h-[100px] flex items-center justify-center text-center">
+                    {result ? (
+                      <div className="text-green-700 dark:text-green-300 w-full">
+                        <div className="text-sm font-bold uppercase tracking-wider mb-1">Result:</div>
+                        <div className="text-xl font-bold">
                           {formatNumber(result.fromValue)} {result.fromUnit} = {formatNumber(result.result)} {result.toUnit}
                         </div>
                         {result.formula && (
-                          <div className="text-xs mt-1">
+                          <div className="text-xs mt-2 opacity-80 font-mono italic">
                             Formula: {result.formula}
                           </div>
                         )}
                       </div>
-                    </div>
-                  )}
+                    ) : validationError ? (
+                      <div className="text-red-500 font-bold">{validationError}</div>
+                    ) : (
+                      <div className="text-gray-400 italic">
+                        👉 Enter a value above and click Convert
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
 

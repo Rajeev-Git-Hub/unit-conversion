@@ -65,7 +65,7 @@ export default function BatchConverter({ category }: Props) {
         Convert CSV
       </button>
 
-      {output.length > 0 && (
+      {output.length > 0 ? (
         <div className="mt-6">
           <pre className="text-sm p-4 rounded bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700">
             {JSON.stringify(output, null, 2)}
@@ -77,6 +77,12 @@ export default function BatchConverter({ category }: Props) {
             <p><strong>Assumptions:</strong> {conversionMeta[category].assumptions}</p>
             <p><strong>Standard:</strong> {conversionMeta[category].standard}</p>
           </div>
+        </div>
+      ) : (
+        <div className="mt-6 p-8 border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-lg text-center">
+          <p className="text-gray-400 italic">
+            👉 Upload a CSV file and click Convert to see results here
+          </p>
         </div>
       )}
     </div>

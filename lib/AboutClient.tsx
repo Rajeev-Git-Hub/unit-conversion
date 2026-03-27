@@ -103,8 +103,8 @@ function AboutContent() {
                   </div>
                   <div className="text-center p-4 bg-pink-50 dark:bg-pink-900/20 rounded-2xl">
                     <FiHeart className="h-8 w-8 text-pink-600 dark:text-pink-400 mx-auto mb-2" />
-                    <div className="text-2xl font-black text-gray-900 dark:text-white">4.9★</div>
-                    <div className="text-xs text-gray-600 dark:text-gray-400">User Rating</div>
+                    <div className="text-2xl font-black text-gray-900 dark:text-white">Free</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-400">No Cost Ever</div>
                   </div>
                 </div>
               </div>
@@ -119,7 +119,7 @@ function AboutContent() {
       <section className="py-16 bg-white dark:bg-gray-800 shadow-lg">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <StatCard number="10M+" label="Conversions Daily" icon={<FiTrendingUp className="h-6 w-6" />} />
+            <StatCard number="50+" label="Converters Available" icon={<FiTrendingUp className="h-6 w-6" />} />
             <StatCard number="150+" label="Unit Types" icon={<FiTarget className="h-6 w-6" />} />
             <StatCard number="50+" label="Countries" icon={<FiGlobe className="h-6 w-6" />} />
             <StatCard number="99.9%" label="Accuracy Rate" icon={<FiAward className="h-6 w-6" />} />
@@ -196,23 +196,23 @@ function AboutContent() {
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-16">
-            Loved by Millions Worldwide
+            What Makes Us Different
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
-              <div className="text-yellow-400 mb-4">⭐⭐⭐⭐⭐</div>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">"The most intuitive unit converter I've ever used. Saves me hours every week!"</p>
-              <div className="font-semibold text-gray-900 dark:text-white">- Sarah K., Engineer</div>
+              <div className="text-blue-500 mb-4 text-3xl">🔒</div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">100% Private</h3>
+              <p className="text-gray-600 dark:text-gray-300">All conversions happen locally in your browser. We never collect, store, or share any of your data.</p>
             </div>
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
-              <div className="text-yellow-400 mb-4">⭐⭐⭐⭐⭐</div>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">"Perfect for my cooking conversions. The interface is so clean and simple."</p>
-              <div className="font-semibold text-gray-900 dark:text-white">- Mike R., Chef</div>
+              <div className="text-green-500 mb-4 text-3xl">⚡</div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Instant & Offline-Ready</h3>
+              <p className="text-gray-600 dark:text-gray-300">Lightning-fast conversions with no server round-trips. Works even without an internet connection.</p>
             </div>
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
-              <div className="text-yellow-400 mb-4">⭐⭐⭐⭐⭐</div>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">"As a student, this tool has been invaluable for my physics and chemistry classes."</p>
-              <div className="font-semibold text-gray-900 dark:text-white">- Emily L., Student</div>
+              <div className="text-purple-500 mb-4 text-3xl">🎯</div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Professional Grade</h3>
+              <p className="text-gray-600 dark:text-gray-300">Industry-standard conversion factors covering engineering, healthcare, cooking, chemistry, and more.</p>
             </div>
           </div>
         </div>

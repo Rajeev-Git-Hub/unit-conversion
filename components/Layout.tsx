@@ -8,6 +8,7 @@ import { CategoryMenu } from '../lib/CategoryMenu';
 import { LocalizationProvider, useLocalization } from '../lib/LocalizationContext';
 import { CategoryKey } from '../lib';
 import { categories } from '../lib/categories';
+import Footer from './Footer';
 
 // Filter out dev-tools and utilities, and add individual tools
 const sidebarCategories = categories.filter(c => c.key !== 'dev-tools' && c.key !== 'utilities');
@@ -97,6 +98,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
 
         <main className="flex-1 w-full overflow-y-auto">
           {children}
+          <Footer />
         </main>
       </div>
     </div>
