@@ -83,6 +83,13 @@ export const CategoryMenu: React.FC<CategoryMenuProps> = ({
               {t('nav.about')}
             </Link>
 
+            <Link
+              href="/all-converters"
+              className="inline-flex items-center px-4 py-2 text-lg font-bold text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-150 focus:outline-none whitespace-nowrap"
+            >
+              All Converters
+            </Link>
+
             {(Object.keys(CATEGORY_GROUPS) as GroupName[]).map((group) => (
               <div key={group} className="relative">
                 <button
