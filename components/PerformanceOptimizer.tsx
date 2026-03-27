@@ -40,18 +40,6 @@ export default function PerformanceOptimizer() {
 
     lazyImages.forEach((img) => imageObserver.observe(img));
 
-    // Measure Core Web Vitals
-    if ('web-vitals' in window) {
-      // @ts-ignore
-      import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-        getCLS(console.log);
-        getFID(console.log);
-        getFCP(console.log);
-        getLCP(console.log);
-        getTTFB(console.log);
-      });
-    }
-
     return () => {
       imageObserver.disconnect();
     };
