@@ -62,8 +62,8 @@ function HomeContent() {
       <section className="relative py-6 overflow-hidden">
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-semibold rounded-full mb-6 shadow-lg">
+            {/* Badge - High Contrast */}
+            <div className="inline-flex items-center px-4 py-2 bg-blue-700 text-white text-sm font-semibold rounded-full mb-6 shadow-lg">
               <span className="w-2 h-2 bg-white rounded-full mr-2"></span>
               Free & Open Source — Built for Engineers, Students & Developers
             </div>
@@ -71,7 +71,7 @@ function HomeContent() {
             {/* Main Heading */}
             <h1 className="text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-6 leading-tight">
               Convert Anything
-              <span className="block text-3xl md:text-4xl font-light text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+              <span className="block text-3xl md:text-4xl font-light text-blue-700 dark:text-blue-400">
                 Instantly & Accurately
               </span>
             </h1>
@@ -110,7 +110,7 @@ function HomeContent() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl font-black text-gray-900 dark:text-white mb-4">
-              Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Our Platform</span>
+              Why Choose <span className="text-blue-700 dark:text-blue-400">Our Platform</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               Experience the difference with our premium features designed for professionals

@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { FiHome, FiFileText, FiLock, FiLink, FiClock, FiUser, FiPercent, FiTrendingUp } from 'react-icons/fi';
+import { FiFileText, FiLock, FiLink, FiClock, FiUser, FiPercent, FiTrendingUp } from 'react-icons/fi';
 import { CategoryMenu } from '../lib/CategoryMenu';
 import { LocalizationProvider, useLocalization } from '../lib/LocalizationContext';
 import { CategoryKey } from '../lib';

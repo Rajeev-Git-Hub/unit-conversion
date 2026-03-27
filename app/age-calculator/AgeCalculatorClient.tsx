@@ -93,8 +93,9 @@ export default function AgeCalculatorClient() {
       await navigator.clipboard.writeText(text);
       setCopySuccess(true);
       setTimeout(() => setCopySuccess(false), 2000);
-    } catch (err) {
-      console.error('Failed to copy:', err);
+    } catch {
+      // Clipboard access denied or failed
+      setCopySuccess(false);
     }
   };
 
@@ -115,8 +116,9 @@ export default function AgeCalculatorClient() {
           setShareSuccess(true);
           setTimeout(() => setShareSuccess(false), 2000);
         }
-      } catch (err) {
-        console.error('Failed to share:', err);
+      } catch {
+        // Share cancelled or failed
+        setShareSuccess(false);
       }
     }
   };

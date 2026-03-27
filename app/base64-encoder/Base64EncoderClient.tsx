@@ -45,8 +45,9 @@ export default function Base64EncoderClient() {
         await navigator.clipboard.writeText(output);
         setCopySuccess(true);
         setTimeout(() => setCopySuccess(false), 2000);
-      } catch (err) {
-        console.error('Failed to copy:', err);
+      } catch {
+        // Clipboard access denied or failed
+        setCopySuccess(false);
       }
     }
   };
@@ -68,8 +69,9 @@ export default function Base64EncoderClient() {
           setShareSuccess(true);
           setTimeout(() => setShareSuccess(false), 2000);
         }
-      } catch (err) {
-        console.error('Failed to share:', err);
+      } catch {
+        // Share cancelled or failed
+        setShareSuccess(false);
       }
     }
   };

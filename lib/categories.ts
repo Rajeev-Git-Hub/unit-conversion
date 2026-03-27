@@ -1,7 +1,7 @@
 import {
   FiMaximize, FiPackage, FiThermometer, FiGrid, 
-  FiBox, FiTrendingUp, FiClock, FiDatabase, FiTool, FiHeart, FiCoffee, FiSettings, FiTruck, FiDroplet, FiBarChart2,
-  FiCode, FiCalendar, FiLink
+  FiBox, FiTrendingUp, FiClock, FiDatabase, FiTool, FiBarChart2,
+  FiCode, FiCalendar
 } from 'react-icons/fi';
 
 export const categories = [
