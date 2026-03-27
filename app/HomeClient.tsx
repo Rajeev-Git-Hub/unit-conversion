@@ -177,7 +177,7 @@ function HomeContent() {
           {/* CTA Section */}
           <div className="text-center">
             <Link
-              href="/categories"
+              href="/all-converters"
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg rounded-2xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl"
             >
               <span>Explore All Converters</span>

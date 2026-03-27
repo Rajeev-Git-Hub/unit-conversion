@@ -71,7 +71,7 @@ export default function Footer() {
                 { href: '/timestamp-converter', label: 'Timestamp Converter' },
                 { href: '/percentage-calculator', label: 'Percentage Calculator' },
                 { href: '/age-calculator', label: 'Age Calculator' },
-                { href: '/analytics', label: 'Analytics Dashboard' },
+                { href: '/analytics-converter', label: 'Analytics Dashboard' },
               ].map((item) => (
                 <li key={item.href}>
                   <Link

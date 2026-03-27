@@ -15,9 +15,11 @@ import { useLocalization } from '../lib/LocalizationContext';
 
 type Props = {
   category: CategoryKey;
+  defaultFrom?: string;
+  defaultTo?: string;
 };
 
-export default function ConverterCard({ category }: Props) {
+export default function ConverterCard({ category, defaultFrom, defaultTo }: Props) {
   const { t } = useLocalization();
   const categoryInfo = categories.find((c) => c.key === category);
   const color = categoryInfo?.color.replace('text-', '') || 'gray-500';
@@ -150,13 +152,13 @@ export default function ConverterCard({ category }: Props) {
     // Set initial from/to values
     if (units.length > 0) {
       if (!from || !units.includes(from)) {
-        setFrom(units[0]);
+        setFrom(defaultFrom || units[0]);
       }
       if (!to || !units.includes(to)) {
-        setTo(units.length > 1 ? units[1] : units[0]);
+        setTo(defaultTo || (units.length > 1 ? units[1] : units[0]));
       }
     }
-  }, [units, from, to]);
+  }, [units, from, to, defaultFrom, defaultTo]);
 
   // For categories that don't have conversion units, show a message
   if (units.length === 0) {

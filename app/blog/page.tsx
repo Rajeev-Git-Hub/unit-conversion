@@ -14,7 +14,7 @@ const blogPosts = [
     excerpt: 'Learn the easiest ways to convert kilograms to pounds. Includes formulas, quick tricks, and real-world examples for everyday use.',
     category: 'Weight',
     readTime: '5 min read',
-    date: 'Mar 28, 2024',
+    date: 'Mar 28, 2026',
   },
   {
     slug: 'understanding-celsius-fahrenheit',
@@ -22,7 +22,7 @@ const blogPosts = [
     excerpt: 'Discover the differences between Celsius and Fahrenheit scales. Learn when and why each scale is used around the world.',
     category: 'Temperature',
     readTime: '6 min read',
-    date: 'Mar 28, 2024',
+    date: 'Mar 28, 2026',
   },
   {
     slug: 'metric-vs-imperial-systems',
@@ -30,7 +30,7 @@ const blogPosts = [
     excerpt: 'A comprehensive comparison of metric and imperial measurement systems. Understand their origins, uses, and conversion between them.',
     category: 'Education',
     readTime: '8 min read',
-    date: 'Mar 28, 2024',
+    date: 'Mar 28, 2026',
   },
   {
     slug: 'common-cooking-conversions',
@@ -38,7 +38,7 @@ const blogPosts = [
     excerpt: 'Master kitchen conversions with our comprehensive guide. Convert between cups, grams, ounces, tablespoons, and teaspoons easily.',
     category: 'Cooking',
     readTime: '7 min read',
-    date: 'Mar 28, 2024',
+    date: 'Mar 28, 2026',
   },
   {
     slug: 'body-temperature-guide',
@@ -46,7 +46,7 @@ const blogPosts = [
     excerpt: 'Understand body temperature ranges in both Celsius and Fahrenheit. Learn what is normal, when you have a fever, and when to seek medical attention.',
     category: 'Health',
     readTime: '5 min read',
-    date: 'Mar 28, 2024',
+    date: 'Mar 28, 2026',
   },
   {
     slug: 'data-storage-explained',
@@ -54,7 +54,7 @@ const blogPosts = [
     excerpt: 'Understand digital storage units from bytes to terabytes. Learn how file sizes work and how to convert between storage units.',
     category: 'Technology',
     readTime: '6 min read',
-    date: 'Mar 28, 2024',
+    date: 'Mar 28, 2026',
   },
 ];
 
