@@ -27,7 +27,7 @@ export default function TemperatureConverterLandingPage() {
               Convert between Celsius, Fahrenheit, and Kelvin
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="temperature" />
+              <ConverterCard category="temperature" defaultFrom="celsius" defaultTo="fahrenheit" />
             </div>
           </div>
         </div>
@@ -116,6 +116,37 @@ export default function TemperatureConverterLandingPage() {
                   <p>25 + 273.15 = 298.15K</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Temperature Unit Definitions */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+            Temperature Unit Definitions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Celsius (°C)</h3>
+              <p className="text-gray-600 dark:text-gray-300">The most widely used temperature scale worldwide. Based on 0°C for water freezing point and 100°C for boiling point at sea level. Used in science, weather forecasting, and everyday life in most countries.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Fahrenheit (°F)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Primarily used in the United States and a few other countries. Water freezes at 32°F and boils at 212°F. Commonly used for weather reports, cooking, and body temperature in the US.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Kelvin (K)</h3>
+              <p className="text-gray-600 dark:text-gray-300">The SI base unit of temperature. An absolute scale where 0K is absolute zero (-273.15°C), the lowest possible temperature. Used in scientific calculations, physics, and chemistry.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Rankine (°R)</h3>
+              <p className="text-gray-600 dark:text-gray-300">An absolute temperature scale used primarily in engineering thermodynamics in the United States. 0°R is absolute zero, and the scale uses Fahrenheit-sized degrees. 0°R = 0K = -459.67°F.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Réaumur (°Ré)</h3>
+              <p className="text-gray-600 dark:text-gray-300">A historical temperature scale once used in Europe. Water freezes at 0°Ré and boils at 80°Ré. Now rarely used, but occasionally found in historical European scientific literature and some traditional cheese production contexts.</p>
             </div>
           </div>
         </div>

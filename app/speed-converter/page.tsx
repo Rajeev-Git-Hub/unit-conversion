@@ -27,7 +27,46 @@ export default function SpeedConverterLandingPage() {
               Convert between miles per hour, kilometers per hour, meters per second, and more
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="speed" />
+              <ConverterCard category="speed" defaultFrom="kmh" defaultTo="mph" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Speed Unit Definitions */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+            Speed Unit Definitions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Meter Per Second (m/s)</h3>
+              <p className="text-gray-600 dark:text-gray-300">The SI unit of speed. Defined as the distance traveled in meters divided by time in seconds. Used in physics, engineering, and scientific calculations worldwide.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Kilometer Per Hour (km/h)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 0.2778 meters per second. The standard unit for road speeds in most countries worldwide. Used on speedometers, road signs, and vehicle specifications.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Mile Per Hour (mph)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to approximately 1.609 kilometers per hour. Used primarily in the United States, UK, and a few other countries for road speeds and vehicle performance.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Foot Per Second (ft/s)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 0.3048 meters per second. Used in engineering applications, particularly in ballistics and fluid dynamics in countries using imperial units.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Knot (kn)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to one nautical mile per hour or approximately 0.514 meters per second. Used in maritime and aviation contexts for navigation and weather reporting.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Mach</h3>
+              <p className="text-gray-600 dark:text-gray-300">The ratio of the speed of an object to the speed of sound. Mach 1 equals approximately 343 meters per second at sea level. Used in aviation and aerospace engineering.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Speed of Light (c)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 299,792,458 meters per second. The ultimate speed limit in the universe. Used in physics, astronomy, and theoretical calculations. Symbol: c.</p>
             </div>
           </div>
         </div>

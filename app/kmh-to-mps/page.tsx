@@ -3,11 +3,11 @@ import Link from 'next/link';
 import ConverterCard from '../../components/ConverterCard';
 
 export const metadata: Metadata = {
-  title: 'KMH to MPS Converter - Convert km/h to m/s',
+  title: 'KM/H to Meters/sec Converter - Convert km/h to m/s',
   description: 'Free km/h to m/s converter. Convert kilometers per hour to meters per second instantly. 1 km/h = 0.277778 m/s. Accurate results, conversion formula, and practical examples.',
-  keywords: 'kmh to mps, km/h to m/s, kilometers per hour to meters per second, convert kmh to mps, speed converter',
+  keywords: 'km/h to m/s, km/h to meter per second, kilometers per hour to meters per second, convert km/h to m/s, speed converter',
   openGraph: {
-    title: 'KMH to MPS Converter',
+    title: 'KM/H to Meters/sec Converter',
     description: 'Convert km/h to m/s instantly',
     type: 'website',
   },
@@ -19,7 +19,7 @@ export default function KmhToMpsPage() {
       <section className="bg-white dark:bg-gray-800 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">KMH to MPS Converter</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">KM/H to Meters/sec Converter</h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-400">
               Convert km/h to m/s instantly. 1 km/h = 0.277778 m/s.
             </p>

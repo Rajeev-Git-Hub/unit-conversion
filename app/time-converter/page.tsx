@@ -33,6 +33,53 @@ export default function TimeConverterLandingPage() {
         </div>
       </section>
 
+      {/* Time Unit Definitions */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+            Time Unit Definitions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Second (s)</h3>
+              <p className="text-gray-600 dark:text-gray-300">The SI base unit of time. Defined as the duration of 9,192,631,770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium-133 atom.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Minute (min)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 60 seconds. A common unit for measuring durations such as meetings, cooking times, and exercise sessions. 60 minutes = 1 hour.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Hour (hr)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 60 minutes or 3,600 seconds. The standard unit for work shifts, travel times, and daily schedules. 24 hours = 1 day.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Day</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 24 hours or 86,400 seconds. Based on Earth's rotation period. Used for calendars, project planning, and billing cycles.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Week</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 7 days or 168 hours. A standard period for work schedules, project milestones, and recurring events. 52 weeks = 1 year (approximately).</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Year</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 365.25 days (Julian year) or approximately 31,557,600 seconds. Used for age, anniversaries, financial planning, and long-term projects.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Millisecond (ms)</h3>
+              <p className="text-gray-600 dark:text-gray-300">One thousandth of a second. Used in computing, physics experiments, and measuring very short time intervals in sports and technology.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Microsecond (μs)</h3>
+              <p className="text-gray-600 dark:text-gray-300">One millionth of a second. Used in high-speed electronics, telecommunications, and scientific measurements requiring extreme precision.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Nanosecond (ns)</h3>
+              <p className="text-gray-600 dark:text-gray-300">One billionth of a second. Used in computer processors, fiber optic communications, and advanced scientific research for ultra-precise timing.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Understanding Time Conversion */}
       <section className="py-16 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

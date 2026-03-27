@@ -80,6 +80,57 @@ export default function AreaConverterLandingPage() {
         </div>
       </section>
 
+      {/* Metric Area Unit Definitions */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+            Area Unit Definitions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Square Meter (m²)</h3>
+              <p className="text-gray-600 dark:text-gray-300">The SI unit of area. Defined as the area of a square with sides of one meter. Widely used in construction, real estate, and land measurement worldwide.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Square Kilometer (km²)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 1,000,000 square meters or 100 hectares. Used for measuring large geographical areas, city sizes, and country territories.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Hectare (ha)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 10,000 square meters or 100 ares. Commonly used in agriculture, forestry, and land management for measuring plots of land.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Square Centimeter (cm²)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 0.0001 square meters. Used for small area measurements such as paper sizes, fabric samples, and precise engineering drawings.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Square Millimeter (mm²)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 0.000001 square meters or one millionth of a square meter. Used in precision engineering, electronics, and microfabrication.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Square Inch (in²)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 6.45 square centimeters. Commonly used in the United States for measuring small areas, screen sizes, and construction materials.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Square Foot (ft²)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 929 square centimeters or 144 square inches. Widely used in the US and UK for measuring room sizes, floor areas, and real estate.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Square Yard (yd²)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 9 square feet or approximately 0.836 square meters. Used for measuring larger areas such as carpets, land, and construction sites.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Square Mile (mi²)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 2.59 square kilometers or 640 acres. Used for measuring large land areas, cities, and geographical regions in the US and UK.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Acre</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 4,047 square meters or approximately 0.405 hectares. Commonly used in the United States and UK for measuring land, especially in agriculture and real estate.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Common Area Conversions */}
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

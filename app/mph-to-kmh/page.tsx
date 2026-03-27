@@ -3,11 +3,11 @@ import Link from 'next/link';
 import ConverterCard from '../../components/ConverterCard';
 
 export const metadata: Metadata = {
-  title: 'MPH to KMH Converter - Convert Miles per Hour to Kilometers per Hour',
+  title: 'MPH to KM/H Converter - Convert Miles per Hour to Kilometers per Hour',
   description: 'Free mph to km/h converter. Convert miles per hour to kilometers per hour instantly. 1 mph = 1.60934 km/h. Accurate results, conversion formula, and practical examples.',
-  keywords: 'mph to kmh, mph to km/h, miles per hour to kilometers per hour, convert mph to kmh, speed converter',
+  keywords: 'mph to km/h, miles per hour to kilometers per hour, convert mph to km/h, speed converter',
   openGraph: {
-    title: 'MPH to KMH Converter',
+    title: 'MPH to KM/H Converter',
     description: 'Convert mph to km/h instantly',
     type: 'website',
   },
@@ -19,7 +19,7 @@ export default function MphToKmhPage() {
       <section className="bg-white dark:bg-gray-800 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">MPH to KMH Converter</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">MPH to KM/H Converter</h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-400">
               Convert miles per hour to kilometers per hour instantly. 1 mph = 1.60934 km/h.
             </p>

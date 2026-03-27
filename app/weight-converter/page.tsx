@@ -27,7 +27,7 @@ export default function WeightConverterLandingPage() {
               Convert between kilograms, pounds, ounces, grams, and tons
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="weight" />
+              <ConverterCard category="weight" defaultFrom="kg" defaultTo="lbs" />
             </div>
           </div>
         </div>
@@ -45,11 +45,11 @@ export default function WeightConverterLandingPage() {
               <div className="space-y-4 text-gray-600 dark:text-gray-300">
                 <p>
                   <strong>Metric System (International):</strong> Based on the kilogram, used worldwide in science and most countries. 
-                  Units include kilograms (kg), grams (g), and metric tons.
+                  Available units: Kilogram (kg), Gram (g), Milligram (mg), Microgram (μg), Nanogram (ng), Metric Ton.
                 </p>
                 <p>
                   <strong>Imperial System (US Customary):</strong> Used primarily in the United States. 
-                  Units include pounds (lbs), ounces (oz), and US tons.
+                  Available units: Pound (lbs), Ounce (oz), US Ton.
                 </p>
                 <p>
                   Understanding both systems is essential for international trade, cooking, fitness, and scientific applications.
@@ -84,6 +84,61 @@ export default function WeightConverterLandingPage() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Metric Unit Definitions */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+            Metric Weight Unit Definitions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Kilogram (kg)</h3>
+              <p className="text-gray-600 dark:text-gray-300">The base unit of mass in the International System of Units (SI). 1 kg = 1,000 grams. Commonly used for measuring body weight, food items, and commercial goods.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Gram (g)</h3>
+              <p className="text-gray-600 dark:text-gray-300">One thousandth of a kilogram. Used for measuring small quantities of food, precious metals, and scientific samples. 1 g = 0.001 kg.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Milligram (mg)</h3>
+              <p className="text-gray-600 dark:text-gray-300">One thousandth of a gram. Commonly used in medicine for measuring drug dosages and in nutrition for vitamin and mineral content. 1 mg = 0.001 g.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Microgram (μg)</h3>
+              <p className="text-gray-600 dark:text-gray-300">One millionth of a gram. Used for extremely small measurements such as trace nutrients, pollutants, and pharmaceutical compounds. 1 μg = 0.000001 g.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Nanogram (ng)</h3>
+              <p className="text-gray-600 dark:text-gray-300">One billionth of a gram. Used in molecular biology, genetics (DNA/RNA measurements), and ultra-sensitive chemical analysis. 1 ng = 0.000000001 g.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Metric Ton</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 1,000 kilograms or 1 million grams. Used for measuring large quantities such as cargo, industrial materials, and vehicle weights. Also known as tonne.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Metric Ton</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 1,000 kilograms or 1 million grams. Used for measuring large quantities such as cargo, industrial materials, and vehicle weights. Also known as tonne.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">US Ton</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 2,000 pounds or approximately 907 kilograms. Used in the United States for measuring large quantities of materials and cargo.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Pound (lbs)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 453.592 grams. Used primarily in the United States and UK for measuring body weight, food products, and commercial goods.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Ounce (oz)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 28.3495 grams. Used for measuring smaller quantities of food, precious metals, and postal items in countries using imperial units.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">US Ton</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 2,000 pounds or approximately 907 kilograms. Used in the United States for measuring large quantities of materials and cargo.</p>
             </div>
           </div>
         </div>

@@ -3,11 +3,11 @@ import Link from 'next/link';
 import ConverterCard from '../../components/ConverterCard';
 
 export const metadata: Metadata = {
-  title: 'MPS to MPH Converter - Convert m/s to mph',
+  title: 'Meters/sec to MPH Converter - Convert m/s to mph',
   description: 'Free m/s to mph converter. Convert meters per second to miles per hour instantly. 1 m/s = 2.23694 mph. Accurate results, conversion formula, and practical examples.',
-  keywords: 'mps to mph, m/s to mph, meters per second to miles per hour, convert mps to mph, speed converter',
+  keywords: 'm/s to mph, meter per second to mph, meters per second to miles per hour, convert m/s to mph, speed converter',
   openGraph: {
-    title: 'MPS to MPH Converter',
+    title: 'Meters/sec to MPH Converter',
     description: 'Convert m/s to mph instantly',
     type: 'website',
   },
@@ -19,7 +19,7 @@ export default function MpsToMphPage() {
       <section className="bg-white dark:bg-gray-800 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">MPS to MPH Converter</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Meters/sec to MPH Converter</h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-400">
               Convert m/s to mph instantly. 1 m/s = 2.23694 mph.
             </p>

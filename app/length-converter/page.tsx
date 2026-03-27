@@ -71,6 +71,69 @@ export default function LengthConverterLandingPage() {
         </div>
       </section>
 
+      {/* Metric Length Unit Definitions */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+            Length Unit Definitions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Meter (m)</h3>
+              <p className="text-gray-600 dark:text-gray-300">The SI unit of length. Defined as the distance light travels in a vacuum in 1/299,792,458 seconds.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Kilometer (km)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 1,000 meters. Commonly used for measuring long distances such as road lengths and geographical distances.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Centimeter (cm)</h3>
+              <p className="text-gray-600 dark:text-gray-300">One hundredth of a meter. Used for measuring small objects, clothing sizes, and everyday items.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Millimeter (mm)</h3>
+              <p className="text-gray-600 dark:text-gray-300">One thousandth of a meter. Used for precise measurements in engineering, manufacturing, and medical applications.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Micrometer (μm)</h3>
+              <p className="text-gray-600 dark:text-gray-300">One millionth of a meter. Used in microscopy, semiconductor manufacturing, and precision engineering.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Nanometer (nm)</h3>
+              <p className="text-gray-600 dark:text-gray-300">One billionth of a meter. Used in nanotechnology, molecular biology, and measuring wavelengths of light.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Decimeter (dm)</h3>
+              <p className="text-gray-600 dark:text-gray-300">One tenth of a meter. Equal to 10 centimeters. Occasionally used in scientific contexts.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Dekameter (dam)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 10 meters. Rarely used in practice, but part of the metric system hierarchy.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Hectometer (hm)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 100 meters. Sometimes used in agricultural land measurement and surveying.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Inch (in)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 2.54 centimeters. Commonly used in the United States for measuring screen sizes, carpentry, and everyday objects.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Foot (ft)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 12 inches or 30.48 centimeters. Used for measuring height, room dimensions, and construction in the US.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Yard (yd)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 3 feet or 0.9144 meters. Used in sports fields, textile measurements, and construction.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Mile (mi)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 5,280 feet or 1.609 kilometers. Used for road distances and speed limits in the United States and UK.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How to Guide */}
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

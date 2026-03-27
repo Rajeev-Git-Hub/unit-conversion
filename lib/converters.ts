@@ -66,7 +66,6 @@ export const converters = {
     decimeter: 0.1,            // 1 dm = 0.1 m (exact)
     dekameter: 10,             // 1 dam = 10 m (exact)
     hectometer: 100,           // 1 hm = 100 m (exact)
-    nautical_mile: 1852        // 1 nmi = 1852 m (exact - international standard)
   },
   weight: {
     // Base Unit: gram (g) - NIST Standard
@@ -77,10 +76,8 @@ export const converters = {
     nanogram: 0.000000001,     // 1 ng = 1e-9 g (exact)
     pound: 453.59237,          // 1 lb = 453.59237 g (exact - international yard and pound agreement)
     ounce: 28.349523125,       // 1 oz = 28.349523125 g (exact - international yard and pound agreement)
-    ton: 1000000,              // 1 metric ton = 1,000,000 g (exact)
-    stone: 6350.29318,         // 1 stone = 6350.29318 g (exact - UK)
-    carat: 0.2,                // 1 carat = 0.2 g (exact - international standard)
-    grain: 0.06479891          // 1 grain = 0.06479891 g (exact)
+    'metric ton': 1000000,     // 1 metric ton = 1,000,000 g (exact)
+    'us ton': 907184.74        // 1 US ton = 2,000 lb = 907,184.74 g (exact)
   },
   time: {
     // Base Unit: second (s) - SI Standard
@@ -116,12 +113,7 @@ export const converters = {
     'cubic inch': 0.016387064,       // 1 in³ = 0.016387064 L (exact)
     'cubic foot': 28.316846592,      // 1 ft³ = 28.316846592 L (exact)
     gallon: 3.785411784,             // 1 gal (US) = 3.785411784 L (exact)
-    quart: 0.946352946,              // 1 qt (US) = 0.946352946 L (exact)
-    pint: 0.473176473,               // 1 pt (US) = 0.473176473 L (exact)
-    cup: 0.2365882365,               // 1 cup (US) = 0.2365882365 L (exact)
     'fluid ounce': 0.0295735295625,   // 1 fl oz (US) = 0.0295735295625 L (exact)
-    tablespoon: 0.0147867647825,     // 1 tbsp (US) = 0.0147867647825 L (exact)
-    teaspoon: 0.00492892159375       // 1 tsp (US) = 0.00492892159375 L (exact)
   },
   speed: {
     // Base Unit: meter per second (m/s) - SI Standard

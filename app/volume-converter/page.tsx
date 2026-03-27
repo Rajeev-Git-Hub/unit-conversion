@@ -80,6 +80,49 @@ export default function VolumeConverterLandingPage() {
         </div>
       </section>
 
+      {/* Metric Volume Unit Definitions */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+            Metric Volume Unit Definitions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Liter (L)</h3>
+              <p className="text-gray-600 dark:text-gray-300">The base unit of volume in the metric system. Defined as the volume of one cubic decimeter. Widely used worldwide for measuring liquids, beverages, and container capacities.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Milliliter (mL)</h3>
+              <p className="text-gray-600 dark:text-gray-300">One thousandth of a liter. Commonly used for measuring small liquid quantities, medication dosages, and precise liquid measurements. 1 mL = 0.001 L.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Cubic Meter (m³)</h3>
+              <p className="text-gray-600 dark:text-gray-300">The SI unit of volume. Equal to 1,000 liters. Used for measuring large volumes such as water tanks, shipping containers, and construction materials.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Cubic Centimeter (cm³)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to one milliliter. Used in scientific and engineering contexts, particularly for measuring small precise volumes and engine displacement.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Cubic Foot (ft³)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to approximately 28.3 liters. Used in construction, shipping, and industrial applications in countries using the imperial system.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Cubic Inch (in³)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to approximately 16.4 milliliters. Used in automotive engineering for engine displacement and small volume measurements in the US.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Gallon (gal)</h3>
+              <p className="text-gray-600 dark:text-gray-300">US customary unit equal to 3.785 liters. Used for measuring fuel, large liquid containers, and beverage volumes in the United States.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Fluid Ounce (fl oz)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to approximately 29.6 milliliters. Used for measuring smaller liquid quantities, beverage servings, and cooking ingredients in the US.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Common Volume Conversions */}
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

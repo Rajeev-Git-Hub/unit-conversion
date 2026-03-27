@@ -27,7 +27,62 @@ export default function DataConverterLandingPage() {
               Convert between gigabytes, megabytes, kilobytes, bytes, and bits
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="data" />
+              <ConverterCard category="data" defaultFrom="megabyte" defaultTo="gigabyte" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Data Unit Definitions */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+            Data Unit Definitions
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Byte (B)</h3>
+              <p className="text-gray-600 dark:text-gray-300">The basic unit of digital information. Equal to 8 bits. Used for measuring file sizes, memory capacity, and data storage across all computing devices.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Kilobyte (KB)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 1,024 bytes. Used for measuring small text documents, configuration files, and email attachments in digital storage systems.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Megabyte (MB)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 1,024 kilobytes or approximately 1 million bytes. Used for measuring photos, documents, music files, and application sizes.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Gigabyte (GB)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 1,024 megabytes or approximately 1 billion bytes. Used for measuring video files, software installations, and device storage capacity.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Terabyte (TB)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 1,024 gigabytes or approximately 1 trillion bytes. Used for measuring hard drive capacity, server storage, and large database sizes.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Petabyte (PB)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 1,024 terabytes or approximately 1 quadrillion bytes. Used for measuring data center storage, cloud infrastructure, and big data analytics.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Exabyte (EB)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 1,024 petabytes or approximately 1 quintillion bytes. Used for measuring global internet traffic, massive data centers, and enterprise-level storage systems.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Bit (b)</h3>
+              <p className="text-gray-600 dark:text-gray-300">The smallest unit of digital information, representing a binary value of 0 or 1. Used for measuring data transfer rates and network speeds.</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Kilobit (Kb)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 1,024 bits or 128 bytes. Used for measuring internet connection speeds, data transfer rates, and network bandwidth in kilobits per second (Kbps).</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Megabit (Mb)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 1,024 kilobits or approximately 131,072 bytes. Commonly used for measuring broadband internet speeds in megabits per second (Mbps).</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Gigabit (Gb)</h3>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 1,024 megabits or approximately 134 million bytes. Used for measuring high-speed internet connections, fiber optic networks, and data center bandwidth in gigabits per second (Gbps).</p>
             </div>
           </div>
         </div>
