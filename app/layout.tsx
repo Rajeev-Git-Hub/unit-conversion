@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Layout from "../components/Layout";
 import Script from "next/script";
+import SchemaMarkup from "../components/SchemaMarkup";
+import PerformanceOptimizer from "../components/PerformanceOptimizer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -73,10 +75,15 @@ export default function RootLayout({
             gtag('config', 'G-XXXXXXXXXX');
           `}
         </Script>
+        {/* Schema Markup for Website */}
+        <SchemaMarkup type="WebSite" />
+        {/* Schema Markup for Software Application */}
+        <SchemaMarkup type="SoftwareApplication" data={{ name: "ConvertMaster Unit Converter" }} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <PerformanceOptimizer />
         <Layout>{children}</Layout>
       </body>
     </html>
