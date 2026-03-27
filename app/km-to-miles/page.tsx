@@ -24,7 +24,7 @@ export default function KmToMilesPage() {
               Convert kilometers to miles instantly. 1 km = 0.621371 miles.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="length" />
+              <ConverterCard category="length" defaultFrom="kilometer" defaultTo="mile" />
             </div>
           </div>
         </div>

@@ -24,7 +24,7 @@ export default function MgToGramsPage() {
               Convert milligrams to grams instantly. 1 mg = 0.001 grams.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="weight" />
+              <ConverterCard category="weight" defaultFrom="milligram" defaultTo="gram" />
             </div>
           </div>
         </div>

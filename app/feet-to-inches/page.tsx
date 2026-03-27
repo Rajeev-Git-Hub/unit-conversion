@@ -24,7 +24,7 @@ export default function FeetToInchesPage() {
               Convert feet to inches instantly. 1 foot = 12 inches.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="length" />
+              <ConverterCard category="length" defaultFrom="foot" defaultTo="inch" />
             </div>
           </div>
         </div>

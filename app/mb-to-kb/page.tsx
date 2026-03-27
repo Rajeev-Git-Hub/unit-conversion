@@ -24,7 +24,7 @@ export default function MbToKbPage() {
               Convert megabytes to kilobytes instantly. 1 MB = 1024 KB
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="data" />
+              <ConverterCard category="data" defaultFrom="megabyte" defaultTo="kilobyte" />
             </div>
           </div>
         </div>

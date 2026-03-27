@@ -24,7 +24,7 @@ export default function GramsToMgPage() {
               Convert grams to milligrams instantly. 1 gram = 1000 mg.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="weight" />
+              <ConverterCard category="weight" defaultFrom="gram" defaultTo="milligram" />
             </div>
           </div>
         </div>

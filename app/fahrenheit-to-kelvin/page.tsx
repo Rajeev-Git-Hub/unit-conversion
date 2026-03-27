@@ -24,7 +24,7 @@ export default function FahrenheitToKelvinPage() {
               Convert Fahrenheit to Kelvin instantly. Formula: K = (F - 32) × 5/9 + 273.15
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="temperature" />
+              <ConverterCard category="temperature" defaultFrom="fahrenheit" defaultTo="kelvin" />
             </div>
           </div>
         </div>

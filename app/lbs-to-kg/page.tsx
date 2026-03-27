@@ -24,7 +24,7 @@ export default function LbsToKgPage() {
               Convert pounds to kilograms instantly. 1 lb = 0.453592 kg.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="weight" />
+              <ConverterCard category="weight" defaultFrom="pound" defaultTo="kilogram" />
             </div>
           </div>
         </div>

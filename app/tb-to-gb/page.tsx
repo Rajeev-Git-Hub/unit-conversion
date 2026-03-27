@@ -24,7 +24,7 @@ export default function TbToGbPage() {
               Convert terabytes to gigabytes instantly. 1 TB = 1024 GB
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="data" />
+              <ConverterCard category="data" defaultFrom="terabyte" defaultTo="gigabyte" />
             </div>
           </div>
         </div>

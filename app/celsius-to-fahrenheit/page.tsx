@@ -27,7 +27,7 @@ export default function CelsiusToFahrenheitPage() {
               Convert Celsius to Fahrenheit instantly. Formula: F = (C × 9/5) + 32
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="temperature" />
+              <ConverterCard category="temperature" defaultFrom="celsius" defaultTo="fahrenheit" />
             </div>
           </div>
         </div>

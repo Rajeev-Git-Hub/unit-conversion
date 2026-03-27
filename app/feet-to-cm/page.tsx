@@ -24,7 +24,7 @@ export default function FeetToCmPage() {
               Convert feet to centimeters instantly. 1 foot = 30.48 cm.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="length" />
+              <ConverterCard category="length" defaultFrom="foot" defaultTo="centimeter" />
             </div>
           </div>
         </div>

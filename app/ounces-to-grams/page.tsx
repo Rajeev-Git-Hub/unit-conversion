@@ -24,7 +24,7 @@ export default function OuncesToGramsPage() {
               Convert ounces to grams instantly. 1 ounce = 28.3495 grams.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="weight" />
+              <ConverterCard category="weight" defaultFrom="ounce" defaultTo="gram" />
             </div>
           </div>
         </div>

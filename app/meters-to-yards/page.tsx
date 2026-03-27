@@ -24,7 +24,7 @@ export default function MetersToYardsPage() {
               Convert meters to yards instantly. 1 meter = 1.09361 yards.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="length" />
+              <ConverterCard category="length" defaultFrom="meter" defaultTo="yard" />
             </div>
           </div>
         </div>

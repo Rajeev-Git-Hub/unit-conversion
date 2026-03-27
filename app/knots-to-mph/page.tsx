@@ -24,7 +24,7 @@ export default function KnotsToMphPage() {
               Convert knots to miles per hour instantly. 1 knot = 1.15078 mph.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="speed" />
+              <ConverterCard category="speed" defaultFrom="knots" defaultTo="mph" />
             </div>
           </div>
         </div>

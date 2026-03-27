@@ -24,7 +24,7 @@ export default function KelvinToCelsiusPage() {
               Convert Kelvin to Celsius instantly. Formula: C = K - 273.15
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="temperature" />
+              <ConverterCard category="temperature" defaultFrom="kelvin" defaultTo="celsius" />
             </div>
           </div>
         </div>

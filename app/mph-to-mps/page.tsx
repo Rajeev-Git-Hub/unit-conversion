@@ -24,7 +24,7 @@ export default function MphToMpsPage() {
               Convert mph to m/s instantly. 1 mph = 0.44704 m/s.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="speed" />
+              <ConverterCard category="speed" defaultFrom="mph" defaultTo="mps" />
             </div>
           </div>
         </div>

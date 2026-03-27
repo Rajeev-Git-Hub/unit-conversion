@@ -24,7 +24,7 @@ export default function InchesToCmPage() {
               Convert inches to centimeters instantly. 1 inch = 2.54 cm.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="length" />
+              <ConverterCard category="length" defaultFrom="inch" defaultTo="centimeter" />
             </div>
           </div>
         </div>

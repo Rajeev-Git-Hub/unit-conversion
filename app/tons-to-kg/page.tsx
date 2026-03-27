@@ -24,7 +24,7 @@ export default function TonsToKgPage() {
               Convert metric tons to kilograms instantly. 1 ton = 1000 kg.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="weight" />
+              <ConverterCard category="weight" defaultFrom="ton" defaultTo="kilogram" />
             </div>
           </div>
         </div>

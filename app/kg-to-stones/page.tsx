@@ -24,7 +24,7 @@ export default function KgToStonesPage() {
               Convert kilograms to stones instantly. 1 kg = 0.157473 stones.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="weight" />
+              <ConverterCard category="weight" defaultFrom="kilogram" defaultTo="stone" />
             </div>
           </div>
         </div>

@@ -24,7 +24,7 @@ export default function KmToMetersPage() {
               Convert kilometers to meters instantly. 1 km = 1000 meters.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="length" />
+              <ConverterCard category="length" defaultFrom="kilometer" defaultTo="meter" />
             </div>
           </div>
         </div>

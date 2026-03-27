@@ -24,7 +24,7 @@ export default function LbsToStonesPage() {
               Convert pounds to stones instantly. 1 pound = 0.0714286 stones.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="weight" />
+              <ConverterCard category="weight" defaultFrom="pound" defaultTo="stone" />
             </div>
           </div>
         </div>

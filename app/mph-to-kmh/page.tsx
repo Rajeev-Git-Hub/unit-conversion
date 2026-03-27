@@ -24,7 +24,7 @@ export default function MphToKmhPage() {
               Convert miles per hour to kilometers per hour instantly. 1 mph = 1.60934 km/h.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="speed" />
+              <ConverterCard category="speed" defaultFrom="mph" defaultTo="kmh" />
             </div>
           </div>
         </div>

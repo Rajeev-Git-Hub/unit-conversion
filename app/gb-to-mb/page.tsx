@@ -24,7 +24,7 @@ export default function GbToMbPage() {
               Convert gigabytes to megabytes instantly. 1 GB = 1024 MB
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="data" />
+              <ConverterCard category="data" defaultFrom="gigabyte" defaultTo="megabyte" />
             </div>
           </div>
         </div>

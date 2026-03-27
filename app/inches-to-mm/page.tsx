@@ -24,7 +24,7 @@ export default function InchesToMmPage() {
               Convert inches to millimeters instantly. 1 inch = 25.4 mm.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="length" />
+              <ConverterCard category="length" defaultFrom="inch" defaultTo="millimeter" />
             </div>
           </div>
         </div>
