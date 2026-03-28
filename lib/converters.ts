@@ -220,6 +220,22 @@ export function convert(
     'gb': 'gigabyte',
     'tb': 'terabyte',
     'pb': 'petabyte',
+    // Speed aliases
+    'm/s': 'meter per second',
+    'mps': 'meter per second',
+    'km/h': 'kilometer per hour',
+    'kmh': 'kilometer per hour',
+    'kmph': 'kilometer per hour',
+    'kph': 'kilometer per hour',
+    'mph': 'mile per hour',
+    'mi/h': 'mile per hour',
+    'ft/s': 'foot per second',
+    'fts': 'foot per second',
+    'fps': 'foot per second',
+    'kn': 'knot',
+    'kt': 'knot',
+    'mach': 'mach',
+    'c': 'speed of light',
   };
 
   // Normalize unit names
