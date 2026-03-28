@@ -1,0 +1,35 @@
+import { Metadata } from 'next';
+import ConverterCard from '../../components/ConverterCard';
+
+export const metadata: Metadata = {
+  title: 'Acres to Square Yards Converter – ac to yd² | Free Tool',
+  description: 'Free acres to square yards converter. Convert ac to yd² instantly with accurate results.',
+  keywords: 'acres to square yards, ac to yd², convert acres to square yards, area converter',
+  openGraph: {
+    title: 'Acres to Square Yards Converter – ac to yd²',
+    description: 'Convert acres to square yards instantly with accurate results',
+    type: 'website',
+  },
+};
+
+export default function AcreToYd2Page() {
+  return (
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Acres to Square Yards Converter
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-blue-100">
+              Convert acres to square yards instantly. 1 ac = 4,840 yd².
+            </p>
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
+              <ConverterCard category="area" defaultFrom="acre" defaultTo="square-yard" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

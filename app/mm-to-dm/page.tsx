@@ -1,0 +1,36 @@
+import { Metadata } from 'next';
+import Link from 'next/link';
+import ConverterCard from '../../components/ConverterCard';
+
+export const metadata: Metadata = {
+  title: 'Millimeters to Decimeters Converter – mm to dm | Free Tool',
+  description: 'Free millimeters to decimeters converter. Convert mm to dm instantly with accurate results.',
+  keywords: 'millimeters to decimeters, mm to dm, convert millimeters to decimeters, length converter',
+  openGraph: {
+    title: 'Millimeters to Decimeters Converter – mm to dm',
+    description: 'Convert millimeters to decimeters instantly with accurate results',
+    type: 'website',
+  },
+};
+
+export default function MmToDmPage() {
+  return (
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <section className="bg-gradient-to-r from-blue-600 to-indigo-600 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Millimeters to Decimeters Converter
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-blue-100">
+              Convert millimeters to decimeters instantly. 100 mm = 1 dm.
+            </p>
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
+              <ConverterCard category="length" defaultFrom="millimeter" defaultTo="decimeter" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
