@@ -50,6 +50,59 @@ const getChemicalUnits = () => {
   return chemicalUnits;
 };
 
+// Unit aliases mapping - exported for use in components
+export const unitAliases: Record<string, string> = {
+  // Weight aliases
+  'kg': 'kilogram',
+  'g': 'gram',
+  'mg': 'milligram',
+  'lbs': 'pound',
+  'lb': 'pound',
+  'oz': 'ounce',
+  'ton': 'metric ton',
+  'tons': 'metric ton',
+  'us ton': 'us ton',
+  // Length aliases
+  'm': 'meter',
+  'km': 'kilometer',
+  'cm': 'centimeter',
+  'mm': 'millimeter',
+  'ft': 'foot',
+  'in': 'inch',
+  'mi': 'mile',
+  'yd': 'yard',
+  // Time aliases
+  's': 'second',
+  'min': 'minute',
+  'hr': 'hour',
+  'd': 'day',
+  'wk': 'week',
+  'y': 'year',
+  // Data aliases
+  'b': 'byte',
+  'kb': 'kilobyte',
+  'mb': 'megabyte',
+  'gb': 'gigabyte',
+  'tb': 'terabyte',
+  'pb': 'petabyte',
+  // Speed aliases
+  'm/s': 'meter per second',
+  'mps': 'meter per second',
+  'km/h': 'kilometer per hour',
+  'kmh': 'kilometer per hour',
+  'kmph': 'kilometer per hour',
+  'kph': 'kilometer per hour',
+  'mph': 'mile per hour',
+  'mi/h': 'mile per hour',
+  'ft/s': 'foot per second',
+  'fts': 'foot per second',
+  'fps': 'foot per second',
+  'kn': 'knot',
+  'kt': 'knot',
+  'mach': 'mach',
+  'c': 'speed of light',
+};
+
 export const converters = {
   length: {
     // Base Unit: meter (m) - NIST Standard
@@ -184,59 +237,6 @@ export function convert(
   if (!from || !to) {
     throw new Error('Invalid units: from and to units must be specified');
   }
-
-  // Normalize unit names (handle common abbreviations)
-  const unitAliases: Record<string, string> = {
-    // Weight aliases
-    'kg': 'kilogram',
-    'g': 'gram',
-    'mg': 'milligram',
-    'lbs': 'pound',
-    'lb': 'pound',
-    'oz': 'ounce',
-    'ton': 'metric ton',
-    'tons': 'metric ton',
-    'us ton': 'us ton',
-    // Length aliases
-    'm': 'meter',
-    'km': 'kilometer',
-    'cm': 'centimeter',
-    'mm': 'millimeter',
-    'ft': 'foot',
-    'in': 'inch',
-    'mi': 'mile',
-    'yd': 'yard',
-    // Time aliases
-    's': 'second',
-    'min': 'minute',
-    'hr': 'hour',
-    'd': 'day',
-    'wk': 'week',
-    'y': 'year',
-    // Data aliases
-    'b': 'byte',
-    'kb': 'kilobyte',
-    'mb': 'megabyte',
-    'gb': 'gigabyte',
-    'tb': 'terabyte',
-    'pb': 'petabyte',
-    // Speed aliases
-    'm/s': 'meter per second',
-    'mps': 'meter per second',
-    'km/h': 'kilometer per hour',
-    'kmh': 'kilometer per hour',
-    'kmph': 'kilometer per hour',
-    'kph': 'kilometer per hour',
-    'mph': 'mile per hour',
-    'mi/h': 'mile per hour',
-    'ft/s': 'foot per second',
-    'fts': 'foot per second',
-    'fps': 'foot per second',
-    'kn': 'knot',
-    'kt': 'knot',
-    'mach': 'mach',
-    'c': 'speed of light',
-  };
 
   // Normalize unit names
   const normalizedFrom = unitAliases[from.toLowerCase()] || from;

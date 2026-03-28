@@ -6,7 +6,8 @@ import {
   CategoryKey,
   temperatureUnits,
   convert,
-  conversionMeta // Import conversionMeta
+  conversionMeta,
+  unitAliases
 } from '../lib';
 import { categories } from '../lib/categories';
 import { useConversionHistory } from '../lib/hooks/useConversionHistory';
@@ -151,11 +152,15 @@ export default function ConverterCard({ category, defaultFrom, defaultTo }: Prop
   useEffect(() => {
     // Set initial from/to values
     if (units.length > 0) {
+      // Normalize default values using unitAliases
+      const normalizedDefaultFrom = defaultFrom ? (unitAliases[defaultFrom.toLowerCase()] || defaultFrom) : null;
+      const normalizedDefaultTo = defaultTo ? (unitAliases[defaultTo.toLowerCase()] || defaultTo) : null;
+      
       if (!from || !units.includes(from)) {
-        setFrom(defaultFrom || units[0]);
+        setFrom(normalizedDefaultFrom || units[0]);
       }
       if (!to || !units.includes(to)) {
-        setTo(defaultTo || (units.length > 1 ? units[1] : units[0]));
+        setTo(normalizedDefaultTo || (units.length > 1 ? units[1] : units[0]));
       }
     }
   }, [units, from, to, defaultFrom, defaultTo]);
