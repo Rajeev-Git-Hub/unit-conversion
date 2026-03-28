@@ -65,7 +65,7 @@ function HomeContent() {
             {/* Badge - High Contrast */}
             <div className="inline-flex items-center px-4 py-2 bg-blue-700 text-white text-sm font-semibold rounded-full mb-6 shadow-lg">
               <span className="w-2 h-2 bg-white rounded-full mr-2"></span>
-              Free & Open Source — Built for Engineers, Students & Developers
+              100% Free — No Registration Required
             </div>
             
             {/* Main Heading */}
@@ -78,7 +78,7 @@ function HomeContent() {
             
             {/* Subheading */}
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed">
-              The most powerful unit converter with 50+ tools, real-time search, and advanced analytics
+              The most powerful unit converter with 650+ converters, real-time search, and conversion history
             </p>
             
             {/* Search Box - Enhanced */}
@@ -99,6 +99,30 @@ function HomeContent() {
                   </Suspense>
                 )}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Signals Section */}
+      <section className="py-12 bg-gray-100 dark:bg-gray-900 border-y border-gray-200 dark:border-gray-700">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">650+</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Unit Converters</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-green-600 dark:text-green-400 mb-2">100%</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Free Forever</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">0</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Registration Needed</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-amber-600 dark:text-amber-400 mb-2">🔒</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Browser-Only Privacy</div>
             </div>
           </div>
         </div>
@@ -128,7 +152,7 @@ function HomeContent() {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Universal Search</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  Search across all 50+ converters with intelligent auto-complete and real-time results
+                  Search across all 650+ converters with intelligent auto-complete and real-time results
                 </p>
                 <div className="flex items-center text-blue-600 font-semibold">
                   <span>Lightning Fast</span>
@@ -144,12 +168,12 @@ function HomeContent() {
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
                   <span className="text-white text-2xl">📊</span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Advanced Analytics</h3>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Conversion History</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  Track conversion patterns, analyze usage trends, and optimize your workflow
+                  View your recent conversions stored locally in your browser
                 </p>
                 <div className="flex items-center text-purple-600 font-semibold">
-                  <span>Data-Driven Insights</span>
+                  <span>Privacy-First</span>
                   <FiArrowRight className="w-5 h-5 ml-2 transform transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
@@ -167,7 +191,7 @@ function HomeContent() {
                   Industry-grade converters with precision accuracy and reliable results
                 </p>
                 <div className="flex items-center text-green-600 font-semibold">
-                  <span>Enterprise Quality</span>
+                  <span>Always Free</span>
                   <FiArrowRight className="w-5 h-5 ml-2 transform transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
@@ -252,16 +276,7 @@ function HomeContent() {
             </Link>
           </div>
 
-          {/* CTA */}
-          <div className="text-center mt-12">
-            <Link
-              href="/all-converters"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg rounded-2xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-xl"
-            >
-              <span>Explore All Converters</span>
-              <FiArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-          </div>
+          {/* Removed duplicate CTA - single CTA in Features section is sufficient */}
         </div>
       </section>
 

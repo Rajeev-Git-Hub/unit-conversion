@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { FiLayers, FiMail, FiGlobe } from 'react-icons/fi';
+import { FiLayers, FiMail } from 'react-icons/fi';
 import { useLocalization } from '../lib/LocalizationContext';
 
 export default function Footer() {
@@ -25,12 +25,8 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
-              The most powerful free unit converter with 50+ tools. Convert length, weight, temperature, and more — instantly and accurately.
+              The most powerful free unit converter with 650+ converters. Convert length, weight, temperature, and more — instantly and accurately.
             </p>
-            <div className="flex items-center gap-2 text-sm text-gray-500">
-              <FiGlobe className="h-4 w-4" />
-              <span>Available worldwide</span>
-            </div>
           </div>
 
           {/* Popular Converters */}

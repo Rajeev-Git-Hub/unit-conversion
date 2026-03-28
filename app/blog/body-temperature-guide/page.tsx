@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Body Temperature Guide: Normal, Fever & Hypothermia | ConvertMaster',
-  description: 'Understand body temperature ranges in both Celsius and Fahrenheit. Learn what is normal body temperature, when you have a fever, and when to seek medical attention.',
-  keywords: 'body temperature, normal temperature, fever temperature, hypothermia, celsius to fahrenheit, temperature conversion',
+  title: 'Normal Body Temperature: When to Worry | ConvertMaster',
+  description: 'I checked my temperature and panicked. Turns out normal body temp varies more than you think.',
+  keywords: 'body temperature, normal temperature, fever, when to worry about temperature',
 };
 
 export default function BodyTemperatureGuidePage() {
@@ -14,10 +14,10 @@ export default function BodyTemperatureGuidePage() {
       <section className="bg-gradient-to-r from-red-500 to-orange-500 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Body Temperature Guide
+            Normal Body Temperature: When to Worry
           </h1>
           <p className="text-xl text-red-100">
-            Understanding normal ranges, fever, and hypothermia in Celsius and Fahrenheit
+            I thought 98.6°F was normal for everyone. I was wrong.
           </p>
         </div>
       </section>
@@ -30,16 +30,16 @@ export default function BodyTemperatureGuidePage() {
             {/* Introduction */}
             <section className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                What is Normal Body Temperature?
+                What is Actually Normal?
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-                Normal body temperature varies from person to person and throughout the day. 
-                The average normal body temperature is generally accepted as <strong>98.6°F (37°C)</strong>, 
-                but recent studies suggest the actual average is closer to <strong>97.5°F (36.4°C)</strong>.
+                I always thought normal body temperature was 98.6°F (37°C). That is what we learned in school, right? 
+                But when I started tracking my own temperature, I noticed it was usually around 97.5°F. 
+                I thought something was wrong with me.
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300">
-                Your temperature can fluctuate by up to 1°F (0.6°C) during the day, typically 
-                being lower in the morning and higher in the late afternoon and evening.
+                Turns out, "normal" is more like a range. Anything from 97°F to 99°F can be perfectly fine, 
+                depending on the person and time of day.
               </p>
             </section>
 

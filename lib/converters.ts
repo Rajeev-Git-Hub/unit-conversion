@@ -185,8 +185,49 @@ export function convert(
     throw new Error('Invalid units: from and to units must be specified');
   }
 
+  // Normalize unit names (handle common abbreviations)
+  const unitAliases: Record<string, string> = {
+    // Weight aliases
+    'kg': 'kilogram',
+    'g': 'gram',
+    'mg': 'milligram',
+    'lbs': 'pound',
+    'lb': 'pound',
+    'oz': 'ounce',
+    'ton': 'metric ton',
+    'tons': 'metric ton',
+    'us ton': 'us ton',
+    // Length aliases
+    'm': 'meter',
+    'km': 'kilometer',
+    'cm': 'centimeter',
+    'mm': 'millimeter',
+    'ft': 'foot',
+    'in': 'inch',
+    'mi': 'mile',
+    'yd': 'yard',
+    // Time aliases
+    's': 'second',
+    'min': 'minute',
+    'hr': 'hour',
+    'd': 'day',
+    'wk': 'week',
+    'y': 'year',
+    // Data aliases
+    'b': 'byte',
+    'kb': 'kilobyte',
+    'mb': 'megabyte',
+    'gb': 'gigabyte',
+    'tb': 'terabyte',
+    'pb': 'petabyte',
+  };
+
+  // Normalize unit names
+  const normalizedFrom = unitAliases[from.toLowerCase()] || from;
+  const normalizedTo = unitAliases[to.toLowerCase()] || to;
+
   // Same unit conversion - return the same value
-  if (from === to) {
+  if (normalizedFrom === normalizedTo) {
     return rounding !== undefined ? +value.toFixed(rounding) : value;
   }
 
@@ -196,7 +237,7 @@ export function convert(
     let celsius: number;
     
     // Convert from source to Celsius
-    switch (from) {
+    switch (normalizedFrom) {
       case 'celsius':
         celsius = value;
         break;
@@ -213,11 +254,11 @@ export function convert(
         celsius = value * 1.25;
         break;
       default:
-        throw new Error(`Unsupported temperature unit: ${from}`);
+        throw new Error(`Unsupported temperature unit: ${normalizedFrom}`);
     }
     
     // Convert from Celsius to target
-    switch (to) {
+    switch (normalizedTo) {
       case 'celsius':
         return celsius;
       case 'fahrenheit':
@@ -229,7 +270,7 @@ export function convert(
       case 'reaumur':
         return celsius * 0.8;
       default:
-        throw new Error(`Unsupported temperature unit: ${to}`);
+        throw new Error(`Unsupported temperature unit: ${normalizedTo}`);
     }
   }
 
@@ -248,15 +289,15 @@ export function convert(
     throw new Error(`Invalid category: ${category} not found`);
   }
 
-  const fromFactor = map[from as keyof typeof map];
-  const toFactor = map[to as keyof typeof map];
+  const fromFactor = map[normalizedFrom as keyof typeof map];
+  const toFactor = map[normalizedTo as keyof typeof map];
 
   if (fromFactor === undefined || toFactor === undefined) {
-    throw new Error(`Invalid unit: ${from} or ${to} not found in ${category}`);
+    throw new Error(`Invalid unit: ${normalizedFrom} or ${normalizedTo} not found in ${category}`);
   }
 
   if (typeof fromFactor !== 'number' || typeof toFactor !== 'number') {
-    throw new Error(`Invalid conversion factors for ${from} or ${to}`);
+    throw new Error(`Invalid conversion factors for ${normalizedFrom} or ${normalizedTo}`);
   }
 
   // Convert: value * (fromFactor / toFactor)

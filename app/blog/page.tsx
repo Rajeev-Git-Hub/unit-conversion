@@ -10,51 +10,45 @@ export const metadata: Metadata = {
 const blogPosts = [
   {
     slug: 'how-to-convert-kg-to-lbs',
-    title: 'How to Convert KG to LBS: Complete Guide',
-    excerpt: 'Learn the easiest ways to convert kilograms to pounds. Includes formulas, quick tricks, and real-world examples for everyday use.',
+    title: 'How to Convert KG to LBS: The Simple Way',
+    excerpt: 'I used to always get confused converting kilos to pounds. Here is the easy trick I learned that works every time.',
     category: 'Weight',
-    readTime: '5 min read',
-    date: 'Mar 28, 2026',
+    readTime: '3 min read',
   },
   {
     slug: 'understanding-celsius-fahrenheit',
-    title: 'Understanding Celsius vs Fahrenheit: A Complete Guide',
-    excerpt: 'Discover the differences between Celsius and Fahrenheit scales. Learn when and why each scale is used around the world.',
+    title: 'Celsius vs Fahrenheit: What is the Difference?',
+    excerpt: 'Ever wondered why some countries use Celsius and others use Fahrenheit? I break it down simply.',
     category: 'Temperature',
-    readTime: '6 min read',
-    date: 'Mar 28, 2026',
+    readTime: '4 min read',
   },
   {
     slug: 'metric-vs-imperial-systems',
-    title: 'Metric vs Imperial: Which System Should You Use?',
-    excerpt: 'A comprehensive comparison of metric and imperial measurement systems. Understand their origins, uses, and conversion between them.',
+    title: 'Metric or Imperial: Which One is Better?',
+    excerpt: 'I have lived in countries that use both systems. Here is my honest take on which one makes more sense.',
     category: 'Education',
-    readTime: '8 min read',
-    date: 'Mar 28, 2026',
+    readTime: '6 min read',
   },
   {
     slug: 'common-cooking-conversions',
-    title: 'Common Cooking Conversions: Cups, Grams, Ounces & More',
-    excerpt: 'Master kitchen conversions with our comprehensive guide. Convert between cups, grams, ounces, tablespoons, and teaspoons easily.',
+    title: 'Kitchen Conversions That Actually Help',
+    excerpt: 'Tired of guessing how many tablespoons are in a cup? These are the cooking conversions I use daily.',
     category: 'Cooking',
-    readTime: '7 min read',
-    date: 'Mar 28, 2026',
+    readTime: '4 min read',
   },
   {
     slug: 'body-temperature-guide',
-    title: 'Body Temperature Guide: Normal, Fever & Hypothermia',
-    excerpt: 'Understand body temperature ranges in both Celsius and Fahrenheit. Learn what is normal, when you have a fever, and when to seek medical attention.',
+    title: 'Normal Body Temperature: When to Worry',
+    excerpt: 'I checked my temperature and panicked. Turns out normal body temp varies more than you think.',
     category: 'Health',
-    readTime: '5 min read',
-    date: 'Mar 28, 2026',
+    readTime: '3 min read',
   },
   {
     slug: 'data-storage-explained',
-    title: 'Data Storage Explained: Bytes, KB, MB, GB, TB & Beyond',
-    excerpt: 'Understand digital storage units from bytes to terabytes. Learn how file sizes work and how to convert between storage units.',
+    title: 'MB, GB, TB: What Do They Actually Mean?',
+    excerpt: 'Buying a new phone or laptop? Here is what those storage numbers really mean in plain English.',
     category: 'Technology',
-    readTime: '6 min read',
-    date: 'Mar 28, 2026',
+    readTime: '4 min read',
   },
 ];
 
@@ -99,7 +93,7 @@ export default function BlogPage() {
                     {post.excerpt}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-500">{post.date}</span>
+                    <span className="text-sm text-gray-500">{post.readTime}</span>
                     <span className="text-blue-600 font-medium group-hover:translate-x-1 transition-transform">
                       Read More →
                     </span>

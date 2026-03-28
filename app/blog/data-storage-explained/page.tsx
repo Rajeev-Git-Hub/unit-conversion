@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Data Storage Explained: Bytes, KB, MB, GB, TB & Beyond | ConvertMaster',
-  description: 'Understand digital storage units from bytes to terabytes. Learn how file sizes work, how to convert between storage units, and what they mean for your devices.',
-  keywords: 'data storage, bytes, kilobytes, megabytes, gigabytes, terabytes, file size conversion, digital storage units',
+  title: 'MB, GB, TB: What Do They Actually Mean? | ConvertMaster',
+  description: 'Buying a new phone or laptop? Here is what those storage numbers really mean in plain English.',
+  keywords: 'data storage explained, MB GB TB difference, how much storage do I need',
 };
 
 export default function DataStorageExplainedPage() {
@@ -14,10 +14,10 @@ export default function DataStorageExplainedPage() {
       <section className="bg-gradient-to-r from-purple-600 to-indigo-600 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Data Storage Explained
+            MB, GB, TB: What Do They Actually Mean?
           </h1>
           <p className="text-xl text-purple-100">
-            Understanding bytes, kilobytes, megabytes, gigabytes, and beyond
+            Stop guessing if 128GB is enough for your new phone
           </p>
         </div>
       </section>
@@ -30,16 +30,16 @@ export default function DataStorageExplainedPage() {
             {/* Introduction */}
             <section className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                What is a Byte?
+                Why Your "500GB" Drive Shows Less
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-                A <strong>byte</strong> is the basic unit of digital information. It consists of 8 bits 
-                (binary digits), and can represent 256 different values (0-255). Everything on your computer, 
-                from text documents to high-resolution videos, is ultimately stored as a series of bytes.
+                I bought a 500GB hard drive once. Plugged it in. Windows said 465GB. 
+                I thought I got ripped off. Turns out, there is a reason for this - 
+                and it involves math that nobody explains properly.
               </p>
               <p className="text-lg text-gray-700 dark:text-gray-300">
-                Understanding data storage units helps you manage your device storage, estimate download times, 
-                and compare storage options when buying new devices.
+                Here is what MB, GB, and TB actually mean, why your storage is never quite what you paid for, 
+                and how much you really need.
               </p>
             </section>
 
