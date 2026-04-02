@@ -11,7 +11,7 @@ import {
 } from '../lib';
 import { categories } from '../lib/categories';
 import { useConversionHistory } from '../lib/hooks/useConversionHistory';
-import { FaCalculator, FaCaretDown, FaArrowRight, FaExchangeAlt, FaInfoCircle, FaCopy, FaShare } from 'react-icons/fa';
+import { FaCalculator, FaCaretDown, FaArrowRight, FaExchangeAlt, FaInfoCircle, FaCopy, FaShare, FaWhatsapp, FaFacebook, FaTwitter, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { useLocalization } from '../lib/LocalizationContext';
 
 type Props = {
@@ -42,6 +42,7 @@ export default function ConverterCard({ category, defaultFrom, defaultTo }: Prop
   const [validationError, setValidationError] = useState<string | null>(null);
   const [copySuccess, setCopySuccess] = useState(false);
   const [shareSuccess, setShareSuccess] = useState(false);
+  const [showSocialShare, setShowSocialShare] = useState(false);
   const { addConversion } = useConversionHistory();
 
   const handleCopy = async () => {
@@ -60,17 +61,25 @@ export default function ConverterCard({ category, defaultFrom, defaultTo }: Prop
   const handleShare = async () => {
     if (result !== null && value && from && to) {
       const shareText = `I converted ${value} ${from} to ${result} ${to}!`;
-      const shareUrl = window.location.href;
+      
+      // Build shareable URL with conversion parameters
+      const baseUrl = typeof window !== 'undefined' ? window.location.origin + window.location.pathname : '';
+      const params = new URLSearchParams();
+      params.set('value', value);
+      params.set('from', from);
+      params.set('to', to);
+      const shareUrl = `${baseUrl}?${params.toString()}`;
+      
+      const fullText = `${shareText}\n\n${shareUrl}`;
       
       try {
         if (navigator.share) {
           await navigator.share({
             title: 'Unit Conversion Result',
-            text: shareText,
-            url: shareUrl,
+            text: fullText,
           });
         } else {
-          await navigator.clipboard.writeText(shareUrl);
+          await navigator.clipboard.writeText(fullText);
           setShareSuccess(true);
           setTimeout(() => setShareSuccess(false), 2000);
         }
@@ -80,7 +89,48 @@ export default function ConverterCard({ category, defaultFrom, defaultTo }: Prop
     }
   };
 
-  // Auto-convert when input changes
+  // Validate input with comprehensive checks
+  const validateInput = (inputValue: string): { isValid: boolean; error?: string; sanitizedValue?: number } => {
+    if (!inputValue || inputValue.trim() === '') {
+      return { isValid: false, error: t('converter.validation.empty') };
+    }
+
+    const trimmedValue = inputValue.trim();
+    
+    // Check for letters/non-numeric characters (except decimal point and minus)
+    if (!/^-?\d*\.?\d*$/.test(trimmedValue)) {
+      return { isValid: false, error: t('converter.validation.invalid_chars') };
+    }
+
+    const numValue = parseFloat(trimmedValue);
+    
+    if (isNaN(numValue)) {
+      return { isValid: false, error: t('converter.validation.invalid') };
+    }
+
+    // Check for extremely large numbers (practical limit of 1 quadrillion)
+    if (Math.abs(numValue) > 1e15) {
+      return { isValid: false, error: t('converter.validation.too_large') };
+    }
+
+    // Check for extremely small numbers (practical minimum)
+    if (numValue !== 0 && Math.abs(numValue) < 1e-10) {
+      return { isValid: false, error: t('converter.validation.too_small') };
+    }
+
+    // Check for reasonable decimal precision (max 15 decimal places)
+    const decimalMatch = trimmedValue.match(/\.(\d+)/);
+    if (decimalMatch && decimalMatch[1].length > 15) {
+      return { isValid: false, error: t('converter.validation.too_many_decimals') };
+    }
+
+    // Check if negative numbers are appropriate for this category
+    if (numValue < 0 && !['temperature'].includes(category)) {
+      return { isValid: false, error: t('converter.validation.no_negative') };
+    }
+
+    return { isValid: true, sanitizedValue: numValue };
+  };
   useEffect(() => {
     if (!value) {
       setResult(null);
@@ -88,16 +138,16 @@ export default function ConverterCard({ category, defaultFrom, defaultTo }: Prop
       return;
     }
 
-    const val = parseFloat(value);
-    if (isNaN(val)) {
+    const validation = validateInput(value);
+    if (!validation.isValid) {
       setResult(null);
-      setValidationError(t('converter.validation.invalid'));
+      setValidationError(validation.error || t('converter.validation.invalid'));
       return;
     }
 
-    if (from && to) {
+    if (from && to && validation.sanitizedValue !== undefined) {
       try {
-        const conversionResult = convert(category, val, from, to);
+        const conversionResult = convert(category, validation.sanitizedValue, from, to);
         setResult(conversionResult);
         setValidationError(null);
       } catch (error) {
@@ -110,27 +160,22 @@ export default function ConverterCard({ category, defaultFrom, defaultTo }: Prop
   }, [value, from, to, category, t]);
 
   const handleConvert = () => {
-    if (!value) {
-      setValidationError(t('converter.validation.empty'));
+    const validation = validateInput(value);
+    
+    if (!validation.isValid) {
+      setValidationError(validation.error || t('converter.validation.invalid'));
       setResult(null);
       return;
     }
 
-    const val = parseFloat(value);
-    if (isNaN(val)) {
-      setValidationError(t('converter.validation.invalid'));
-      setResult(null);
-      return;
-    }
-
-    if (from && to) {
+    if (from && to && validation.sanitizedValue !== undefined) {
       try {
-        const conversionResult = convert(category, val, from, to);
+        const conversionResult = convert(category, validation.sanitizedValue, from, to);
         setResult(conversionResult);
         setValidationError(null);
         addConversion({
           category,
-          value: val,
+          value: validation.sanitizedValue,
           from,
           to,
           result: conversionResult,
@@ -165,6 +210,26 @@ export default function ConverterCard({ category, defaultFrom, defaultTo }: Prop
     }
   }, [units, from, to, defaultFrom, defaultTo]);
 
+  // Read URL parameters for shared conversions
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const sharedValue = params.get('value');
+      const sharedFrom = params.get('from');
+      const sharedTo = params.get('to');
+      
+      if (sharedValue && sharedFrom && sharedTo) {
+        setValue(sharedValue);
+        if (units.includes(sharedFrom)) {
+          setFrom(sharedFrom);
+        }
+        if (units.includes(sharedTo)) {
+          setTo(sharedTo);
+        }
+      }
+    }
+  }, [units]);
+
   // For categories that don't have conversion units, show a message
   if (units.length === 0) {
     return (
@@ -190,33 +255,45 @@ export default function ConverterCard({ category, defaultFrom, defaultTo }: Prop
 
       {/* --- Value Input --- */}
       <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{t('converter.value')}</label>
+        <label htmlFor="value-input" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{t('converter.value')}</label>
         <div className="relative">
-          <FaCalculator className="absolute top-1/2 left-4 -translate-y-1/2 text-gray-400" />
+          <FaCalculator className="absolute top-1/2 left-4 -translate-y-1/2 text-gray-400" aria-hidden="true" />
           <input
+            id="value-input"
             type="number"
-            className="w-full bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg p-4 pl-12 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+            inputMode="decimal"
+            className={`w-full bg-gray-50 dark:bg-gray-700 border rounded-lg p-4 pl-12 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all ${validationError ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : 'border-gray-300 dark:border-gray-600'}`}
             placeholder={t('converter.placeholder')}
             value={value}
             onChange={(e) => setValue(e.target.value)}
+            aria-invalid={validationError ? 'true' : 'false'}
+            aria-describedby={validationError ? 'value-error' : undefined}
+            aria-label={t('converter.value')}
           />
         </div>
+        {validationError && (
+          <div id="value-error" className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert" aria-live="polite">
+            {validationError}
+          </div>
+        )}
       </div>
 
       {/* --- From/To Selectors --- */}
       <div className="flex items-center gap-2 md:gap-4 mb-6">
         {/* From */}
         <div className="relative flex-1">
-          <label className="block text-xs text-gray-600 dark:text-gray-400 mb-1">{t('converter.from')}</label>
+          <label htmlFor="from-unit" className="block text-xs text-gray-600 dark:text-gray-400 mb-1">{t('converter.from')}</label>
           <div className="relative">
             <select
+              id="from-unit"
               className="w-full appearance-none bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-4 flex-1 rounded-lg capitalize text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none pr-10"
               onChange={(e) => setFrom(e.target.value)}
               value={from}
+              aria-label={t('converter.from')}
             >
               {units.map((u) => ( <option key={u} value={u}>{u}</option> ))}
             </select>
-            <FaCaretDown className="absolute top-1/2 right-4 -translate-y-1/2 text-gray-400 pointer-events-none" />
+            <FaCaretDown className="absolute top-1/2 right-4 -translate-y-1/2 text-gray-400 pointer-events-none" aria-hidden="true" />
           </div>
         </div>
 
@@ -233,16 +310,18 @@ export default function ConverterCard({ category, defaultFrom, defaultTo }: Prop
 
         {/* To */}
         <div className="relative flex-1">
-          <label className="block text-xs text-gray-600 dark:text-gray-400 mb-1">{t('converter.to')}</label>
+          <label htmlFor="to-unit" className="block text-xs text-gray-600 dark:text-gray-400 mb-1">{t('converter.to')}</label>
           <div className="relative">
             <select
+              id="to-unit"
               className="w-full appearance-none bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 p-4 flex-1 rounded-lg capitalize text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none pr-10"
               onChange={(e) => setTo(e.target.value)}
               value={to}
+              aria-label={t('converter.to')}
             >
               {units.map((u) => ( <option key={u} value={u}>{u}</option>))}
             </select>
-            <FaCaretDown className="absolute top-1/2 right-4 -translate-y-1/2 text-gray-400 pointer-events-none" />
+            <FaCaretDown className="absolute top-1/2 right-4 -translate-y-1/2 text-gray-400 pointer-events-none" aria-hidden="true" />
           </div>
         </div>
       </div>
@@ -273,21 +352,80 @@ export default function ConverterCard({ category, defaultFrom, defaultTo }: Prop
 
         {/* Copy and Share Buttons */}
         {result !== null && (
-          <div className="flex justify-center gap-3 mt-4">
-            <button
-              onClick={handleCopy}
-              className="flex items-center gap-2 px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg transition-colors"
-            >
-              <FaCopy className="w-4 h-4" />
-              {copySuccess ? t('converter.copied') : t('converter.copy')}
-            </button>
-            <button
-              onClick={handleShare}
-              className="flex items-center gap-2 px-4 py-2 bg-green-100 hover:bg-green-200 text-green-700 rounded-lg transition-colors"
-            >
-              <FaShare className="w-4 h-4" />
-              {shareSuccess ? t('base64.link_copied') : t('converter.share')}
-            </button>
+          <div className="mt-4">
+            <div className="flex justify-center gap-3 mb-4">
+              <button
+                onClick={handleCopy}
+                className="flex items-center gap-2 px-4 py-2 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg transition-colors"
+              >
+                <FaCopy className="w-4 h-4" />
+                {copySuccess ? t('converter.copied') : t('converter.copy')}
+              </button>
+              <button
+                onClick={() => setShowSocialShare(!showSocialShare)}
+                className="flex items-center gap-2 px-4 py-2 bg-green-100 hover:bg-green-200 text-green-700 rounded-lg transition-colors"
+              >
+                <FaShare className="w-4 h-4" />
+                {t('converter.share')}
+              </button>
+            </div>
+            
+            {/* Social Media Share Options */}
+            {showSocialShare && (
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-600">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 text-center">Share to:</p>
+                <div className="flex justify-center gap-4 flex-wrap">
+                  <a
+                    href={`https://wa.me/?text=${encodeURIComponent(`I converted ${value} ${from} to ${result} ${to}!\n\n${typeof window !== 'undefined' ? window.location.origin + window.location.pathname + '?value=' + value + '&from=' + from + '&to=' + to : ''}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center gap-1 p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-colors"
+                    aria-label="Share on WhatsApp"
+                  >
+                    <FaWhatsapp className="w-6 h-6 text-green-600" />
+                    <span className="text-xs text-green-700">WhatsApp</span>
+                  </a>
+                  <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(typeof window !== 'undefined' ? window.location.origin + window.location.pathname + '?value=' + value + '&from=' + from + '&to=' + to : '')}&quote=${encodeURIComponent(`I converted ${value} ${from} to ${result} ${to}!`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center gap-1 p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors"
+                    aria-label="Share on Facebook"
+                  >
+                    <FaFacebook className="w-6 h-6 text-blue-600" />
+                    <span className="text-xs text-blue-700">Facebook</span>
+                  </a>
+                  <a
+                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`I converted ${value} ${from} to ${result} ${to}!`)}&url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.origin + window.location.pathname + '?value=' + value + '&from=' + from + '&to=' + to : '')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center gap-1 p-3 bg-sky-50 hover:bg-sky-100 rounded-lg transition-colors"
+                    aria-label="Share on Twitter"
+                  >
+                    <FaTwitter className="w-6 h-6 text-sky-500" />
+                    <span className="text-xs text-sky-600">Twitter</span>
+                  </a>
+                  <a
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.origin + window.location.pathname + '?value=' + value + '&from=' + from + '&to=' + to : '')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center gap-1 p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors"
+                    aria-label="Share on LinkedIn"
+                  >
+                    <FaLinkedin className="w-6 h-6 text-blue-700" />
+                    <span className="text-xs text-blue-800">LinkedIn</span>
+                  </a>
+                  <a
+                    href={`mailto:?subject=${encodeURIComponent('Check out this conversion')}&body=${encodeURIComponent(`I converted ${value} ${from} to ${result} ${to}!\n\n${typeof window !== 'undefined' ? window.location.origin + window.location.pathname + '?value=' + value + '&from=' + from + '&to=' + to : ''}`)}`}
+                    className="flex flex-col items-center gap-1 p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
+                    aria-label="Share via Email"
+                  >
+                    <FaEnvelope className="w-6 h-6 text-gray-600" />
+                    <span className="text-xs text-gray-700">Email</span>
+                  </a>
+                </div>
+              </div>
+            )}
           </div>
         )}
 

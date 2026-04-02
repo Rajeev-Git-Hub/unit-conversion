@@ -4,16 +4,17 @@ import "./globals.css";
 import Layout from "../components/Layout";
 import Script from "next/script";
 import SchemaMarkup from "../components/SchemaMarkup";
-import PerformanceOptimizer from "../components/PerformanceOptimizer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: 'swap',
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -40,14 +41,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Universal Unit Converter",
-    description: "Simple, fast, and accurate unit converter for all your needs.",
-    siteName: "Universal Unit Converter",
+    url: "https://convertmaster.example.com",
+    title: "ConvertMaster | Universal Unit Converter",
+    description: "Free online unit converter for length, weight, temperature, area, volume, time, speed, and more. Supports US, UK, Metric, and Indian units.",
+    siteName: "ConvertMaster",
+    images: [
+      {
+        url: "/unit-conversion/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "ConvertMaster - Universal Unit Converter Tool",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Universal Unit Converter",
-    description: "Simple, fast, and accurate unit converter for all your needs.",
+    title: "ConvertMaster | Universal Unit Converter",
+    description: "Free online unit converter for length, weight, temperature, area, volume, time, speed, and more.",
+    images: ["/unit-conversion/og-image.svg"],
   },
   verification: {
     google: "",
@@ -63,6 +74,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="theme-color" content="#2563eb" />
+        
+        {/* Preconnect to external domains for faster loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
@@ -84,8 +99,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <PerformanceOptimizer />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2"
+          tabIndex={0}
+        >
+          Skip to main content
+        </a>
+        <main id="main-content">
         <Layout>{children}</Layout>
+        </main>
       </body>
     </html>
   );

@@ -78,7 +78,7 @@ function HomeContent() {
             
             {/* Subheading */}
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed">
-              The most powerful unit converter with 650+ converters, real-time search, and conversion history
+              The most powerful unit converter with real-time search and conversion history
             </p>
             
             {/* Search Box - Enhanced */}
@@ -109,7 +109,7 @@ function HomeContent() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">650+</div>
+              <div className="text-3xl md:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2"></div>
               <div className="text-sm text-gray-600 dark:text-gray-400">Unit Converters</div>
             </div>
             <div>
@@ -152,7 +152,7 @@ function HomeContent() {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Universal Search</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  Search across all 650+ converters with intelligent auto-complete and real-time results
+                  Search across all converters with intelligent auto-complete and real-time results
                 </p>
                 <div className="flex items-center text-blue-600 font-semibold">
                   <span>Lightning Fast</span>

@@ -1,0 +1,60 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#gradient)"/>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0e7ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Decorative Elements -->
+  <circle cx="100" cy="100" r="150" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="1100" cy="530" r="200" fill="rgba(255,255,255,0.03)"/>
+  <circle cx="600" cy="315" r="300" fill="rgba(255,255,255,0.02)"/>
+  
+  <!-- Conversion Icon -->
+  <g transform="translate(600, 180)">
+    <!-- Arrow left -->
+    <path d="M-80 0 L-40 0 M-60 -20 L-40 0 L-60 20" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+    <!-- Arrow right -->
+    <path d="M40 0 L80 0 M60 -20 L80 0 L60 20" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+    <!-- Equals -->
+    <rect x="-10" y="-6" width="20" height="4" rx="2" fill="white" opacity="0.9"/>
+    <rect x="-10" y="6" width="20" height="4" rx="2" fill="white" opacity="0.9"/>
+  </g>
+  
+  <!-- Main Title -->
+  <text x="600" y="320" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="bold" fill="url(#textGradient)">
+    ConvertMaster
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="380" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="rgba(255,255,255,0.9)">
+    Universal Unit Converter
+  </text>
+  
+  <!-- Feature Tags -->
+  <g transform="translate(600, 440)">
+    <rect x="-280" y="0" width="140" height="36" rx="18" fill="rgba(255,255,255,0.15)"/>
+    <text x="-210" y="24" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="white" font-weight="500">Length</text>
+    
+    <rect x="-70" y="0" width="140" height="36" rx="18" fill="rgba(255,255,255,0.15)"/>
+    <text x="0" y="24" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="white" font-weight="500">Weight</text>
+    
+    <rect x="140" y="0" width="140" height="36" rx="18" fill="rgba(255,255,255,0.15)"/>
+    <text x="210" y="24" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="white" font-weight="500">Temperature</text>
+  </g>
+  
+  <!-- URL -->
+  <text x="600" y="560" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="rgba(255,255,255,0.7)">
+    Free Online Converter Tool
+  </text>
+</svg>

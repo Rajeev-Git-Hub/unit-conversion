@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useLocalization } from '../../lib/LocalizationContext';
 
 export default function AboutPage() {
@@ -62,12 +63,12 @@ export default function AboutPage() {
             <p className="text-gray-700 dark:text-gray-300 mb-6">
               {t('about.cta.desc')}
             </p>
-            <a
+            <Link
               href="/"
               className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-lg transition-colors"
             >
               {t('about.cta.button')}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

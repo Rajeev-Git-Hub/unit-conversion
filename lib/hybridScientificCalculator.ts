@@ -300,9 +300,11 @@ export class HybridScientificCalculator {
 
   private getUnitCategory(unit: string): string | null {
     // Check regular converters
-    for (const category in converters) {
-      if (converters[category as keyof typeof converters][unit]) {
-        return category;
+    const converterKeys = Object.keys(converters) as Array<keyof typeof converters>;
+    for (const category of converterKeys) {
+      const categoryData = converters[category];
+      if (categoryData && typeof categoryData === 'object' && unit in categoryData) {
+        return category as string;
       }
     }
 

@@ -25,7 +25,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
-              The most powerful free unit converter with 650+ converters. Convert length, weight, temperature, and more — instantly and accurately.
+              The most powerful free unit converter. Convert length, weight, temperature, and more — instantly and accurately.
             </p>
           </div>
 

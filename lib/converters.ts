@@ -1,56 +1,6 @@
 import { CategoryKey } from './types';
 
-// Lazy load complex unit definitions only when needed
-let constructionUnits: any = null;
-let healthcareUnits: any = null;
-let cookingUnits: any = null;
-let engineeringUnits: any = null;
-let logisticsUnits: any = null;
-let chemicalUnits: any = null;
-
-const getConstructionUnits = () => {
-  if (!constructionUnits) {
-    constructionUnits = require('./units/construction').constructionUnits;
-  }
-  return constructionUnits;
-};
-
-const getHealthcareUnits = () => {
-  if (!healthcareUnits) {
-    healthcareUnits = require('./units/healthcare').healthcareUnits;
-  }
-  return healthcareUnits;
-};
-
-const getCookingUnits = () => {
-  if (!cookingUnits) {
-    cookingUnits = require('./units/cooking').cookingUnits;
-  }
-  return cookingUnits;
-};
-
-const getEngineeringUnits = () => {
-  if (!engineeringUnits) {
-    engineeringUnits = require('./units/engineering').engineeringUnits;
-  }
-  return engineeringUnits;
-};
-
-const getLogisticsUnits = () => {
-  if (!logisticsUnits) {
-    logisticsUnits = require('./units/logistics').logisticsUnits;
-  }
-  return logisticsUnits;
-};
-
-const getChemicalUnits = () => {
-  if (!chemicalUnits) {
-    chemicalUnits = require('./units/chemical').chemicalUnits;
-  }
-  return chemicalUnits;
-};
-
-// Unit aliases mapping - exported for use in components
+// Unit aliases mapping for common abbreviations
 export const unitAliases: Record<string, string> = {
   // Weight aliases
   'kg': 'kilogram',
@@ -199,13 +149,7 @@ export const converters = {
     kelvin: 'kelvin',
     rankine: 'rankine',
     reaumur: 'reaumur'
-  },
-  construction: getConstructionUnits(),
-  healthcare: getHealthcareUnits(),
-  cooking: getCookingUnits(),
-  engineering: getEngineeringUnits(),
-  logistics: getLogisticsUnits(),
-  chemical: getChemicalUnits()
+  }
 };
 
 export const temperatureUnits = [
@@ -318,6 +262,16 @@ export function convert(
 
   // Convert: value * (fromFactor / toFactor)
   let result = value * (fromFactor / toFactor);
+
+  // Check for overflow/underflow in the result
+  if (!isFinite(result)) {
+    throw new Error('Calculation overflow: result is too large to represent');
+  }
+  
+  // Check for underflow (result too small)
+  if (result !== 0 && Math.abs(result) < 1e-308) {
+    throw new Error('Calculation underflow: result is too small to represent');
+  }
 
   // Apply rounding if specified
   if (rounding !== undefined && !isNaN(rounding) && rounding >= 0) {

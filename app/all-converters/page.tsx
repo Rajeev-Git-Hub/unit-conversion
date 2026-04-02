@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { FiArrowRight, FiDroplet, FiMaximize, FiPackage, FiThermometer, FiDatabase, FiTrendingUp, FiPercent, FiSearch, FiStar, FiClock } from 'react-icons/fi';
+import { FiArrowRight, FiDroplet, FiMaximize, FiPackage, FiThermometer, FiDatabase, FiTrendingUp, FiPercent, FiSearch, FiStar, FiClock, FiActivity, FiAnchor, FiGitCommit, FiSave } from 'react-icons/fi';
 
 const converterCategories = [
   {
@@ -11,11 +11,6 @@ const converterCategories = [
     icon: FiMaximize,
     color: 'text-blue-600',
     bgColor: 'bg-blue-50 dark:bg-blue-900/20',
-    internalLinks: [
-      { from: 'cm', to: 'inches', label: 'cm → inches' },
-      { from: 'meters', to: 'feet', label: 'meters → feet' },
-      { from: 'km', to: 'miles', label: 'km → miles' },
-    ],
     converters: [
       { name: 'CM to Inches', href: '/cm-to-inches', popular: true },
       { name: 'Inches to CM', href: '/inches-to-cm' },
@@ -180,11 +175,6 @@ const converterCategories = [
     icon: FiPackage,
     color: 'text-green-600',
     bgColor: 'bg-green-50 dark:bg-green-900/20',
-    internalLinks: [
-      { from: 'kg', to: 'lbs', label: 'kg → lbs' },
-      { from: 'grams', to: 'ounces', label: 'grams → ounces' },
-      { from: 'pounds', to: 'kg', label: 'pounds → kg' },
-    ],
     converters: [
       { name: 'KG to Pound/LBS', href: '/kg-to-lbs', popular: true },
       { name: 'Pound/LBS to KG', href: '/lbs-to-kg', popular: true },
@@ -274,11 +264,6 @@ const converterCategories = [
     icon: FiPackage,
     color: 'text-emerald-600',
     bgColor: 'bg-emerald-50 dark:bg-emerald-900/20',
-    internalLinks: [
-      { from: 'm2', to: 'ft2', label: 'm² → ft²' },
-      { from: 'hectare', to: 'acre', label: 'ha → ac' },
-      { from: 'acre', to: 'm2', label: 'ac → m²' },
-    ],
     converters: [
       { name: 'm² to km²', href: '/m2-to-km2' },
       { name: 'm² to cm²', href: '/m2-to-cm2' },
@@ -378,11 +363,6 @@ const converterCategories = [
     icon: FiDroplet,
     color: 'text-cyan-600',
     bgColor: 'bg-cyan-50 dark:bg-cyan-900/20',
-    internalLinks: [
-      { from: 'liter', to: 'gallon', label: 'L → gal' },
-      { from: 'gallon', to: 'liter', label: 'gal → L' },
-      { from: 'ml', to: 'floz', label: 'mL → fl oz' },
-    ],
     converters: [
       { name: 'L to mL', href: '/liter-to-ml' },
       { name: 'L to m³', href: '/liter-to-m3' },
@@ -448,12 +428,6 @@ const converterCategories = [
     icon: FiThermometer,
     color: 'text-red-600',
     bgColor: 'bg-red-50 dark:bg-red-900/20',
-    internalLinks: [
-      { from: 'celsius', to: 'fahrenheit', label: '°C → °F' },
-      { from: 'fahrenheit', to: 'celsius', label: '°F → °C' },
-      { from: 'celsius', to: 'kelvin', label: '°C → K' },
-      { from: 'kelvin', to: 'celsius', label: 'K → °C' },
-    ],
     converters: [
       // Celsius conversions
       { name: 'Celsius to Fahrenheit', href: '/celsius-to-fahrenheit', popular: true },
@@ -493,12 +467,6 @@ const converterCategories = [
     icon: FiClock,
     color: 'text-amber-600',
     bgColor: 'bg-amber-50 dark:bg-amber-900/20',
-    internalLinks: [
-      { from: 'second', to: 'minute', label: 'sec → min' },
-      { from: 'hour', to: 'minute', label: 'hr → min' },
-      { from: 'day', to: 'hour', label: 'day → hr' },
-      { from: 'week', to: 'day', label: 'wk → day' },
-    ],
     converters: [
       // Second conversions
       { name: 'Seconds to Minutes', href: '/second-to-minute', popular: true },
@@ -589,10 +557,6 @@ const converterCategories = [
     icon: FiTrendingUp,
     color: 'text-orange-600',
     bgColor: 'bg-orange-50 dark:bg-orange-900/20',
-    internalLinks: [
-      { from: 'kmh', to: 'mph', label: 'km/h → mph' },
-      { from: 'mph', to: 'kmh', label: 'mph → km/h' },
-    ],
     converters: [
       { name: 'KM/H to MPH', href: '/kmh-to-mph', popular: true },
       { name: 'MPH to KM/H', href: '/mph-to-kmh', popular: true },
@@ -622,12 +586,6 @@ const converterCategories = [
     icon: FiDatabase,
     color: 'text-indigo-600',
     bgColor: 'bg-indigo-50 dark:bg-indigo-900/20',
-    internalLinks: [
-      { from: 'mb', to: 'gb', label: 'MB → GB' },
-      { from: 'gb', to: 'mb', label: 'GB → MB' },
-      { from: 'gb', to: 'tb', label: 'GB → TB' },
-      { from: 'tb', to: 'gb', label: 'TB → GB' },
-    ],
     converters: [
       // Byte conversions
       { name: 'Bytes to KB', href: '/bytes-to-kb' },
@@ -757,10 +715,6 @@ const converterCategories = [
     icon: FiPercent,
     color: 'text-green-600',
     bgColor: 'bg-green-50 dark:bg-green-900/20',
-    internalLinks: [
-      { from: 'percent', to: 'decimal', label: '% → decimal' },
-      { from: 'bps', to: 'percent', label: 'bps → %' },
-    ],
     converters: [
       { name: '% Increase Calculator', href: '/percentage-increase-calculator', popular: true },
       { name: '% Decrease Calculator', href: '/percentage-decrease-calculator' },
@@ -801,7 +755,7 @@ export default function AllConvertersPage() {
               All Unit Converters – Free Online Tools
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              Access our complete directory of 200+ free unit converters. Instantly convert length, weight, 
+              Access our complete directory of free unit converters. Instantly convert length, weight, 
               area, volume, temperature, speed, data storage, and more. Fast, accurate, and SEO-optimized conversion tools 
               for everyday use.
             </p>
@@ -829,27 +783,27 @@ export default function AllConvertersPage() {
       {!searchTerm && (
         <section className="py-12 bg-gradient-to-r from-orange-50 to-yellow-50 dark:from-orange-900/20 dark:to-yellow-900/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">
-              🔥 Popular Converters
+            <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white flex items-center justify-center gap-2">
+              <FiActivity className="text-orange-500" /> Popular Converters
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <Link href="/kg-to-lbs" className="group p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all text-center border-2 border-transparent hover:border-orange-300">
-                <div className="text-4xl mb-3">⚖️</div>
+                <div className="text-4xl mb-3 text-blue-500 flex justify-center"><FiAnchor className="w-10 h-10" /></div>
                 <p className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600">KG to LBS</p>
                 <p className="text-sm text-gray-500">Weight Conversion</p>
               </Link>
               <Link href="/cm-to-inches" className="group p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all text-center border-2 border-transparent hover:border-orange-300">
-                <div className="text-4xl mb-3">📏</div>
+                <div className="text-4xl mb-3 text-green-500 flex justify-center"><FiGitCommit className="w-10 h-10" /></div>
                 <p className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600">CM to Inches</p>
                 <p className="text-sm text-gray-500">Length Conversion</p>
               </Link>
               <Link href="/celsius-to-fahrenheit" className="group p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all text-center border-2 border-transparent hover:border-orange-300">
-                <div className="text-4xl mb-3">🌡️</div>
+                <div className="text-4xl mb-3 text-red-500 flex justify-center"><FiThermometer className="w-10 h-10" /></div>
                 <p className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600">°C to °F</p>
                 <p className="text-sm text-gray-500">Temperature</p>
               </Link>
               <Link href="/mb-to-gb" className="group p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all text-center border-2 border-transparent hover:border-orange-300">
-                <div className="text-4xl mb-3">💾</div>
+                <div className="text-4xl mb-3 text-purple-500 flex justify-center"><FiSave className="w-10 h-10" /></div>
                 <p className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600">MB to GB</p>
                 <p className="text-sm text-gray-500">Data Storage</p>
               </Link>
@@ -876,22 +830,6 @@ export default function AllConvertersPage() {
                   </span>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 mb-4 ml-16">{category.description}</p>
-                
-                {/* Internal Links */}
-                {category.internalLinks && (
-                  <div className="flex flex-wrap gap-2 mb-6 ml-16">
-                    {category.internalLinks.map((link) => (
-                      <Link
-                        key={link.label}
-                        href={`/${link.from}-to-${link.to}`}
-                        className="inline-flex items-center px-3 py-1.5 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-lg text-sm font-medium hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors"
-                      >
-                        {link.label}
-                        <FiArrowRight className="w-3 h-3 ml-1" />
-                      </Link>
-                    ))}
-                  </div>
-                )}
                 
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                   {category.converters.map((converter) => (
@@ -923,8 +861,8 @@ export default function AllConvertersPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">200+</div>
-              <div className="text-gray-600 dark:text-gray-400">Specialized Converters</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">70</div>
+              <div className="text-gray-600 dark:text-gray-400">Unit Converters</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-green-600 mb-2">8</div>
