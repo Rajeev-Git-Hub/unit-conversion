@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConvertMaster - Brand Transformation Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .gradient-mesh {
+            background: 
+                radial-gradient(at 40% 20%, hsla(280, 100%, 74%, 0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(189, 100%, 56%, 0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(355, 100%, 93%, 0.3) 0px, transparent 50%);
+        }
+        
+        .converter-glow {
+            box-shadow: 
+                0 0 60px rgba(236, 72, 153, 0.3),
+                0 0 120px rgba(59, 130, 246, 0.2),
+                0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .morph-animation {
+            animation: morph 4s ease-in-out infinite;
+        }
+        
+        @keyframes morph {
+            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #EC4899, #3B82F6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .button-gradient {
+            background: linear-gradient(135deg, #6B46C1, #EC4899);
+            transition: all 0.3s ease;
+        }
+        
+        .button-gradient:hover {
+            background: linear-gradient(135deg, #EC4899, #6B46C1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.4);
+        }
+        
+        .input-glow:focus {
+            box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.2), 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .conversion-path {
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            animation: draw 2s ease-in-out infinite;
+        }
+        
+        @keyframes draw {
+            0% { stroke-dashoffset: 100; }
+            50% { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: -100; }
+        }
+    </style>
+</head>
+<body class="gradient-mesh">
+    <div class="min-h-screen p-8">
+        <!-- Navigation Preview -->
+        <nav class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 mb-8">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center morph-animation">
+                        <span class="text-white text-xl font-bold">⚡</span>
+                    </div>
+                    <span class="text-white text-2xl font-bold">ConvertMaster</span>
+                </div>
+                <div class="hidden md:flex items-center gap-6">
+                    <button class="text-white/80 hover:text-white transition">Length</button>
+                    <button class="text-white/80 hover:text-white transition">Weight</button>
+                    <button class="text-white/80 hover:text-white transition">Temperature</button>
+                    <button class="text-white/80 hover:text-white transition">Area</button>
+                    <button class="text-white/80 hover:text-white transition">Volume</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section Preview -->
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-6xl font-bold text-white mb-4">
+                    Where conversions become<br/>
+                    <span class="text-gradient">discoveries</span>
+                </h1>
+                <p class="text-xl text-white/80">Transform mundane calculations into delightful visual experiences</p>
+            </div>
+
+            <!-- Main Converter Preview -->
+            <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-8 converter-glow">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-white mb-2">Length Converter</h2>
+                    <p class="text-white/70">Watch the magic happen ✨</p>
+                </div>
+
+                <!-- Converter Interface -->
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <!-- Input Side -->
+                    <div class="space-y-4">
+                        <div>
+                            <label class="text-white/80 text-sm font-medium mb-2 block">From</label>
+                            <div class="flex gap-3">
+                                <input type="number" value="100" 
+                                    class="flex-1 bg-white/20 border border-white/30 rounded-xl px-4 py-3 text-white text-2xl font-bold placeholder-white/50 input-glow focus:outline-none transition" />
+                                <select class="bg-white/20 border border-white/30 rounded-xl px-4 py-3 text-white font-medium focus:outline-none">
+                                    <option>meters</option>
+                                    <option>feet</option>
+                                    <option>inches</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Result Side -->
+                    <div class="space-y-4">
+                        <div>
+                            <label class="text-white/80 text-sm font-medium mb-2 block">To</label>
+                            <div class="flex gap-3">
+                                <input type="text" value="328.084" readonly
+                                    class="flex-1 bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-400/30 rounded-xl px-4 py-3 text-white text-2xl font-bold pulse-animation" />
+                                <select class="bg-white/20 border border-white/30 rounded-xl px-4 py-3 text-white font-medium focus:outline-none">
+                                    <option>feet</option>
+                                    <option>meters</option>
+                                    <option>inches</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Conversion Area -->
+                <div class="bg-white/5 rounded-2xl p-6 mb-8">
+                    <div class="flex items-center justify-center">
+                        <div class="flex items-center gap-8">
+                            <!-- From Unit -->
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-2 float-animation">
+                                    <span class="text-white text-2xl">📏</span>
+                                </div>
+                                <div class="text-white font-bold">100m</div>
+                            </div>
+
+                            <!-- Animation Path -->
+                            <div class="relative">
+                                <svg width="120" height="40" class="conversion-path">
+                                    <path d="M 10 20 Q 60 5 110 20" stroke="url(#gradient)" stroke-width="3" fill="none" />
+                                    <defs>
+                                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <div class="absolute top-0 left-1/2 transform -translate-x-1/2">
+                                    <span class="text-yellow-400 text-xl">✨</span>
+                                </div>
+                            </div>
+
+                            <!-- To Unit -->
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-2 float-animation" style="animation-delay: 1s;">
+                                    <span class="text-white text-2xl">📏</span>
+                                </div>
+                                <div class="text-white font-bold">328.1ft</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <button class="button-gradient text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2">
+                        <span>⇄</span> Swap Units
+                    </button>
+                    <button class="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2 transition">
+                        <span>📋</span> Copy Result
+                    </button>
+                    <button class="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2 transition">
+                        <span>🔗</span> Share
+                    </button>
+                    <button class="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2 transition">
+                        <span>💾</span> Save
+                    </button>
+                </div>
+            </div>
+
+            <!-- Category Cards Preview -->
+            <div class="mt-12">
+                <h3 class="text-2xl font-bold text-white mb-6 text-center">Explore Categories</h3>
+                <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition cursor-pointer group">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                            <span class="text-white text-xl">📏</span>
+                        </div>
+                        <h4 class="text-white font-bold">Length</h4>
+                        <p class="text-white/60 text-sm">Meters, feet, inches</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition cursor-pointer group">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                            <span class="text-white text-xl">⚖️</span>
+                        </div>
+                        <h4 class="text-white font-bold">Weight</h4>
+                        <p class="text-white/60 text-sm">Kg, lbs, ounces</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition cursor-pointer group">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                            <span class="text-white text-xl">🌡️</span>
+                        </div>
+                        <h4 class="text-white font-bold">Temperature</h4>
+                        <p class="text-white/60 text-sm">Celsius, Fahrenheit</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition cursor-pointer group">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                            <span class="text-white text-xl">⬜</span>
+                        </div>
+                        <h4 class="text-white font-bold">Area</h4>
+                        <p class="text-white/60 text-sm">Sq meters, sq feet</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition cursor-pointer group">
+                        <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                            <span class="text-white text-xl">💧</span>
+                        </div>
+                        <h4 class="text-white font-bold">Volume</h4>
+                        <p class="text-white/60 text-sm">Liters, gallons</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
