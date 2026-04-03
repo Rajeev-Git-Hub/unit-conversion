@@ -62,7 +62,7 @@ export default function BlogPostPage() {
                 <li>100 kg × 2.2 = 220 lbs (actual: 220.5)</li>
               </ul>
               <p className="text-gray-700 dark:text-gray-300">
-                See? Close enough for gym weights, cooking, shipping boxes, whatever.
+                See? Close enough for gym weights, shipping boxes, whatever.
               </p>
             </section>
 
@@ -85,7 +85,7 @@ export default function BlogPostPage() {
               </p>
               <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
                 <li>Estimating your weight at the gym</li>
-                <li>Rough calculations for cooking ingredients</li>
+                <li>Rough calculations for measurements</li>
                 <li>Quick mental conversions while shopping</li>
               </ul>
             </section>
@@ -225,10 +225,6 @@ export default function BlogPostPage() {
             <Link href="/blog/metric-vs-imperial-systems" className="group bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-all">
               <h3 className="font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600">Metric vs Imperial Systems</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">Understanding different measurement systems</p>
-            </Link>
-            <Link href="/blog/common-cooking-conversions" className="group bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-all">
-              <h3 className="font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600">Cooking Conversions</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Kitchen measurements made easy</p>
             </Link>
             <Link href="/blog" className="group bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-all">
               <h3 className="font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600">All Articles</h3>

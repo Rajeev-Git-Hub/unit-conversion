@@ -134,7 +134,7 @@ export default function TemperatureConverterLandingPage() {
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Fahrenheit (°F)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Primarily used in the United States and a few other countries. Water freezes at 32°F and boils at 212°F. Commonly used for weather reports, cooking, and body temperature in the US.</p>
+              <p className="text-gray-600 dark:text-gray-300">Primarily used in the United States and a few other countries. Water freezes at 32°F and boils at 212°F. Commonly used for weather reports and body temperature in the US.</p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Kelvin (K)</h3>
@@ -184,11 +184,11 @@ export default function TemperatureConverterLandingPage() {
               </div>
             </div>
             <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">🍳 Cooking</h4>
+              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">🔥 Temperature Examples</h4>
               <div className="text-sm text-gray-600 dark:text-gray-300">
-                <p>Oven low: 150°C / 300°F / 423K</p>
-                <p>Oven medium: 180°C / 350°F / 453K</p>
-                <p>Oven high: 220°C / 425°F / 493K</p>
+                <p>Water freezing: 0°C / 32°F / 273K</p>
+                <p>Room temperature: 20°C / 68°F / 293K</p>
+                <p>Water boiling: 100°C / 212°F / 373K</p>
               </div>
             </div>
             <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
@@ -237,12 +237,11 @@ export default function TemperatureConverterLandingPage() {
               </div>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">🍳 Cooking & Food</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">�️ Everyday Applications</h3>
               <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Recipe conversion:</strong> Convert oven temperatures between Celsius and Fahrenheit</p>
-                <p><strong>Food safety:</strong> Danger zone: 5°C to 60°C (41°F to 140°F)</p>
-                <p><strong>Meat temperatures:</strong> Chicken: 74°C / 165°F (fully cooked)</p>
-                <p><strong>Baking:</strong> Precision temperature control crucial for consistent results</p>
+                <p><strong>Weather monitoring:</strong> Convert temperature readings between different scales</p>
+                <p><strong>Health monitoring:</strong> Body temperature readings in different units</p>
+                <p><strong>Industrial processes:</strong> Manufacturing requires precise temperature control</p>
               </div>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">

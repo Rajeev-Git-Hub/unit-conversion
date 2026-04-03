@@ -98,48 +98,7 @@ describe('Unit Conversion', () => {
     });
   });
 
-  describe('Cooking Conversions', () => {
-    test('should convert cup to gram with ingredient density (flour, 0.6 g/ml)', () => {
-      // 1 cup = 236.588 ml. Flour density ~0.6 g/ml.
-      // 1 cup flour = 236.588 * 0.6 = 141.9528 grams
-      expect(convert('cooking', 1, 'cup', 'gram', undefined, 0.6)).toBeCloseTo(141.9528);
-    });
-
-    test('should convert gram to cup with ingredient density (flour, 0.6 g/ml)', () => {
-      // 141.9528 grams flour = 1 cup
-      expect(convert('cooking', 141.9528, 'gram', 'cup', undefined, 0.6)).toBeCloseTo(1);
-    });
-
-    test('should convert tablespoon to milliliter', () => {
-      // This conversion is volume to volume, so ingredientDensity is not needed and should not affect it.
-      expect(convert('cooking', 1, 'tablespoon', 'milliliter')).toBeCloseTo(14.7868);
-    });
-
-    test('should throw error if ingredient density is missing for cup to gram conversion', () => {
-      expect(() => convert('cooking', 1, 'cup', 'gram')).toThrow('Ingredient density is required for conversions between mass and volume units in cooking.');
-    });
-
-    test('should convert pinch to milliliter', () => {
-      expect(convert('cooking', 1, 'pinch', 'milliliter')).toBeCloseTo(0.308);
-    });
-
-    test('should convert dash to milliliter', () => {
-      expect(convert('cooking', 1, 'dash', 'milliliter')).toBeCloseTo(0.616);
-    });
-
-    test('should convert smidgen to milliliter', () => {
-      expect(convert('cooking', 1, 'smidgen', 'milliliter')).toBeCloseTo(0.154);
-    });
-
-    test('should convert drop to milliliter', () => {
-      expect(convert('cooking', 1, 'drop', 'milliliter')).toBeCloseTo(0.05);
-    });
-
-    test('should convert stick of butter to gram', () => {
-      expect(convert('cooking', 1, 'stick of butter', 'gram')).toBeCloseTo(113.4);
-    });
-  });
-
+  
   describe('Engineering Conversions', () => {
     test('should convert meters to feet with rounding', () => {
       expect(convert('engineering', 1, 'meter', 'foot', undefined, undefined, undefined, 2)).toBe(3.28);

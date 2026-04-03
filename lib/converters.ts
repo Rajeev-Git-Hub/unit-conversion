@@ -166,7 +166,6 @@ export function convert(
   from: string,
   to: string,
   concentration?: number, // Optional concentration for healthcare
-  ingredientDensity?: number, // Optional ingredient density for cooking (e.g., grams per ml)
   tolerance?: number, // Optional tolerance for engineering conversions
   rounding?: number, // Optional rounding for engineering conversions
   volumetricWeightFactor?: number, // Optional volumetric weight factor for logistics conversions (e.g., kg/m^3)
@@ -319,32 +318,6 @@ function convertHealthcareUnits(value: number, from: string, to: string, map: an
   return value * (fromFactor / toFactor);
 }
 
-function convertCookingUnits(value: number, from: string, to: string, map: any, ingredientDensity?: number): number {
-  const cookingMassUnits = ['gram', 'kilogram', 'ounce', 'pound', 'stick of butter'];
-  const cookingVolumeUnits = ['milliliter', 'liter', 'teaspoon', 'tablespoon', 'cup', 'pinch', 'dash', 'smidgen', 'drop'];
-
-  const isMassToVolume = cookingMassUnits.includes(from) && cookingVolumeUnits.includes(to);
-  const isVolumeToMass = cookingVolumeUnits.includes(from) && cookingMassUnits.includes(to);
-
-  if (isMassToVolume || isVolumeToMass) {
-    if (ingredientDensity === undefined || ingredientDensity <= 0) {
-      throw new Error('Valid ingredient density is required for cooking mass-volume conversions.');
-    }
-  }
-
-  // Handle cup <-> gram conversions using ingredient density
-  if (from === 'cup' && to === 'gram') {
-    return value * (map['cup' as keyof typeof map] as number) * ingredientDensity!;
-  }
-  if (from === 'gram' && to === 'cup') {
-    return value / ingredientDensity! / (map['cup' as keyof typeof map] as number);
-  }
-
-  // Standard conversion
-  const fromFactor = map[from as keyof typeof map];
-  const toFactor = map[to as keyof typeof map];
-  return value * (fromFactor / toFactor);
-}
 
 function convertLogisticsUnits(value: number, from: string, to: string, map: any, volumetricWeightFactor?: number): number {
   const logisticsVolumeUnits = ['cubic meter', 'cubic foot', 'cubic inch', 'liter', 'CBM (cubic meter)', 'TEU (Twenty-foot Equivalent Unit)', 'FEU (Forty-foot Equivalent Unit)'];

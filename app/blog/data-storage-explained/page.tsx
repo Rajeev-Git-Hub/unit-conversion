@@ -48,7 +48,7 @@ export default function DataStorageExplainedPage() {
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
                 Digital Storage Units
               </h2>
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto max-w-full">
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="bg-gray-100 dark:bg-gray-700">

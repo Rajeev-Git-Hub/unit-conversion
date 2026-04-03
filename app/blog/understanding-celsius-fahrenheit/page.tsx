@@ -123,7 +123,6 @@ export default function CelsiusVsFahrenheitPage() {
                   <h3 className="font-bold text-blue-900 dark:text-blue-100 mb-2">Celsius Wins For:</h3>
                   <ul className="list-disc list-inside text-gray-700 dark:text-gray-300">
                     <li>Science and math (water-based scale)</li>
-                    <li>Cooking (oven temps are cleaner)</li>
                     <li>International travel</li>
                   </ul>
                 </div>

@@ -91,15 +91,7 @@ export default function MetricVsImperialPage() {
                     they evolved from actual human use, not scientific ideals.
                   </p>
                 </div>
-                <div className="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-xl">
-                  <h3 className="font-bold text-yellow-900 dark:text-yellow-100 mb-2">Cooking is Easier</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Half of 1 cup is 1/2 cup. Half of 1/3 cup is... actually that is annoying too. 
-                    Okay, cooking is a mess in both systems. But at least Fahrenheit gives you 
-                    finer temperature control for baking.
-                  </p>
-                </div>
-              </div>
+                              </div>
             </section>
 
             {/* My Verdict */}
@@ -177,11 +169,7 @@ export default function MetricVsImperialPage() {
               <h3 className="font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600">Celsius vs Fahrenheit</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">Temperature scale drama</p>
             </Link>
-            <Link href="/blog/common-cooking-conversions" className="group bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-all">
-              <h3 className="font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600">Kitchen Conversions</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Where both systems fail us</p>
-            </Link>
-            <Link href="/blog" className="group bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-all">
+                        <Link href="/blog" className="group bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-all">
               <h3 className="font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600">All Articles</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">Browse everything</p>
             </Link>

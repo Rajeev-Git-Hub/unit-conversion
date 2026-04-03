@@ -38,8 +38,8 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300 flex flex-col">
       <CategoryMenu selectedCategory={category} />
 
-      <div className="flex flex-1 overflow-hidden">
-        <aside className="hidden lg:block w-64 bg-white dark:bg-gray-800 overflow-y-auto">
+      <div className="flex flex-1">
+        <aside className="hidden lg:block w-64 bg-white dark:bg-gray-800 overflow-y-auto flex-shrink-0">
           <nav className="pt-2 px-4">
             <ul className="space-y-1">
               {/* Regular categories (excluding dev-tools and utilities) */}
@@ -96,7 +96,7 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
           </nav>
         </aside>
 
-        <main className="flex-1 w-full overflow-y-auto">
+        <main className="flex-1 min-w-0 overflow-y-auto">
           {children}
           <Footer />
         </main>

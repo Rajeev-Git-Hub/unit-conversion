@@ -5,7 +5,7 @@ import ConverterCard from '../../components/ConverterCard';
 export const metadata: Metadata = {
   title: 'Volume Converter - Free Online Tool | Convert Liters, Gallons, Cubic Meters',
   description: 'Free online volume converter. Convert between liters, gallons, cubic meters, milliliters, fluid ounces. Accurate calculations, conversion tables, and practical examples.',
-  keywords: 'volume converter, liters to gallons, cubic meters to liters, milliliters to ounces, fluid volume converter, cooking measurements, online tool',
+  keywords: 'volume converter, liters to gallons, cubic meters to liters, milliliters to ounces, fluid volume converter, online tool',
   openGraph: {
     title: 'Volume Converter - Free Online Tool',
     description: 'Convert between different units of volume instantly',
@@ -117,7 +117,7 @@ export default function VolumeConverterLandingPage() {
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Fluid Ounce (fl oz)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to approximately 29.6 milliliters. Used for measuring smaller liquid quantities, beverage servings, and cooking ingredients in the US.</p>
+              <p className="text-gray-600 dark:text-gray-300">Equal to approximately 29.6 milliliters. Used for measuring smaller liquid quantities and beverage servings in the US.</p>
             </div>
           </div>
         </div>
@@ -131,7 +131,7 @@ export default function VolumeConverterLandingPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Cooking & Kitchen</h3>
+              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Household & Kitchen</h3>
               <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
                 <p>1 cup = 237 mL</p>
                 <p>1 tablespoon = 15 mL</p>
@@ -169,10 +169,10 @@ export default function VolumeConverterLandingPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">🍳 Cooking & Baking</h3>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">� Household & DIY</h3>
               <div className="space-y-3 text-gray-600 dark:text-gray-300">
                 <p><strong>Recipe Conversion:</strong> Convert between metric and imperial measurements</p>
-                <p><strong>Baking Precision:</strong> Accurate volume measurements for perfect results</p>
+                <p><strong>Precision Work:</strong> Accurate volume measurements for DIY projects</p>
                 <p><strong>International Recipes:</strong> Convert cups to milliliters for global dishes</p>
                 <p><strong>Ingredient Scaling:</strong> Adjust recipe quantities for different serving sizes</p>
               </div>
@@ -217,7 +217,7 @@ export default function VolumeConverterLandingPage() {
           <div className="max-w-3xl mx-auto space-y-6">
             <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
               <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">How many milliliters are in a cup?</h3>
-              <p className="text-gray-600 dark:text-gray-300">One US cup equals 236.588 milliliters. For cooking, it's often rounded to 237 mL. Note that UK cups are larger (284 mL).</p>
+              <p className="text-gray-600 dark:text-gray-300">One US cup equals 236.588 milliliters. For practical purposes, it's often rounded to 237 mL. Note that UK cups are larger (284 mL).</p>
             </div>
             <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
               <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">What's the difference between US and UK gallons?</h3>

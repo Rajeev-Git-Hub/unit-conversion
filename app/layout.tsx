@@ -4,6 +4,7 @@ import "./globals.css";
 import Layout from "../components/Layout";
 import Script from "next/script";
 import SchemaMarkup from "../components/SchemaMarkup";
+import BodyLock from "../components/BodyLock";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,6 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('http://localhost:3000'),
   title: {
     default: "ConvertMaster | Convert Metric, Imperial & Local Units",
     template: "%s | ConvertMaster",
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://convertmaster.example.com",
-    title: "ConvertMaster | Universal Unit Converter",
+    title: "ConvertMaster",
     description: "Free online unit converter for length, weight, temperature, area, volume, time, speed, and more. Supports US, UK, Metric, and Indian units.",
     siteName: "ConvertMaster",
     images: [
@@ -97,8 +99,13 @@ export default function RootLayout({
         <SchemaMarkup type="SoftwareApplication" data={{ name: "ConvertMaster Unit Converter" }} />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-hidden`}
+        style={{ 
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none'
+        }}
       >
+        <BodyLock />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2"
@@ -106,7 +113,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <main id="main-content">
+        <main id="main-content" className="min-h-screen">
         <Layout>{children}</Layout>
         </main>
       </body>

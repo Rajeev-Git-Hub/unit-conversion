@@ -52,19 +52,13 @@ export default function WeightConverterLandingPage() {
                   Available units: Pound (lbs), Ounce (oz), US Ton.
                 </p>
                 <p>
-                  Understanding both systems is essential for international trade, cooking, fitness, and scientific applications.
+                  Understanding both systems is essential for international trade, fitness, and scientific applications.
                 </p>
               </div>
             </div>
             <div>
               <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Common Applications</h3>
               <div className="space-y-4 text-gray-600 dark:text-gray-300">
-                <div className="flex items-start">
-                  <span className="text-green-600 mr-3">🍳</span>
-                  <div>
-                    <strong>Cooking & Baking:</strong> Recipe conversions between metric and imperial measurements
-                  </div>
-                </div>
                 <div className="flex items-start">
                   <span className="text-green-600 mr-3">💪</span>
                   <div>

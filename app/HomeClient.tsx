@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { FiSearch, FiArrowRight } from 'react-icons/fi';
 import { useLocalization } from '../lib/LocalizationContext';
 import { useState, useEffect, useRef, Suspense, lazy } from 'react';
+import NewsletterSignup from '../components/NewsletterSignup';
 
 // Lazy load heavy components
 const SearchDropdown = lazy(() => import('../components/SearchDropdown'));
@@ -62,27 +63,8 @@ function HomeContent() {
       <section className="relative py-6 overflow-hidden">
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            {/* Badge - High Contrast */}
-            <div className="inline-flex items-center px-4 py-2 bg-blue-700 text-white text-sm font-semibold rounded-full mb-6 shadow-lg">
-              <span className="w-2 h-2 bg-white rounded-full mr-2"></span>
-              100% Free — No Registration Required
-            </div>
-            
-            {/* Main Heading */}
-            <h1 className="text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-6 leading-tight">
-              Convert Anything
-              <span className="block text-3xl md:text-4xl font-light text-blue-700 dark:text-blue-400">
-                Instantly & Accurately
-              </span>
-            </h1>
-            
-            {/* Subheading */}
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed">
-              The most powerful unit converter with real-time search and conversion history
-            </p>
-            
-            {/* Search Box - Enhanced */}
-            <div className="max-w-2xl mx-auto mb-12" ref={searchContainerRef}>
+            {/* Search Box - ABOVE THE FOLD */}
+            <div className="max-w-2xl mx-auto mb-8" ref={searchContainerRef}>
               <div className="relative group">
                 <FiSearch className="absolute left-5 top-1/2 -translate-y-1/2 h-6 w-6 text-gray-400 z-10" />
                 <input
@@ -100,6 +82,25 @@ function HomeContent() {
                 )}
               </div>
             </div>
+            
+            {/* Badge - High Contrast */}
+            <div className="inline-flex items-center px-4 py-2 bg-blue-700 text-white text-sm font-semibold rounded-full mb-6 shadow-lg">
+              <span className="w-2 h-2 bg-white rounded-full mr-2"></span>
+              No Registration Required
+            </div>
+            
+            {/* Main Heading */}
+            <h1 className="text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-6 leading-tight">
+              Convert Anything
+              <span className="block text-3xl md:text-4xl font-light text-blue-700 dark:text-blue-400">
+                Instantly & Accurately
+              </span>
+            </h1>
+            
+            {/* Subheading */}
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed">
+              The most powerful unit converter with real-time search and conversion history
+            </p>
           </div>
         </div>
       </section>
@@ -113,8 +114,8 @@ function HomeContent() {
               <div className="text-sm text-gray-600 dark:text-gray-400">Unit Converters</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-green-600 dark:text-green-400 mb-2">100%</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Free Forever</div>
+              <div className="text-3xl md:text-4xl font-bold text-green-600 dark:text-green-400 mb-2">50+</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Unit Types</div>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">0</div>
@@ -191,7 +192,7 @@ function HomeContent() {
                   Industry-grade converters with precision accuracy and reliable results
                 </p>
                 <div className="flex items-center text-green-600 font-semibold">
-                  <span>Always Free</span>
+                  <span>Professional Grade</span>
                   <FiArrowRight className="w-5 h-5 ml-2 transform transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
@@ -311,6 +312,9 @@ function HomeContent() {
           </div>
         </div>
       </section>
+
+      {/* Newsletter Signup */}
+      <NewsletterSignup />
     </div>
   );
 }

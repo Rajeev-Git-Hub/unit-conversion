@@ -46,7 +46,7 @@ export default function TimeConverterLandingPage() {
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Minute (min)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to 60 seconds. A common unit for measuring durations such as meetings, cooking times, and exercise sessions. 60 minutes = 1 hour.</p>
+              <p className="text-gray-600 dark:text-gray-300">Equal to 60 seconds. A common unit for measuring durations such as meetings, exercise sessions, and short activities. 60 minutes = 1 hour.</p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Hour (hr)</h3>

@@ -212,7 +212,7 @@ function AboutContent() {
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
               <div className="text-purple-500 mb-4 text-3xl">🎯</div>
               <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Professional Grade</h3>
-              <p className="text-gray-600 dark:text-gray-300">Industry-standard conversion factors covering engineering, healthcare, cooking, chemistry, and more.</p>
+              <p className="text-gray-600 dark:text-gray-300">Industry-standard conversion factors covering engineering, healthcare, chemistry, and more.</p>
             </div>
           </div>
         </div>

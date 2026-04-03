@@ -29,14 +29,7 @@ const blogPosts = [
     category: 'Education',
     readTime: '6 min read',
   },
-  {
-    slug: 'common-cooking-conversions',
-    title: 'Kitchen Conversions That Actually Help',
-    excerpt: 'Tired of guessing how many tablespoons are in a cup? These are the cooking conversions I use daily.',
-    category: 'Cooking',
-    readTime: '4 min read',
-  },
-  {
+    {
     slug: 'body-temperature-guide',
     title: 'Normal Body Temperature: When to Worry',
     excerpt: 'I checked my temperature and panicked. Turns out normal body temp varies more than you think.',
