@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import ConverterCard from '../../components/ConverterCard';
+import { FiArrowRight, FiTrendingUp, FiCheckCircle, FiActivity, FiZap, FiShield, FiUsers, FiWind, FiNavigation } from 'react-icons/fi';
 
 export const metadata: Metadata = {
   title: 'Speed Converter - Free Online Tool | Convert mph, km/h, m/s, knots',
@@ -15,240 +16,389 @@ export const metadata: Metadata = {
 
 export default function SpeedConverterLandingPage() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* Hero Section */}
-      <section className="bg-white dark:bg-gray-800 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Speed Converter - Free Online Tool
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-400">
-              Convert between miles per hour, kilometers per hour, meters per second, and more
-            </p>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
+    <div className="min-h-screen bg-gray-50">
+      <div className="container py-16">
+        {/* Hero Section */}
+        <section className="text-center mb-16">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="premium-badge">
+              <FiZap className="w-3 h-3"></FiZap>
+              <span>Instant Results</span>
+            </div>
+            <div className="badge badge-success">
+              <FiCheckCircle className="w-3 h-3"></FiCheckCircle>
+              <span>High Precision</span>
+            </div>
+            <div className="badge badge-secondary">
+              <FiActivity className="w-3 h-3"></FiActivity>
+              <span>8+ Units</span>
+            </div>
+          </div>
+          
+          <h1 className="hero-gradient text-4xl font-bold mb-4">Speed Converter</h1>
+          <p className="text-base text-gray-600 max-w-2xl mx-auto">
+            Convert between miles per hour, kilometers per hour, meters per second, and more
+          </p>
+          
+          <div className="max-w-2xl mx-auto mt-8">
+            <div className="card p-6">
               <ConverterCard category="speed" defaultFrom="kmh" defaultTo="mph" />
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Speed Unit Definitions */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Speed Unit Definitions
-          </h2>
+        {/* Speed Unit Definitions */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Speed Unit Definitions</h3>
+            <p className="section-subtitle">Understanding speed measurement standards</p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Meter Per Second (m/s)</h3>
-              <p className="text-gray-600 dark:text-gray-300">The SI unit of speed. Defined as the distance traveled in meters divided by time in seconds. Used in physics, engineering, and scientific calculations worldwide.</p>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Meter Per Second (m/s)</h5>
+              <p className="text-sm text-gray-600">The SI unit of speed. Defined as the distance traveled in meters divided by time in seconds. Used in physics, engineering, and scientific calculations worldwide.</p>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Kilometer Per Hour (km/h)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to 0.2778 meters per second. The standard unit for road speeds in most countries worldwide. Used on speedometers, road signs, and vehicle specifications.</p>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Kilometer Per Hour (km/h)</h5>
+              <p className="text-sm text-gray-600">Equal to 0.2778 meters per second. The standard unit for road speeds in most countries worldwide. Used on speedometers, road signs, and vehicle specifications.</p>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Mile Per Hour (mph)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to approximately 1.609 kilometers per hour. Used primarily in the United States, UK, and a few other countries for road speeds and vehicle performance.</p>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Mile Per Hour (mph)</h5>
+              <p className="text-sm text-gray-600">Equal to 1.609 km/h or 0.447 m/s. Used primarily in the United States and UK for road speeds, vehicle specifications, and weather reports.</p>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Foot Per Second (ft/s)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to 0.3048 meters per second. Used in engineering applications, particularly in ballistics and fluid dynamics in countries using imperial units.</p>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Knot</h5>
+              <p className="text-sm text-gray-600">Equal to 1.852 km/h or 0.514 m/s. Used in maritime and aviation contexts for measuring the speed of ships and aircraft.</p>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Knot (kn)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to one nautical mile per hour or approximately 0.514 meters per second. Used in maritime and aviation contexts for navigation and weather reporting.</p>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Foot Per Second (ft/s)</h5>
+              <p className="text-sm text-gray-600">Equal to 0.3048 m/s or 1.097 km/h. Used in engineering and ballistics calculations in countries using imperial units.</p>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Mach</h3>
-              <p className="text-gray-600 dark:text-gray-300">The ratio of the speed of an object to the speed of sound. Mach 1 equals approximately 343 meters per second at sea level. Used in aviation and aerospace engineering.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Speed of Light (c)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to 299,792,458 meters per second. The ultimate speed limit in the universe. Used in physics, astronomy, and theoretical calculations. Symbol: c.</p>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Speed of Light</h5>
+              <p className="text-sm text-gray-600">299,792,458 m/s. The universal speed limit in vacuum. Used in physics, astronomy, and telecommunications calculations.</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Understanding Speed Conversion */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Understanding Speed Conversion
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="bg-blue-100 dark:bg-blue-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">mph</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Miles Per Hour</h3>
-              <div className="text-gray-600 dark:text-gray-300">
-                <p className="mb-2">US customary unit</p>
-                <p className="mb-2">Used for road speeds in US/UK</p>
-                <p className="mb-2">Common in automotive context</p>
-                <p>1 mph = 1.609 km/h</p>
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="bg-green-100 dark:bg-green-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">km/h</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Kilometers Per Hour</h3>
-              <div className="text-gray-600 dark:text-gray-300">
-                <p className="mb-2">Metric system standard</p>
-                <p className="mb-2">Used worldwide for roads</p>
-                <p className="mb-2">International speed standard</p>
-                <p>1 km/h = 0.621 mph</p>
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="bg-yellow-100 dark:bg-yellow-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">m/s</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Meters Per Second</h3>
-              <div className="text-gray-600 dark:text-gray-300">
-                <p className="mb-2">SI unit for speed</p>
-                <p className="mb-2">Used in scientific contexts</p>
-                <p className="mb-2">Physics and engineering</p>
-                <p>1 m/s = 3.6 km/h</p>
-              </div>
-            </div>
+        {/* Common Speed Conversions */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Common Speed Conversions</h3>
+            <p className="section-subtitle">Quick reference for everyday speed measurements</p>
           </div>
-        </div>
-      </section>
-
-      {/* Common Speed Conversions */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Common Speed Conversions
-          </h2>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Driving Speeds</h3>
-              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                <p>60 mph = 96.6 km/h</p>
-                <p>70 mph = 112.7 km/h</p>
-                <p>100 km/h = 62.1 mph</p>
-                <p>50 km/h = 31.1 mph</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary">
+                  <FiTrendingUp className="w-5 h-5" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">km/h to mph</h4>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>50 km/h = 31.07 mph</li>
+                <li>100 km/h = 62.14 mph</li>
+                <li>120 km/h = 74.56 mph</li>
+                <li>200 km/h = 124.27 mph</li>
+              </ul>
+            </div>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#10b981' }}>
+                  <FiTrendingUp className="w-5 h-5" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">mph to km/h</h4>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>30 mph = 48.28 km/h</li>
+                <li>60 mph = 96.56 km/h</li>
+                <li>75 mph = 120.70 km/h</li>
+                <li>100 mph = 160.93 km/h</li>
+              </ul>
+            </div>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#8b5cf6' }}>
+                  <FiWind className="w-5 h-5" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">m/s to km/h</h4>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>10 m/s = 36 km/h</li>
+                <li>20 m/s = 72 km/h</li>
+                <li>30 m/s = 108 km/h</li>
+                <li>40 m/s = 144 km/h</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Real-World Applications */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Real-World Applications</h3>
+            <p className="section-subtitle">Where speed conversion is essential</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#3b82f6' }}>
+                  <FiNavigation className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Transportation</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>Car speed limits:</strong> 60 mph = 96.6 km/h</p>
+                <p><strong>Highway driving:</strong> 120 km/h = 74.6 mph</p>
+                <p><strong>City driving:</strong> 50 km/h = 31.1 mph</p>
+                <p><strong>Train speed:</strong> 300 km/h = 186.4 mph</p>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Running Speeds</h3>
-              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                <p>10 km/h = 6.2 mph</p>
-                <p>15 km/h = 9.3 mph</p>
-                <p>8 mph = 12.9 km/h</p>
-                <p>6 mph = 9.7 km/h</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#10b981' }}>
+                  <FiWind className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Weather & Aviation</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>Wind speed:</strong> 20 knots = 37.0 km/h</p>
+                <p><strong>Hurricane:</strong> 150 km/h = 93.2 mph</p>
+                <p><strong>Aircraft cruise:</strong> 900 km/h = 559.2 mph</p>
+                <p><strong>Takeoff speed:</strong> 250 km/h = 155.3 mph</p>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Wind Speeds</h3>
-              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                <p>10 knots = 11.5 mph</p>
-                <p>20 knots = 23.0 mph</p>
-                <p>50 km/h = 13.9 m/s</p>
-                <p>100 km/h = 27.8 m/s</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#8b5cf6' }}>
+                  <FiTrendingUp className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Sports & Athletics</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>Running:</strong> 10 m/s = 36 km/h (sprint)</p>
+                <p><strong>Cycling:</strong> 60 km/h = 37.3 mph (pro)</p>
+                <p><strong>Swimming:</strong> 2 m/s = 7.2 km/h (olympic)</p>
+                <p><strong>Sailing:</strong> 15 knots = 27.8 km/h</p>
+              </div>
+            </div>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#f59e0b' }}>
+                  <FiTrendingUp className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Science & Physics</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>Sound speed:</strong> 343 m/s = 1,235 km/h</p>
+                <p><strong>Earth rotation:</strong> 465 m/s = 1,674 km/h</p>
+                <p><strong>Orbital speed:</strong> 7.8 km/s = 28,080 km/h</p>
+                <p><strong>Light speed:</strong> 299,792 km/s = 1,079,252,848 km/h</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Practical Applications */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Practical Applications
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">🚗 Automotive & Transportation</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Speed Limits:</strong> Convert between mph and km/h when traveling internationally</p>
-                <p><strong>Car Specifications:</strong> Compare acceleration times (0-60 mph vs 0-100 km/h)</p>
-                <p><strong>Fuel Efficiency:</strong> Calculate mpg vs liters per 100km</p>
-                <p><strong>Navigation:</strong> Understand speed limits in different countries</p>
+        {/* Step-by-Step Guide */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">How to Convert Speed Units</h3>
+            <p className="section-subtitle">Simple steps for accurate speed conversion</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto">
+                <span className="text-2xl font-bold text-white">1</span>
               </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Enter Speed Value</h4>
+              <p className="text-sm text-gray-600">Input the speed measurement you want to convert</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">🏃‍♂️ Sports & Fitness</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Running Pace:</strong> Convert min/km to min/mile for training</p>
-                <p><strong>Cycling Speed:</strong> Track performance in different units</p>
-                <p><strong>Race Analysis:</strong> Compare world records across measurement systems</p>
-                <p><strong>Fitness Apps:</strong> Sync data from devices using different units</p>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#3b82f6' }}>
+                <span className="text-2xl font-bold text-white">2</span>
               </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Select Unit</h4>
+              <p className="text-sm text-gray-600">Choose the current speed unit (km/h, mph, m/s, etc.)</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">✈️ Aviation & Maritime</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Air Speed:</strong> Convert knots to mph/km/h for aviation</p>
-                <p><strong>Wind Speed:</strong> Weather forecasts in different units</p>
-                <p><strong>Marine Navigation:</strong> Ship speeds in knots vs mph</p>
-                <p><strong>Flight Planning:</strong> Calculate travel times with different units</p>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#10b981' }}>
+                <span className="text-2xl font-bold text-white">3</span>
               </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Target Unit</h4>
+              <p className="text-sm text-gray-600">Select the speed unit to convert to</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">🔬 Science & Engineering</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Physics Experiments:</strong> Convert between SI and imperial units</p>
-                <p><strong>Engineering:</strong> Wind tunnel speeds in different units</p>
-                <p><strong>Research:</strong> Standardize data across international studies</p>
-                <p><strong>Manufacturing:</strong> Conveyor belt speeds and production rates</p>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#8b5cf6' }}>
+                <span className="text-2xl font-bold text-white">4</span>
               </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Get Result</h4>
+              <p className="text-sm text-gray-600">View instant, accurate conversion results</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Frequently Asked Questions
-          </h2>
+        {/* FAQ Section */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Frequently Asked Questions</h3>
+            <p className="section-subtitle">Common questions about speed conversion</p>
+          </div>
+          
           <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">How do I convert km/h to mph?</h3>
-              <p className="text-gray-600 dark:text-gray-300">Multiply km/h by 0.621371. For quick approximation, divide by 1.6. Example: 100 km/h × 0.621 = 62.1 mph.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">How many km/h are in a mph?</h4>
+              <p className="text-sm text-gray-600">One mile per hour equals 1.60934 kilometers per hour. This is the standard conversion used worldwide.</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">What is a knot in speed?</h3>
-              <p className="text-gray-600 dark:text-gray-300">One knot equals one nautical mile per hour (1.852 km/h or 1.151 mph). Used primarily in aviation and maritime contexts.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">What is a knot used for?</h4>
+              <p className="text-sm text-gray-600">Knots are used in maritime and aviation contexts. One knot equals one nautical mile per hour (1.852 km/h).</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">How fast is 100 km/h in mph?</h3>
-              <p className="text-gray-600 dark:text-gray-300">100 km/h equals 62.14 mph. This is approximately the speed limit on many highways in the United States.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Why do different countries use different speed units?</h4>
+              <p className="text-sm text-gray-600">Historical reasons and established measurement systems. Most countries use km/h, while the US uses mph for road speeds.</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">How do I convert m/s to km/h?</h3>
-              <p className="text-gray-600 dark:text-gray-300">Multiply meters per second by 3.6. Example: 10 m/s × 3.6 = 36 km/h. This is useful for scientific calculations.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">How accurate is this speed converter?</h4>
+              <p className="text-sm text-gray-600">Our converter provides results with up to 10 decimal places, using standard international conversion factors for professional accuracy.</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Ready to Convert More Units?</h2>
-          <p className="text-xl mb-8 text-gray-600 dark:text-gray-400">Explore our other free conversion tools for all your measurement needs</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/length-converter/" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
-              Length Converter
-            </Link>
-            <Link href="/weight-converter/" className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors">
-              Weight Converter
-            </Link>
-            <Link href="/" className="inline-flex items-center px-6 py-3 bg-gray-600 text-white font-medium rounded-lg hover:bg-gray-700 transition-colors">
-              All Converters
-            </Link>
+        {/* Quick Stats */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Platform Statistics</h3>
+            <p className="section-subtitle">Trusted by professionals worldwide</p>
           </div>
-        </div>
-      </section>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="card p-6 text-center">
+              <div className="metric-label">Speed Units</div>
+              <div className="metric-value">8+</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Available</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Systems</div>
+              <div className="metric-value">3</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Metric, Imperial, Nautical</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Precision</div>
+              <div className="metric-value">10</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Decimal Places</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Applications</div>
+              <div className="metric-value">35+</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Use Cases</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Indicators */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Why Choose ConvertMaster?</h3>
+            <p className="section-subtitle">Professional features designed for precision and reliability</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4">
+                <FiShield className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Enterprise Security</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                Bank-level encryption with GDPR compliance and complete data privacy protection.
+              </p>
+              <div className="flex items-center justify-center text-blue-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#10b981' }}>
+                <FiUsers className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Global Trust</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                50M+ active users worldwide trust our platform for accurate, instant conversions.
+              </p>
+              <div className="flex items-center justify-center text-green-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#8b5cf6' }}>
+                <FiZap className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Lightning Fast</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                0.1s response time with instant calculations and real-time results.
+              </p>
+              <div className="flex items-center justify-center text-purple-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="text-center">
+          <div className="gradient-border p-8">
+            <h3 className="section-title mb-4">Ready to Convert More Units?</h3>
+            <p className="section-subtitle mb-8">
+              Explore our other free conversion tools for all your measurement needs
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/length-converter/"
+                className="btn btn-primary"
+              >
+                <span>Length Converter</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/weight-converter/"
+                className="btn btn-secondary"
+              >
+                <span>Weight Converter</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/"
+                className="btn btn-secondary"
+              >
+                <span>All Converters</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

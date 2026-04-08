@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { FaEnvelope, FaCheckCircle, FaPaperPlane } from 'react-icons/fa';
+import { FiMail, FiCheckCircle, FiSend } from 'react-icons/fi';
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState('');
@@ -54,72 +54,63 @@ export default function NewsletterSignup() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-r from-purple-600 to-blue-600">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/20">
-          <div className="flex justify-center mb-6">
-            <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
-              <FaEnvelope className="w-8 h-8 text-white" />
-            </div>
-          </div>
-
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Get Conversion Tips & Updates
-          </h2>
-          <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join our newsletter for expert conversion guides, new features, and helpful tips delivered to your inbox. No spam, unsubscribe anytime.
-          </p>
-
+    <section className="py-20 bg-white">
+      <div className="container text-center">
+        <h3 className="section-title">Stay Updated</h3>
+        <p className="section-subtitle">Get the latest conversion tips and features delivered to your inbox</p>
+        
+        <div className="max-w-2xl mx-auto">
           {subscribed ? (
-            <div className="flex flex-col items-center">
-              <div className="flex items-center gap-3 bg-green-500/20 text-green-100 px-6 py-4 rounded-xl">
-                <FaCheckCircle className="w-6 h-6" />
-                <span className="font-semibold">Thanks for subscribing! Check your inbox soon.</span>
+            <div className="card p-8 text-center">
+              <div className="icon-box icon-box-primary mb-4 mx-auto">
+                <FiCheckCircle className="w-6 h-6" />
               </div>
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">Successfully Subscribed!</h4>
+              <p className="text-gray-600">Thanks for subscribing! Check your inbox soon for conversion tips and updates.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <div className="flex-1 relative">
+            <form onSubmit={handleSubmit} className="card p-8">
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                <div className="flex-1">
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email"
-                    className="w-full px-5 py-4 rounded-xl bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-purple-600"
+                    placeholder="Enter your email address"
+                    className="input"
                     aria-label="Email address"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="px-8 py-4 bg-white text-purple-600 font-bold rounded-xl hover:bg-gray-100 transition-colors duration-300 flex items-center justify-center gap-2 shadow-lg"
+                  className="btn btn-primary"
                 >
                   <span>Subscribe</span>
-                  <FaPaperPlane className="w-4 h-4" />
+                  <FiSend className="w-4 h-4" />
                 </button>
               </div>
               {error && (
-                <p className="text-red-200 text-sm mt-3" role="alert">
+                <p className="text-red-600 text-sm mb-4" role="alert">
                   {error}
                 </p>
               )}
+              
+              <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600">
+                <span className="flex items-center gap-2">
+                  <FiCheckCircle className="w-4 h-4 text-green-600" />
+                  Weekly tips
+                </span>
+                <span className="flex items-center gap-2">
+                  <FiCheckCircle className="w-4 h-4 text-green-600" />
+                  New features
+                </span>
+                <span className="flex items-center gap-2">
+                  <FiCheckCircle className="w-4 h-4 text-green-600" />
+                  No spam
+                </span>
+              </div>
             </form>
           )}
-
-          <div className="mt-6 flex flex-wrap justify-center gap-6 text-sm text-blue-200">
-            <span className="flex items-center gap-2">
-              <FaCheckCircle className="w-4 h-4" />
-              Weekly tips
-            </span>
-            <span className="flex items-center gap-2">
-              <FaCheckCircle className="w-4 h-4" />
-              New features
-            </span>
-            <span className="flex items-center gap-2">
-              <FaCheckCircle className="w-4 h-4" />
-              No spam
-            </span>
-          </div>
         </div>
       </div>
     </section>

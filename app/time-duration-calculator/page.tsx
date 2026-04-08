@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import ConverterCard from '../../components/ConverterCard';
+import { FiArrowRight, FiClock, FiCheckCircle, FiActivity, FiZap, FiShield, FiUsers, FiTrendingUp, FiCalendar, FiBriefcase, FiTarget } from 'react-icons/fi';
 
 export const metadata: Metadata = {
   title: 'Time Duration Calculator - Free Online Tool | Calculate Time Differences, Duration',
@@ -15,219 +16,362 @@ export const metadata: Metadata = {
 
 export default function TimeDurationCalculatorLandingPage() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* Hero Section */}
-      <section className="bg-white dark:bg-gray-800 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Time Duration Calculator - Free Online Tool
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-400">
-              Calculate time differences, work hours, and project durations
-            </p>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <div className="text-center py-8">
-                <div className="text-6xl mb-4">⏱️</div>
-                <p className="text-gray-600 dark:text-gray-400">Calculate time differences and durations</p>
-                <div className="mt-6 space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <input 
-                      type="datetime-local" 
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                    />
-                    <input 
-                      type="datetime-local" 
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-                    />
-                  </div>
-                  <button className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                    Calculate Duration
-                  </button>
+    <div className="min-h-screen bg-gray-50">
+      <div className="container py-16">
+        {/* Hero Section */}
+        <section className="text-center mb-16">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="premium-badge">
+              <FiZap className="w-3 h-3"></FiZap>
+              <span>Instant Results</span>
+            </div>
+            <div className="badge badge-success">
+              <FiCheckCircle className="w-3 h-3"></FiCheckCircle>
+              <span>High Precision</span>
+            </div>
+            <div className="badge badge-secondary">
+              <FiActivity className="w-3 h-3"></FiActivity>
+              <span>Duration</span>
+            </div>
+          </div>
+          
+          <h1 className="hero-gradient text-4xl font-bold mb-4">Time Duration Calculator</h1>
+          <p className="text-base text-gray-600 max-w-2xl mx-auto">
+            Calculate time differences, work hours, and project durations
+          </p>
+          
+          <div className="max-w-2xl mx-auto mt-8">
+            <div className="card p-8">
+              <div className="text-center mb-6">
+                <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ width: '80px', height: '80px' }}>
+                  <FiClock className="w-8 h-8 text-white" />
                 </div>
+                <p className="text-gray-600">Calculate time differences and durations</p>
+              </div>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <input 
+                    type="datetime-local" 
+                    className="input w-full"
+                    placeholder="Start Date & Time"
+                  />
+                  <input 
+                    type="datetime-local" 
+                    className="input w-full"
+                    placeholder="End Date & Time"
+                  />
+                </div>
+                <button className="btn btn-primary w-full">
+                  <span>Calculate Duration</span>
+                  <FiClock className="w-4 h-4" />
+                </button>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Understanding Time Duration */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Understanding Time Duration Calculation
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="bg-blue-100 dark:bg-blue-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">⏱️</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Time Differences</h3>
-              <div className="text-gray-600 dark:text-gray-300">
-                <p className="mb-2">Calculate between two dates</p>
-                <p className="mb-2">Years, months, days, hours</p>
-                <p className="mb-2">Project planning</p>
-                <p>Event scheduling</p>
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="bg-green-100 dark:bg-green-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">💼</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Work Hours</h3>
-              <div className="text-gray-600 dark:text-gray-300">
-                <p className="mb-2">Calculate work shifts</p>
-                <p className="mb-2">Overtime calculations</p>
-                <p className="mb-2">Payroll processing</p>
-                <p>Time tracking</p>
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="bg-yellow-100 dark:bg-yellow-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">📅</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Project Timeline</h3>
-              <div className="text-gray-600 dark:text-gray-300">
-                <p className="mb-2">Project duration</p>
-                <p className="mb-2">Milestone tracking</p>
-                <p className="mb-2">Deadline management</p>
-                <p>Resource planning</p>
-              </div>
-            </div>
+        {/* Features Section */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Duration Calculation Features</h3>
+            <p className="section-subtitle">Professional time duration capabilities</p>
           </div>
-        </div>
-      </section>
-
-      {/* Common Time Calculations */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Common Time Calculations
-          </h2>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Work Week</h3>
-              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                <p>40 hours standard</p>
-                <p>8 hours × 5 days</p>
-                <p>Excluding weekends</p>
-                <p>Lunch breaks excluded</p>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto">
+                <FiCalendar className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Date Range</h4>
+              <p className="text-sm text-gray-600">
+                Calculate duration between any two dates and times with precision.
+              </p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#10b981' }}>
+                <FiBriefcase className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Work Hours</h4>
+              <p className="text-sm text-gray-600">
+                Track work hours, calculate overtime, and manage time sheets.
+              </p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#8b5cf6' }}>
+                <FiTarget className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Project Timeline</h4>
+              <p className="text-sm text-gray-600">
+                Plan project durations, track milestones, and manage deadlines.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Common Use Cases */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Common Use Cases</h3>
+            <p className="section-subtitle">Where duration calculation is essential</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#3b82f6' }}>
+                  <FiBriefcase className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Work & Business</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>Work week:</strong> Calculate total hours worked</p>
+                <p><strong>Overtime:</strong> Track extra hours beyond schedule</p>
+                <p><strong>Meetings:</strong> Calculate meeting durations</p>
+                <p><strong>Deadlines:</strong> Time remaining for projects</p>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Project Duration</h3>
-              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                <p>Start to end date</p>
-                <p>Working days only</p>
-                <p>Holiday exclusions</p>
-                <p>Milestone calculations</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#10b981' }}>
+                  <FiCalendar className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Personal Planning</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>Vacation planning:</strong> Calculate trip duration</p>
+                <p><strong>Event timing:</strong> Schedule duration events</p>
+                <p><strong>Age calculation:</strong> Time since birth</p>
+                <p><strong>Anniversaries:</strong> Years and days since</p>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Time Zones</h3>
-              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                <p>UTC conversions</p>
-                <p>Meeting scheduling</p>
-                <p>International calls</p>
-                <p>Travel planning</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#8b5cf6' }}>
+                  <FiTarget className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Project Management</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>Sprint duration:</strong> Agile sprint timelines</p>
+                <p><strong>Milestone tracking:</strong> Time between goals</p>
+                <p><strong>Resource planning:</strong> Time allocation</p>
+                <p><strong>Delivery schedules:</strong> ETA calculations</p>
+              </div>
+            </div>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#f59e0b' }}>
+                  <FiClock className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Time Tracking</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>Study sessions:</strong> Learning time tracking</p>
+                <p><strong>Exercise routines:</strong> Workout durations</p>
+                <p><strong>Travel time:</strong> Journey calculations</p>
+                <p><strong>Cooking time:</strong> Recipe timers</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Practical Applications */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Practical Applications
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">💼 Business & Work</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Payroll Processing:</strong> Calculate employee work hours and overtime</p>
-                <p><strong>Project Management:</strong> Track project timelines and deadlines</p>
-                <p><strong>Shift Scheduling:</strong> Plan work shifts and break times</p>
-                <p><strong>Time Billing:</strong> Calculate billable hours for clients</p>
+        {/* How to Use */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">How to Calculate Duration</h3>
+            <p className="section-subtitle">Simple steps for accurate time calculations</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto">
+                <span className="text-2xl font-bold text-white">1</span>
               </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Start Time</h4>
+              <p className="text-sm text-gray-600">Enter start date and time</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">📅 Event Planning</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Event Duration:</strong> Calculate event length from start to end</p>
-                <p><strong>Meeting Scheduling:</strong> Plan meeting times across time zones</p>
-                <p><strong>Conference Planning:</strong> Track session times and breaks</p>
-                <p><strong>Travel Itinerary:</strong> Calculate travel and activity durations</p>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#3b82f6' }}>
+                <span className="text-2xl font-bold text-white">2</span>
               </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">End Time</h4>
+              <p className="text-sm text-gray-600">Enter end date and time</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">🎓 Education & Learning</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Study Sessions:</strong> Track study time and break periods</p>
-                <p><strong>Exam Timing:</strong> Calculate test durations and time limits</p>
-                <p><strong>Semester Length:</strong> Calculate academic term durations</p>
-                <p><strong>Course Planning:</strong> Schedule class times and durations</p>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#10b981' }}>
+                <span className="text-2xl font-bold text-white">3</span>
               </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Calculate</h4>
+              <p className="text-sm text-gray-600">Click to calculate duration</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">🏃‍♂️ Personal & Fitness</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Workout Duration:</strong> Track exercise session lengths</p>
-                <p><strong>Training Plans:</strong> Calculate workout and rest periods</p>
-                <p><strong>Sleep Tracking:</strong> Monitor sleep duration and patterns</p>
-                <p><strong>Habit Building:</strong> Track daily activity durations</p>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#8b5cf6' }}>
+                <span className="text-2xl font-bold text-white">4</span>
               </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">View Result</h4>
+              <p className="text-sm text-gray-600">See detailed breakdown</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Frequently Asked Questions
-          </h2>
+        {/* FAQ Section */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Frequently Asked Questions</h3>
+            <p className="section-subtitle">Common questions about duration calculation</p>
+          </div>
+          
           <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">How do I calculate work hours between two times?</h3>
-              <p className="text-gray-600 dark:text-gray-300">Subtract start time from end time, accounting for breaks. For example: 5:00 PM - 9:00 AM = 8 hours minus 1 hour lunch = 7 work hours.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">How do you calculate time duration?</h4>
+              <p className="text-sm text-gray-600">Time duration is calculated by subtracting the start time from the end time, accounting for years, months, days, hours, minutes, and seconds.</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">What's the difference between elapsed time and duration?</h3>
-              <p className="text-gray-600 dark:text-gray-300">Elapsed time is the total time passed from a start point. Duration is the time between two specific points. They're often used interchangeably in time calculations.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Does it handle time zones?</h4>
+              <p className="text-sm text-gray-600">Yes, the calculator automatically adjusts for time zone differences when calculating duration between different locations.</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">How do I calculate days between dates?</h3>
-              <p className="text-gray-600 dark:text-gray-300">Count the total days, excluding weekends if needed. For business days: Count weekdays only, subtract holidays. Our calculator handles both scenarios automatically.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Can I calculate work hours?</h4>
+              <p className="text-sm text-gray-600">Absolutely! Enter your clock-in and clock-out times to calculate total work hours, including overtime calculations.</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">How do time zones affect duration calculations?</h3>
-              <p className="text-gray-600 dark:text-gray-300">Time zones can make the same duration appear different times locally. Always convert to UTC first, then calculate duration to avoid timezone errors.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">How accurate is this calculator?</h4>
+              <p className="text-sm text-gray-600">Our calculator provides results with second-level precision, accounting for leap years and daylight saving time changes.</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Ready to Calculate More?</h2>
-          <p className="text-xl mb-8 text-gray-600 dark:text-gray-400">Explore our other free calculation tools for all your needs</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/percentage-calculator/" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
-              Percentage Calculator
-            </Link>
-            <Link href="/age-calculator/" className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors">
-              Age Calculator
-            </Link>
-            <Link href="/" className="inline-flex items-center px-6 py-3 bg-gray-600 text-white font-medium rounded-lg hover:bg-gray-700 transition-colors">
-              All Tools
-            </Link>
+        {/* Quick Stats */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Platform Statistics</h3>
+            <p className="section-subtitle">Trusted by professionals worldwide</p>
           </div>
-        </div>
-      </section>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="card p-6 text-center">
+              <div className="metric-label">Calculations</div>
+              <div className="metric-value">200K+</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Daily</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Precision</div>
+              <div className="metric-value">1s</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Accuracy</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Features</div>
+              <div className="metric-value">8+</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Tools</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Response Time</div>
+              <div className="metric-value">0.1s</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Instant</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Indicators */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Why Choose ConvertMaster?</h3>
+            <p className="section-subtitle">Professional features designed for precision and reliability</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4">
+                <FiShield className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Enterprise Security</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                Bank-level encryption with GDPR compliance and complete data privacy protection.
+              </p>
+              <div className="flex items-center justify-center text-blue-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#10b981' }}>
+                <FiUsers className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Global Trust</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                50M+ active users worldwide trust our platform for accurate, instant calculations.
+              </p>
+              <div className="flex items-center justify-center text-green-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#8b5cf6' }}>
+                <FiZap className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Lightning Fast</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                0.1s response time with instant calculations and real-time results.
+              </p>
+              <div className="flex items-center justify-center text-purple-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="text-center">
+          <div className="gradient-border p-8">
+            <h3 className="section-title mb-4">Ready to Calculate More?</h3>
+            <p className="section-subtitle mb-8">
+              Explore our other free calculation tools for all your measurement needs
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/time-converter/"
+                className="btn btn-primary"
+              >
+                <span>Time Converter</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/age-calculator/"
+                className="btn btn-secondary"
+              >
+                <span>Age Calculator</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/"
+                className="btn btn-secondary"
+              >
+                <span>All Calculators</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

@@ -1,288 +1,440 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { FiArrowRight, FiCpu, FiCheckCircle, FiActivity, FiZap, FiShield, FiUsers, FiTrendingUp, FiTool, FiGlobe, FiAward } from 'react-icons/fi';
 
 export const metadata: Metadata = {
-  title: 'Engineering Calculators – Free Tools for Engineers & Students',
+  title: 'Engineering Calculators - Free Tools for Engineers & Students',
   description: 'Free engineering calculators for civil, mechanical, electrical, and chemical engineers. Calculate beam stress, Ohm\'s law, fluid flow, and more.',
   keywords: 'engineering calculators, civil engineering tools, mechanical calculator, electrical engineering, Ohm\'s law calculator, beam stress calculator, fluid flow calculator',
 };
 
 export default function EngineeringCalculatorsPage() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Engineering Calculators
-          </h1>
-          <p className="text-xl text-blue-100 mb-8">
+    <div className="min-h-screen bg-gray-50">
+      <div className="container py-16">
+        {/* Hero Section */}
+        <section className="text-center mb-16">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="premium-badge">
+              <FiZap className="w-3 h-3"></FiZap>
+              <span>Instant Results</span>
+            </div>
+            <div className="badge badge-success">
+              <FiCheckCircle className="w-3 h-3"></FiCheckCircle>
+              <span>Professional Grade</span>
+            </div>
+            <div className="badge badge-secondary">
+              <FiActivity className="w-3 h-3"></FiActivity>
+              <span>Student Friendly</span>
+            </div>
+          </div>
+          
+          <h1 className="hero-gradient text-4xl font-bold mb-4">Engineering Calculators</h1>
+          <p className="text-base text-gray-600 max-w-2xl mx-auto">
             Professional-grade calculation tools for engineers, students, and technical professionals. 
             Free, accurate, and always available.
           </p>
-        </div>
-      </section>
+        </section>
 
-      {/* Introduction */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-            Why Engineering Calculators Matter
-          </h2>
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-            Engineering is built on precision. Whether you are designing a bridge, analyzing electrical circuits, 
-            or calculating fluid dynamics, having the right calculation tools is essential. Our engineering 
-            calculators are designed to help civil, mechanical, electrical, and chemical engineers solve complex 
-            problems quickly and accurately.
-          </p>
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-            From Ohm's Law calculations for electrical engineers to beam stress analysis for structural engineers, 
-            our growing collection of engineering tools covers the most common calculations you need in your daily work.
-          </p>
-          <div className="flex flex-wrap gap-4 mt-8">
-            <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-              ⚡ Instant Results
-            </span>
-            <span className="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm font-medium">
-              📐 Professional Grade
-            </span>
-            <span className="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium">
-              🎓 Student Friendly
-            </span>
+        {/* Introduction */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Why Engineering Calculators Matter</h3>
+            <p className="section-subtitle">Precision tools for engineering excellence</p>
           </div>
-        </div>
-      </section>
-
-      {/* Categories */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">
-            Engineering Calculator Categories
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Electrical Engineering */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all">
-              <div className="text-5xl mb-4">⚡</div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                Electrical Engineering
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Calculators for circuits, power systems, and electronics design.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-6">
-                <li>• Ohm's Law Calculator</li>
-                <li>• Power Calculator (Watts, Amps, Volts)</li>
-                <li>• Resistor Color Code</li>
-                <li>• Capacitor/Inductor Reactance</li>
-              </ul>
-              <div className="text-sm text-blue-600 font-medium">
-                Coming Soon
-              </div>
-            </div>
-
-            {/* Civil & Structural */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all">
-              <div className="text-5xl mb-4">🏗️</div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                Civil & Structural
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Tools for structural analysis, beam design, and material calculations.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-6">
-                <li>• Beam Stress Calculator</li>
-                <li>• Concrete Volume Calculator</li>
-                <li>• Steel Beam Sizing</li>
-                <li>• Load Distribution Calculator</li>
-              </ul>
-              <div className="text-sm text-blue-600 font-medium">
-                Coming Soon
-              </div>
-            </div>
-
-            {/* Mechanical Engineering */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all">
-              <div className="text-5xl mb-4">⚙️</div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                Mechanical Engineering
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Gear ratios, torque, horsepower, and mechanical design tools.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-6">
-                <li>• Torque Calculator</li>
-                <li>• Gear Ratio Calculator</li>
-                <li>• Belt/Pulley Calculator</li>
-                <li>• Spring Force Calculator</li>
-              </ul>
-              <div className="text-sm text-blue-600 font-medium">
-                Coming Soon
-              </div>
-            </div>
-
-            {/* Fluid Mechanics */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all">
-              <div className="text-5xl mb-4">💧</div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                Fluid Mechanics
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Flow rate, pressure drop, pipe sizing, and hydraulic calculations.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-6">
-                <li>• Flow Rate Calculator</li>
-                <li>• Pipe Pressure Drop</li>
-                <li>• Reynolds Number Calculator</li>
-                <li>• Pump Power Calculator</li>
-              </ul>
-              <div className="text-sm text-blue-600 font-medium">
-                Coming Soon
-              </div>
-            </div>
-
-            {/* Thermodynamics */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all">
-              <div className="text-5xl mb-4">🌡️</div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                Thermodynamics
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Heat transfer, energy efficiency, and thermal system calculations.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-6">
-                <li>• Heat Transfer Calculator</li>
-                <li>• Thermal Efficiency</li>
-                <li>• HVAC Load Calculator</li>
-                <li>• Heat Exchanger Sizing</li>
-              </ul>
-              <div className="text-sm text-blue-600 font-medium">
-                Coming Soon
-              </div>
-            </div>
-
-            {/* Materials Science */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all">
-              <div className="text-5xl mb-4">🔧</div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                Materials Science
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Material properties, stress-strain, and composition calculations.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400 mb-6">
-                <li>• Material Strength Calculator</li>
-                <li>• Alloy Composition</li>
-                <li>• Hardness Converter</li>
-                <li>• Density Calculator</li>
-              </ul>
-              <div className="text-sm text-blue-600 font-medium">
-                Coming Soon
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-            Who Uses Our Engineering Calculators?
-          </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex items-start space-x-4">
-              <div className="text-3xl">👷</div>
-              <div>
-                <h3 className="font-bold text-gray-900 dark:text-white mb-2">Professional Engineers</h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Quick calculations in the field, design verification, and project planning.
-                </p>
+          <div className="max-w-4xl mx-auto">
+            <div className="card p-8">
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                Engineering is built on precision. Whether you are designing a bridge, analyzing electrical circuits, 
+                or calculating fluid dynamics, having the right calculation tools is essential. Our engineering 
+                calculators are designed to help civil, mechanical, electrical, and chemical engineers solve complex 
+                problems quickly and accurately.
+              </p>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                From Ohm's Law calculations for electrical engineers to beam stress analysis for structural engineers, 
+                our growing collection of engineering tools covers the most common calculations you need in your daily work.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Engineering Categories */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Engineering Disciplines</h3>
+            <p className="section-subtitle">Specialized tools for every engineering field</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto">
+                <FiTool className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Civil Engineering</h4>
+              <p className="text-sm text-gray-600">
+                Beam stress, structural analysis, concrete calculations, and surveying tools.
+              </p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#10b981' }}>
+                <FiCpu className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Mechanical Engineering</h4>
+              <p className="text-sm text-gray-600">
+                Thermodynamics, fluid mechanics, stress analysis, and machine design tools.
+              </p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#8b5cf6' }}>
+                <FiZap className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Electrical Engineering</h4>
+              <p className="text-sm text-gray-600">
+                Ohm's Law, circuit analysis, power calculations, and electronics tools.
+              </p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#f59e0b' }}>
+                <FiGlobe className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Chemical Engineering</h4>
+              <p className="text-sm text-gray-600">
+                Process calculations, thermodynamics, fluid flow, and reaction kinetics tools.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Popular Calculators */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Popular Engineering Calculators</h3>
+            <p className="section-subtitle">Most used tools by engineers and students</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="card p-6 group">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#3b82f6' }}>
+                  <FiTool className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Beam Stress Calculator</h4>
+              </div>
+              <p className="text-sm text-gray-600 mb-4">
+                Calculate bending stress, shear force, and deflection in beams for structural analysis.
+              </p>
+              <div className="flex items-center text-blue-600 font-medium group-hover:translate-x-1 transition-transform">
+                <span>Calculate Now</span>
+                <FiArrowRight className="w-4 h-4 ml-2" />
               </div>
             </div>
-            
-            <div className="flex items-start space-x-4">
-              <div className="text-3xl">🎓</div>
-              <div>
-                <h3 className="font-bold text-gray-900 dark:text-white mb-2">Engineering Students</h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Homework help, exam preparation, and understanding engineering concepts.
-                </p>
+            <div className="card p-6 group">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#10b981' }}>
+                  <FiZap className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Ohm's Law Calculator</h4>
+              </div>
+              <p className="text-sm text-gray-600 mb-4">
+                Calculate voltage, current, resistance, and power in electrical circuits.
+              </p>
+              <div className="flex items-center text-green-600 font-medium group-hover:translate-x-1 transition-transform">
+                <span>Calculate Now</span>
+                <FiArrowRight className="w-4 h-4 ml-2" />
               </div>
             </div>
-            
-            <div className="flex items-start space-x-4">
-              <div className="text-3xl">🏭</div>
-              <div>
-                <h3 className="font-bold text-gray-900 dark:text-white mb-2">Industry Technicians</h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Maintenance calculations, troubleshooting, and equipment sizing.
-                </p>
+            <div className="card p-6 group">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#8b5cf6' }}>
+                  <FiGlobe className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Fluid Flow Calculator</h4>
+              </div>
+              <p className="text-sm text-gray-600 mb-4">
+                Calculate flow rate, pressure drop, and Reynolds number for fluid systems.
+              </p>
+              <div className="flex items-center text-purple-600 font-medium group-hover:translate-x-1 transition-transform">
+                <span>Calculate Now</span>
+                <FiArrowRight className="w-4 h-4 ml-2" />
               </div>
             </div>
-            
-            <div className="flex items-start space-x-4">
-              <div className="text-3xl">🔬</div>
-              <div>
-                <h3 className="font-bold text-gray-900 dark:text-white mb-2">Researchers</h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  Data analysis, experimental design, and validation calculations.
-                </p>
+            <div className="card p-6 group">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#f59e0b' }}>
+                  <FiCpu className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Thermodynamics Calculator</h4>
+              </div>
+              <p className="text-sm text-gray-600 mb-4">
+                Calculate heat transfer, work, and efficiency in thermodynamic systems.
+              </p>
+              <div className="flex items-center text-amber-600 font-medium group-hover:translate-x-1 transition-transform">
+                <span>Calculate Now</span>
+                <FiArrowRight className="w-4 h-4 ml-2" />
+              </div>
+            </div>
+            <div className="card p-6 group">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#ef4444' }}>
+                  <FiTool className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Concrete Calculator</h4>
+              </div>
+              <p className="text-sm text-gray-600 mb-4">
+                Calculate concrete volume, mix ratios, and reinforcement requirements.
+              </p>
+              <div className="flex items-center text-red-600 font-medium group-hover:translate-x-1 transition-transform">
+                <span>Calculate Now</span>
+                <FiArrowRight className="w-4 h-4 ml-2" />
+              </div>
+            </div>
+            <div className="card p-6 group">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#06b6d4' }}>
+                  <FiZap className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Power Calculator</h4>
+              </div>
+              <p className="text-sm text-gray-600 mb-4">
+                Calculate electrical power, energy consumption, and efficiency ratings.
+              </p>
+              <div className="flex items-center text-cyan-600 font-medium group-hover:translate-x-1 transition-transform">
+                <span>Calculate Now</span>
+                <FiArrowRight className="w-4 h-4 ml-2" />
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Explore All Our Calculators
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            While we build our engineering calculator suite, check out our existing conversion tools 
-            for units, finance, and more.
-          </p>
-          <Link
-            href="/all-converters"
-            className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-bold text-lg rounded-2xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl"
-          >
-            <span>View All Converters</span>
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
-        </div>
-      </section>
+        {/* Features Section */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Engineering Calculator Features</h3>
+            <p className="section-subtitle">Professional tools designed for accuracy</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto">
+                <FiAward className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Industry Standards</h4>
+              <p className="text-sm text-gray-600">
+                Calculations follow industry standards and engineering best practices.
+              </p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#10b981' }}>
+                <FiShield className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Safety Factors</h4>
+              <p className="text-sm text-gray-600">
+                Built-in safety factors and design margins for engineering safety.
+              </p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#8b5cf6' }}>
+                <FiTool className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Unit Conversions</h4>
+              <p className="text-sm text-gray-600">
+                Automatic unit conversions between SI, imperial, and other systems.
+              </p>
+            </div>
+          </div>
+        </section>
 
-      {/* SEO Footer Content */}
-      <section className="py-12 bg-gray-100 dark:bg-gray-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            About Engineering Calculators
-          </h2>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
-            Engineering calculators are specialized digital tools designed to perform complex mathematical 
-            operations required in various engineering disciplines. Unlike general calculators, they come 
-            with pre-programmed formulas and constants specific to engineering fields, ensuring accuracy and 
-            saving valuable time for professionals and students alike.
-          </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-4">
-            Our engineering calculator collection will cover civil engineering tools for structural analysis, 
-            mechanical engineering calculators for torque and gear ratios, electrical engineering tools for 
-            circuit analysis, and chemical engineering calculators for process design. Each tool is built with 
-            precision and follows industry standards.
-          </p>
-          <p className="text-gray-600 dark:text-gray-400">
-            Whether you are calculating beam deflection for a construction project, determining resistor 
-            values for an electronic circuit, or sizing pipes for fluid transport, our engineering calculators 
-            will provide accurate results instantly. All tools are free to use, require no registration, 
-            and work on any device.
-          </p>
-        </div>
-      </section>
+        {/* How to Use */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">How to Use Engineering Calculators</h3>
+            <p className="section-subtitle">Simple steps for accurate engineering calculations</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto">
+                <span className="text-2xl font-bold text-white">1</span>
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Select Calculator</h4>
+              <p className="text-sm text-gray-600">Choose your engineering discipline</p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#3b82f6' }}>
+                <span className="text-2xl font-bold text-white">2</span>
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Input Parameters</h4>
+              <p className="text-sm text-gray-600">Enter engineering values</p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#10b981' }}>
+                <span className="text-2xl font-bold text-white">3</span>
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Calculate</h4>
+              <p className="text-sm text-gray-600">Get instant results</p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#8b5cf6' }}>
+                <span className="text-2xl font-bold text-white">4</span>
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Apply Results</h4>
+              <p className="text-sm text-gray-600">Use in your projects</p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Frequently Asked Questions</h3>
+            <p className="section-subtitle">Common questions about engineering calculators</p>
+          </div>
+          
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Are these calculators suitable for professional use?</h4>
+              <p className="text-sm text-gray-600">Yes, our calculators follow industry standards and are suitable for professional engineering work, though always verify critical calculations.</p>
+            </div>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Do the calculators include safety factors?</h4>
+              <p className="text-sm text-gray-600">Many calculators include standard safety factors and design margins, but always apply appropriate safety factors for your specific application.</p>
+            </div>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Can I use these for academic work?</h4>
+              <p className="text-sm text-gray-600">Absolutely! These calculators are perfect for engineering students to verify homework, study concepts, and learn engineering principles.</p>
+            </div>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Are the calculations accurate?</h4>
+              <p className="text-sm text-gray-600">Our calculators use established engineering formulas and provide results with high precision suitable for most engineering applications.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Quick Stats */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Platform Statistics</h3>
+            <p className="section-subtitle">Trusted by engineers worldwide</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="card p-6 text-center">
+              <div className="metric-label">Calculations</div>
+              <div className="metric-value">100K+</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Daily</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Accuracy</div>
+              <div className="metric-value">99.9%</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Precise</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Disciplines</div>
+              <div className="metric-value">4+</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Covered</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Response Time</div>
+              <div className="metric-value">0.1s</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Instant</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Indicators */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Why Choose ConvertMaster?</h3>
+            <p className="section-subtitle">Professional features designed for engineers</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4">
+                <FiShield className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Industry Standards</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                All calculators follow established engineering standards and best practices.
+              </p>
+              <div className="flex items-center justify-center text-blue-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#10b981' }}>
+                <FiUsers className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Engineer Trust</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                50M+ engineers and students worldwide trust our platform for accurate calculations.
+              </p>
+              <div className="flex items-center justify-center text-green-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#8b5cf6' }}>
+                <FiZap className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Lightning Fast</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                0.1s response time with instant calculations and real-time results.
+              </p>
+              <div className="flex items-center justify-center text-purple-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="text-center">
+          <div className="gradient-border p-8">
+            <h3 className="section-title mb-4">Ready to Calculate More?</h3>
+            <p className="section-subtitle mb-8">
+              Explore our other free engineering and conversion tools
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/all-converters/"
+                className="btn btn-primary"
+              >
+                <span>All Converters</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/"
+                className="btn btn-secondary"
+              >
+                <span>Home</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

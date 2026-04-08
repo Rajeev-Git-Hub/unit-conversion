@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import Layout from "../components/Layout";
 import Script from "next/script";
@@ -14,6 +14,12 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+  display: 'swap',
+});
+
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: 'swap',
 });
@@ -99,7 +105,7 @@ export default function RootLayout({
         <SchemaMarkup type="SoftwareApplication" data={{ name: "ConvertMaster Unit Converter" }} />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased overflow-hidden`}
         style={{ 
           scrollbarWidth: 'none',
           msOverflowStyle: 'none'

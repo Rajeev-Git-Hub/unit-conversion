@@ -182,7 +182,7 @@ const SimpleChart: React.FC<{
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
+    <div>
       <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">{config.title}</h3>
       {config.description && (
         <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{config.description}</p>
@@ -348,7 +348,7 @@ export default function ConversionAnalytics() {
         </div>
 
         {/* Simple Test Content */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
+        <div>
           <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">Day Details</h3>
           <div className="space-y-2">
             <p><strong>Date:</strong> {dayDetail.date}</p>
@@ -388,9 +388,9 @@ export default function ConversionAnalytics() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6">
+    <div className="w-full bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
+      <div className="max-w-full">
+        <div>
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center space-x-3">

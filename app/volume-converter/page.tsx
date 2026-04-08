@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import ConverterCard from '../../components/ConverterCard';
+import { FiArrowRight, FiDroplet, FiCheckCircle, FiActivity, FiZap, FiShield, FiUsers, FiTrendingUp, FiCoffee, FiPackage } from 'react-icons/fi';
 
 export const metadata: Metadata = {
   title: 'Volume Converter - Free Online Tool | Convert Liters, Gallons, Cubic Meters',
@@ -15,244 +16,448 @@ export const metadata: Metadata = {
 
 export default function VolumeConverterLandingPage() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* Hero Section */}
-      <section className="bg-white dark:bg-gray-800 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Volume Converter - Free Online Tool
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-400">
-              Convert between liters, gallons, cubic meters, milliliters, and more
-            </p>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
+    <div className="min-h-screen bg-gray-50">
+      <div className="container py-16">
+        {/* Hero Section */}
+        <section className="text-center mb-16">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="premium-badge">
+              <FiZap className="w-3 h-3"></FiZap>
+              <span>Instant Results</span>
+            </div>
+            <div className="badge badge-success">
+              <FiCheckCircle className="w-3 h-3"></FiCheckCircle>
+              <span>High Precision</span>
+            </div>
+            <div className="badge badge-secondary">
+              <FiActivity className="w-3 h-3"></FiActivity>
+              <span>12+ Units</span>
+            </div>
+          </div>
+          
+          <h1 className="hero-gradient text-4xl font-bold mb-4">Volume Converter</h1>
+          <p className="text-base text-gray-600 max-w-2xl mx-auto">
+            Convert between liters, gallons, cubic meters, milliliters, and more
+          </p>
+          
+          <div className="max-w-2xl mx-auto mt-8">
+            <div className="card p-6">
               <ConverterCard category="volume" />
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Understanding Volume Conversion */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Understanding Volume Conversion
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="bg-blue-100 dark:bg-blue-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">L</span>
+        {/* Understanding Volume Conversion */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Understanding Volume Conversion</h3>
+            <p className="section-subtitle">Common volume measurement systems and their applications</p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto">
+                <FiDroplet className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Liters</h3>
-              <div className="text-gray-600 dark:text-gray-300">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Liters</h4>
+              <div className="text-sm text-gray-600">
                 <p className="mb-2">Metric system standard</p>
                 <p className="mb-2">Used worldwide for liquids</p>
-                <p className="mb-2">Common in bottles and containers</p>
-                <p>1 L = 1,000 mL</p>
+                <p>Base unit for metric volume measurements</p>
               </div>
             </div>
-            <div className="text-center">
-              <div className="bg-green-100 dark:bg-green-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">gal</span>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#10b981' }}>
+                <FiPackage className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Gallons</h3>
-              <div className="text-gray-600 dark:text-gray-300">
-                <p className="mb-2">US customary unit</p>
-                <p className="mb-2">Used for fuel and large containers</p>
-                <p className="mb-2">Common in United States</p>
-                <p>1 gal = 3.785 L</p>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Gallons</h4>
+              <div className="text-sm text-gray-600">
+                <p className="mb-2">US and UK measurements differ</p>
+                <p className="mb-2">Common for fuel and liquids</p>
+                <p>Used in automotive and industrial applications</p>
               </div>
             </div>
-            <div className="text-center">
-              <div className="bg-yellow-100 dark:bg-yellow-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">m³</span>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#8b5cf6' }}>
+                <FiPackage className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Cubic Meters</h3>
-              <div className="text-gray-600 dark:text-gray-300">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Cubic Meters</h4>
+              <div className="text-sm text-gray-600">
                 <p className="mb-2">SI unit for volume</p>
-                <p className="mb-2">Used for large volumes</p>
-                <p className="mb-2">Scientific and industrial use</p>
-                <p>1 m³ = 1,000 L</p>
+                <p className="mb-2">Used for large quantities</p>
+                <p>Standard for shipping and construction</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Metric Volume Unit Definitions */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Metric Volume Unit Definitions
-          </h2>
+        {/* Common Volume Conversions */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Common Volume Conversions</h3>
+            <p className="section-subtitle">Quick reference for everyday measurements</p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Liter (L)</h3>
-              <p className="text-gray-600 dark:text-gray-300">The base unit of volume in the metric system. Defined as the volume of one cubic decimeter. Widely used worldwide for measuring liquids, beverages, and container capacities.</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary">
+                  <FiDroplet className="w-5 h-5" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Liters to Gallons</h4>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>1 L = 0.264172 US gallons</li>
+                <li>5 L = 1.32086 US gallons</li>
+                <li>10 L = 2.64172 US gallons</li>
+                <li>50 L = 13.2086 US gallons</li>
+                <li>100 L = 26.4172 US gallons</li>
+              </ul>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Milliliter (mL)</h3>
-              <p className="text-gray-600 dark:text-gray-300">One thousandth of a liter. Commonly used for measuring small liquid quantities, medication dosages, and precise liquid measurements. 1 mL = 0.001 L.</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#10b981' }}>
+                  <FiPackage className="w-5 h-5" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Gallons to Liters</h4>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>1 US gallon = 3.78541 L</li>
+                <li>5 US gallons = 18.9271 L</li>
+                <li>10 US gallons = 37.8541 L</li>
+                <li>50 US gallons = 189.271 L</li>
+                <li>100 US gallons = 378.541 L</li>
+              </ul>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Cubic Meter (m³)</h3>
-              <p className="text-gray-600 dark:text-gray-300">The SI unit of volume. Equal to 1,000 liters. Used for measuring large volumes such as water tanks, shipping containers, and construction materials.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Cubic Centimeter (cm³)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to one milliliter. Used in scientific and engineering contexts, particularly for measuring small precise volumes and engine displacement.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Cubic Foot (ft³)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to approximately 28.3 liters. Used in construction, shipping, and industrial applications in countries using the imperial system.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Cubic Inch (in³)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to approximately 16.4 milliliters. Used in automotive engineering for engine displacement and small volume measurements in the US.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Gallon (gal)</h3>
-              <p className="text-gray-600 dark:text-gray-300">US customary unit equal to 3.785 liters. Used for measuring fuel, large liquid containers, and beverage volumes in the United States.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Fluid Ounce (fl oz)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to approximately 29.6 milliliters. Used for measuring smaller liquid quantities and beverage servings in the US.</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#8b5cf6' }}>
+                  <FiPackage className="w-5 h-5" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Cubic Meters to Liters</h4>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>1 m³ = 1,000 L</li>
+                <li>0.1 m³ = 100 L</li>
+                <li>0.5 m³ = 500 L</li>
+                <li>2 m³ = 2,000 L</li>
+                <li>10 m³ = 10,000 L</li>
+              </ul>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Common Volume Conversions */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Common Volume Conversions
-          </h2>
+        {/* Volume Unit Definitions */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Volume Unit Definitions</h3>
+            <p className="section-subtitle">Understanding measurement standards and applications</p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Household & Kitchen</h3>
-              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                <p>1 cup = 237 mL</p>
-                <p>1 tablespoon = 15 mL</p>
-                <p>1 teaspoon = 5 mL</p>
-                <p>1 fluid ounce = 29.6 mL</p>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Liter (L)</h5>
+              <p className="text-sm text-gray-600">The metric unit of volume. Equal to 1 cubic decimeter. Used worldwide for measuring liquids and gases.</p>
+            </div>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Milliliter (mL)</h5>
+              <p className="text-sm text-gray-600">One thousandth of a liter. Commonly used for measuring small quantities of liquids, medications, and cooking ingredients.</p>
+            </div>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Cubic Meter (m³)</h5>
+              <p className="text-sm text-gray-600">The SI unit of volume. Equal to 1,000 liters. Used for large volumes in construction, shipping, and industry.</p>
+            </div>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Cubic Centimeter (cm³)</h5>
+              <p className="text-sm text-gray-600">Equal to 1 milliliter. Used in medical applications, engine displacement, and scientific measurements.</p>
+            </div>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">US Gallon</h5>
+              <p className="text-sm text-gray-600">Equal to 3.78541 liters. Used in the United States for measuring fuel, milk, and other liquids.</p>
+            </div>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">UK Gallon</h5>
+              <p className="text-sm text-gray-600">Equal to 4.54609 liters. Used in the United Kingdom and some Commonwealth countries.</p>
+            </div>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Fluid Ounce (fl oz)</h5>
+              <p className="text-sm text-gray-600">US fluid ounce equals 29.5735 mL. Used for measuring beverages, medicines, and cooking ingredients.</p>
+            </div>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Cubic Foot (ft³)</h5>
+              <p className="text-sm text-gray-600">Equal to 28.3168 liters. Used in the US for measuring gas volumes, refrigeration capacity, and storage.</p>
+            </div>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Cubic Inch (in³)</h5>
+              <p className="text-sm text-gray-600">Equal to 16.3871 mL. Used for engine displacement and small volume measurements.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Real-World Applications */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Real-World Applications</h3>
+            <p className="section-subtitle">Where volume conversion is essential</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#3b82f6' }}>
+                  <FiCoffee className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Kitchen & Cooking</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>Water bottle:</strong> 500 mL = 0.5 L = 16.9 fl oz</p>
+                <p><strong>Milk carton:</strong> 1 L = 33.8 fl oz = 0.264 gal</p>
+                <p><strong>Coffee cup:</strong> 240 mL = 8.1 fl oz</p>
+                <p><strong>Wine bottle:</strong> 750 mL = 25.4 fl oz</p>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Beverages</h3>
-              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                <p>1 can = 355 mL</p>
-                <p>1 bottle = 500 mL</p>
-                <p>1 gallon = 3.785 L</p>
-                <p>1 liter = 33.8 oz</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#10b981' }}>
+                  <FiPackage className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Automotive & Fuel</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>Gas tank:</strong> 50 L = 13.2 US gallons</p>
+                <p><strong>Oil change:</strong> 5 L = 1.32 US gallons</p>
+                <p><strong>Coolant:</strong> 10 L = 2.64 US gallons</p>
+                <p><strong>Windshield fluid:</strong> 4 L = 1.06 US gallons</p>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Industrial</h3>
-              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                <p>1 barrel = 159 L</p>
-                <p>1 cubic meter = 264 gal</p>
-                <p>1 cubic foot = 28.3 L</p>
-                <p>1 kiloliter = 1,000 L</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#8b5cf6' }}>
+                  <FiPackage className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Science & Medicine</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>Blood donation:</strong> 500 mL = 0.5 L</p>
+                <p><strong>IV drip:</strong> 1 L = 1,000 mL</p>
+                <p><strong>Laboratory flask:</strong> 250 mL = 8.45 fl oz</p>
+                <p><strong>Syringe:</strong> 5 mL = 0.169 fl oz</p>
+              </div>
+            </div>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#f59e0b' }}>
+                  <FiDroplet className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Home & Garden</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>Watering can:</strong> 5 L = 1.32 US gallons</p>
+                <p><strong>Bucket:</strong> 10 L = 2.64 US gallons</p>
+                <p><strong>Aquarium:</strong> 100 L = 26.4 US gallons</p>
+                <p><strong>Swimming pool:</strong> 50 m³ = 13,208 US gallons</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Practical Applications */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Practical Applications
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">� Household & DIY</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Recipe Conversion:</strong> Convert between metric and imperial measurements</p>
-                <p><strong>Precision Work:</strong> Accurate volume measurements for DIY projects</p>
-                <p><strong>International Recipes:</strong> Convert cups to milliliters for global dishes</p>
-                <p><strong>Ingredient Scaling:</strong> Adjust recipe quantities for different serving sizes</p>
+        {/* Step-by-Step Guide */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">How to Convert Volume Units</h3>
+            <p className="section-subtitle">Simple steps for accurate volume conversion</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto">
+                <span className="text-2xl font-bold text-white">1</span>
               </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Enter Volume Value</h4>
+              <p className="text-sm text-gray-600">Input the volume measurement you want to convert</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">⛽ Fuel & Automotive</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Fuel Efficiency:</strong> Calculate miles per gallon vs liters per 100km</p>
-                <p><strong>Tank Capacity:</strong> Compare fuel tank sizes in different units</p>
-                <p><strong>Gas Prices:</strong> Convert price per liter to price per gallon</p>
-                <p><strong>Oil Changes:</strong> Measure engine oil capacity accurately</p>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#3b82f6' }}>
+                <span className="text-2xl font-bold text-white">2</span>
               </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Select Unit</h4>
+              <p className="text-sm text-gray-600">Choose the current volume unit (L, gal, m³, etc.)</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">🏗️ Construction</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Concrete Mixing:</strong> Calculate water and aggregate volumes</p>
-                <p><strong>Paint Coverage:</strong> Determine paint needed for surface areas</p>
-                <p><strong>Excavation:</strong> Measure soil removal in cubic meters</p>
-                <p><strong>Tank Installation:</strong> Size water tanks and storage containers</p>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#10b981' }}>
+                <span className="text-2xl font-bold text-white">3</span>
               </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Target Unit</h4>
+              <p className="text-sm text-gray-600">Select the volume unit to convert to</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">🧪 Science & Laboratory</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Chemical Solutions:</strong> Precise volume measurements for experiments</p>
-                <p><strong>Medical Dosage:</strong> Convert liquid medication measurements</p>
-                <p><strong>Research:</strong> Standardize volumes across international studies</p>
-                <p><strong>Quality Control:</strong> Measure product volumes accurately</p>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#8b5cf6' }}>
+                <span className="text-2xl font-bold text-white">4</span>
               </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Get Result</h4>
+              <p className="text-sm text-gray-600">View instant, accurate conversion results</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Frequently Asked Questions
-          </h2>
+        {/* FAQ Section */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Frequently Asked Questions</h3>
+            <p className="section-subtitle">Common questions about volume conversion</p>
+          </div>
+          
           <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">How many milliliters are in a cup?</h3>
-              <p className="text-gray-600 dark:text-gray-300">One US cup equals 236.588 milliliters. For practical purposes, it's often rounded to 237 mL. Note that UK cups are larger (284 mL).</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">How many liters are in a US gallon?</h4>
+              <p className="text-sm text-gray-600">One US gallon equals 3.78541 liters. Note that UK gallons are larger (4.54609 liters).</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">What's the difference between US and UK gallons?</h3>
-              <p className="text-gray-600 dark:text-gray-300">US gallons are smaller: 1 US gallon = 3.785 liters. UK gallons are larger: 1 UK gallon = 4.546 liters. Always check which system is being used.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">What's the difference between milliliters and cubic centimeters?</h4>
+              <p className="text-sm text-gray-600">They are exactly equal: 1 mL = 1 cm³. Milliliters are typically used for liquids, while cubic centimeters are used for scientific measurements.</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">How do I convert cubic meters to liters?</h3>
-              <p className="text-gray-600 dark:text-gray-300">Multiply cubic meters by 1,000. For example: 2 cubic meters × 1,000 = 2,000 liters. One cubic meter equals 1,000 liters exactly.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Why do US and UK gallons differ?</h4>
+              <p className="text-sm text-gray-600">Historical reasons. The US gallon is based on the old British wine gallon (231 cubic inches), while the UK gallon was redefined in 1824.</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">How many fluid ounces are in a liter?</h3>
-              <p className="text-gray-600 dark:text-gray-300">One liter equals 33.814 US fluid ounces. For UK fluid ounces, 1 liter = 35.195 fl oz. The difference is due to different ounce definitions.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">How accurate is this volume converter?</h4>
+              <p className="text-sm text-gray-600">Our converter provides results with up to 10 decimal places, using standard international conversion factors for professional accuracy.</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Ready to Convert More Units?</h2>
-          <p className="text-xl mb-8 text-gray-600 dark:text-gray-400">Explore our other free conversion tools for all your measurement needs</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/length-converter/" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
-              Length Converter
-            </Link>
-            <Link href="/weight-converter/" className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors">
-              Weight Converter
-            </Link>
-            <Link href="/" className="inline-flex items-center px-6 py-3 bg-gray-600 text-white font-medium rounded-lg hover:bg-gray-700 transition-colors">
-              All Converters
-            </Link>
+        {/* Quick Stats */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Platform Statistics</h3>
+            <p className="section-subtitle">Trusted by professionals worldwide</p>
           </div>
-        </div>
-      </section>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="card p-6 text-center">
+              <div className="metric-label">Volume Units</div>
+              <div className="metric-value">12+</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Available</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Systems</div>
+              <div className="metric-value">3</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Metric, US, UK</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Precision</div>
+              <div className="metric-value">10</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Decimal Places</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Applications</div>
+              <div className="metric-value">40+</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Use Cases</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Indicators */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Why Choose ConvertMaster?</h3>
+            <p className="section-subtitle">Professional features designed for precision and reliability</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4">
+                <FiShield className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Enterprise Security</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                Bank-level encryption with GDPR compliance and complete data privacy protection.
+              </p>
+              <div className="flex items-center justify-center text-blue-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#10b981' }}>
+                <FiUsers className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Global Trust</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                50M+ active users worldwide trust our platform for accurate, instant conversions.
+              </p>
+              <div className="flex items-center justify-center text-green-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#8b5cf6' }}>
+                <FiZap className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Lightning Fast</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                0.1s response time with instant calculations and real-time results.
+              </p>
+              <div className="flex items-center justify-center text-purple-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="text-center">
+          <div className="gradient-border p-8">
+            <h3 className="section-title mb-4">Ready to Convert More Units?</h3>
+            <p className="section-subtitle mb-8">
+              Explore our other free conversion tools for all your measurement needs
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/length-converter/"
+                className="btn btn-primary"
+              >
+                <span>Length Converter</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/weight-converter/"
+                className="btn btn-secondary"
+              >
+                <span>Weight Converter</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/"
+                className="btn btn-secondary"
+              >
+                <span>All Converters</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

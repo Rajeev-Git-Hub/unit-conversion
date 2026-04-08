@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import ConverterCard from '../../components/ConverterCard';
+import { FiArrowRight, FiThermometer, FiCheckCircle, FiActivity, FiZap, FiShield, FiUsers, FiTrendingUp, FiSun, FiCloud, FiDroplet } from 'react-icons/fi';
 
 export const metadata: Metadata = {
   title: 'Temperature Converter - Free Online Tool | Convert Celsius, Fahrenheit, Kelvin',
@@ -15,293 +16,426 @@ export const metadata: Metadata = {
 
 export default function TemperatureConverterLandingPage() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* Hero Section */}
-      <section className="bg-white dark:bg-gray-800 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Temperature Converter - Free Online Tool
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-400">
-              Convert between Celsius, Fahrenheit, and Kelvin
-            </p>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
+    <div className="min-h-screen bg-gray-50">
+      <div className="container py-16">
+        {/* Hero Section */}
+        <section className="text-center mb-16">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="premium-badge">
+              <FiZap className="w-3 h-3"></FiZap>
+              <span>Instant Results</span>
+            </div>
+            <div className="badge badge-success">
+              <FiCheckCircle className="w-3 h-3"></FiCheckCircle>
+              <span>High Precision</span>
+            </div>
+            <div className="badge badge-secondary">
+              <FiActivity className="w-3 h-3"></FiActivity>
+              <span>3 Scales</span>
+            </div>
+          </div>
+          
+          <h1 className="hero-gradient text-4xl font-bold mb-4">Temperature Converter</h1>
+          <p className="text-base text-gray-600 max-w-2xl mx-auto">
+            Convert between Celsius, Fahrenheit, and Kelvin
+          </p>
+          
+          <div className="max-w-2xl mx-auto mt-8">
+            <div className="card p-6">
               <ConverterCard category="temperature" defaultFrom="celsius" defaultTo="fahrenheit" />
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Understanding Temperature Scales */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Understanding Temperature Scales
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="bg-red-100 dark:bg-red-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">°C</span>
+        {/* Understanding Temperature Scales */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Understanding Temperature Scales</h3>
+            <p className="section-subtitle">The three main temperature measurement systems</p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#ef4444' }}>
+                <FiThermometer className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Celsius</h3>
-              <div className="text-gray-600 dark:text-gray-300">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Celsius</h4>
+              <div className="text-sm text-gray-600">
                 <p className="mb-2">Water freezes at 0°C, boils at 100°C</p>
                 <p className="mb-2">Used worldwide except USA</p>
-                <p className="mb-2">Scientific standard</p>
-                <p>Named after Anders Celsius</p>
+                <p>Scientific standard in most countries</p>
               </div>
             </div>
-            <div className="text-center">
-              <div className="bg-orange-100 dark:bg-orange-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">°F</span>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#3b82f6' }}>
+                <FiThermometer className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Fahrenheit</h3>
-              <div className="text-gray-600 dark:text-gray-300">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Fahrenheit</h4>
+              <div className="text-sm text-gray-600">
                 <p className="mb-2">Water freezes at 32°F, boils at 212°F</p>
-                <p className="mb-2">Used primarily in USA</p>
-                <p className="mb-2">Common in weather reports</p>
-                <p>Named after Daniel Fahrenheit</p>
+                <p className="mb-2">Used primarily in United States</p>
+                <p>Common for weather and body temperature</p>
               </div>
             </div>
-            <div className="text-center">
-              <div className="bg-yellow-100 dark:bg-yellow-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">K</span>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#8b5cf6' }}>
+                <FiThermometer className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Kelvin</h3>
-              <div className="text-gray-600 dark:text-gray-300">
-                <p className="mb-2">Absolute zero is 0K</p>
-                <p className="mb-2">Used in scientific calculations</p>
-                <p className="mb-2">No degree symbol</p>
-                <p>Named after Lord Kelvin</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Conversion Formulas */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Temperature Conversion Formulas
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Celsius ↔ Fahrenheit</h3>
-              <div className="space-y-4 font-mono text-sm">
-                <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded">
-                  <strong>°F to °C:</strong> (°F - 32) × 5/9
-                </div>
-                <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded">
-                  <strong>°C to °F:</strong> (°C × 9/5) + 32
-                </div>
-                <div className="text-gray-600 dark:text-gray-300 mt-4">
-                  <p><strong>Example:</strong> Convert 68°F to Celsius</p>
-                  <p>(68 - 32) × 5/9 = 36 × 5/9 = 20°C</p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Celsius ↔ Kelvin</h3>
-              <div className="space-y-4 font-mono text-sm">
-                <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded">
-                  <strong>K to °C:</strong> K - 273.15
-                </div>
-                <div className="bg-gray-100 dark:bg-gray-700 p-3 rounded">
-                  <strong>°C to K:</strong> °C + 273.15
-                </div>
-                <div className="text-gray-600 dark:text-gray-300 mt-4">
-                  <p><strong>Example:</strong> Convert 25°C to Kelvin</p>
-                  <p>25 + 273.15 = 298.15K</p>
-                </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Kelvin</h4>
+              <div className="text-sm text-gray-600">
+                <p className="mb-2">Absolute zero at 0K (-273.15°C)</p>
+                <p className="mb-2">Used in scientific applications</p>
+                <p>SI unit for thermodynamic temperature</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Temperature Unit Definitions */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Temperature Unit Definitions
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Celsius (°C)</h3>
-              <p className="text-gray-600 dark:text-gray-300">The most widely used temperature scale worldwide. Based on 0°C for water freezing point and 100°C for boiling point at sea level. Used in science, weather forecasting, and everyday life in most countries.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Fahrenheit (°F)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Primarily used in the United States and a few other countries. Water freezes at 32°F and boils at 212°F. Commonly used for weather reports and body temperature in the US.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Kelvin (K)</h3>
-              <p className="text-gray-600 dark:text-gray-300">The SI base unit of temperature. An absolute scale where 0K is absolute zero (-273.15°C), the lowest possible temperature. Used in scientific calculations, physics, and chemistry.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Rankine (°R)</h3>
-              <p className="text-gray-600 dark:text-gray-300">An absolute temperature scale used primarily in engineering thermodynamics in the United States. 0°R is absolute zero, and the scale uses Fahrenheit-sized degrees. 0°R = 0K = -459.67°F.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Réaumur (°Ré)</h3>
-              <p className="text-gray-600 dark:text-gray-300">A historical temperature scale once used in Europe. Water freezes at 0°Ré and boils at 80°Ré. Now rarely used, but occasionally found in historical European scientific literature and some traditional cheese production contexts.</p>
-            </div>
+        {/* Conversion Formulas */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Conversion Formulas</h3>
+            <p className="section-subtitle">Mathematical relationships between temperature scales</p>
           </div>
-        </div>
-      </section>
-
-      {/* Common Temperature References */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Common Temperature References
-          </h2>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">🌡️ Extreme Cold</h4>
-              <div className="text-sm text-gray-600 dark:text-gray-300">
-                <p>Water freezes: 0°C / 32°F / 273K</p>
-                <p>Very cold day: -18°C / 0°F / 255K</p>
-                <p>Extreme cold: -40°C / -40°F / 233K</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#ef4444' }}>
+                  <FiThermometer className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Celsius to Fahrenheit</h4>
+              </div>
+              <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                <code className="text-sm text-gray-800">°F = (°C × 9/5) + 32</code>
+              </div>
+              <div className="space-y-2 text-sm text-gray-600">
+                <p><strong>Example:</strong> 25°C = (25 × 9/5) + 32 = 77°F</p>
+                <p><strong>Body temp:</strong> 37°C = 98.6°F</p>
               </div>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">🏠 Room Temperature</h4>
-              <div className="text-sm text-gray-600 dark:text-gray-300">
-                <p>Cool room: 18°C / 64°F / 291K</p>
-                <p>Comfortable: 21°C / 70°F / 294K</p>
-                <p>Warm room: 24°C / 75°F / 297K</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#3b82f6' }}>
+                  <FiThermometer className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Fahrenheit to Celsius</h4>
+              </div>
+              <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                <code className="text-sm text-gray-800">°C = (°F - 32) × 5/9</code>
+              </div>
+              <div className="space-y-2 text-sm text-gray-600">
+                <p><strong>Example:</strong> 77°F = (77 - 32) × 5/9 = 25°C</p>
+                <p><strong>Room temp:</strong> 68°F = 20°C</p>
               </div>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">🔥 Extreme Heat</h4>
-              <div className="text-sm text-gray-600 dark:text-gray-300">
-                <p>Hot day: 32°C / 90°F / 305K</p>
-                <p>Very hot: 38°C / 100°F / 311K</p>
-                <p>Extreme heat: 43°C / 110°F / 316K</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#8b5cf6' }}>
+                  <FiThermometer className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Celsius to Kelvin</h4>
               </div>
-            </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">🔥 Temperature Examples</h4>
-              <div className="text-sm text-gray-600 dark:text-gray-300">
-                <p>Water freezing: 0°C / 32°F / 273K</p>
-                <p>Room temperature: 20°C / 68°F / 293K</p>
-                <p>Water boiling: 100°C / 212°F / 373K</p>
+              <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                <code className="text-sm text-gray-800">K = °C + 273.15</code>
               </div>
-            </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">🧊 Freezing</h4>
-              <div className="text-sm text-gray-600 dark:text-gray-300">
-                <p>Freezer: -18°C / 0°F / 255K</p>
-                <p>Deep freeze: -30°C / -22°F / 243K</p>
-                <p>Flash freeze: -40°C / -40°F / 233K</p>
-              </div>
-            </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">🔬 Scientific</h4>
-              <div className="text-sm text-gray-600 dark:text-gray-300">
-                <p>Body temp: 37°C / 98.6°F / 310K</p>
-                <p>Liquid nitrogen: -196°C / -321°F / 77K</p>
-                <p>Absolute zero: -273°C / -459°F / 0K</p>
+              <div className="space-y-2 text-sm text-gray-600">
+                <p><strong>Example:</strong> 25°C = 25 + 273.15 = 298.15K</p>
+                <p><strong>Freezing:</strong> 0°C = 273.15K</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Practical Applications */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Practical Applications
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">🌤️ Weather & Climate</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Travel:</strong> Convert weather forecasts when traveling internationally</p>
-                <p><strong>Climate studies:</strong> Scientists use Celsius and Kelvin for consistency</p>
-                <p><strong>Agriculture:</strong> Farmers need accurate temperature conversions for crop planning</p>
-                <p><strong>Aviation:</strong> Pilots convert between temperature scales for flight calculations</p>
+        {/* Common Temperature References */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Common Temperature References</h3>
+            <p className="section-subtitle">Everyday temperature comparisons</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#3b82f6' }}>
+                  <FiCloud className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Weather References</h4>
+              </div>
+              <div className="space-y-2 text-sm text-gray-600">
+                <p><strong>Freezing:</strong> 0°C = 32°F = 273.15K</p>
+                <p><strong>Room temp:</strong> 20°C = 68°F = 293.15K</p>
+                <p><strong>Hot day:</strong> 35°C = 95°F = 308.15K</p>
+                <p><strong>Boiling:</strong> 100°C = 212°F = 373.15K</p>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">🏥 Medical & Health</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Body temperature:</strong> Normal: 37°C / 98.6°F / 310K</p>
-                <p><strong>Fever:</strong> 38°C / 100.4°F indicates fever</p>
-                <p><strong>Hypothermia:</strong> Below 35°C / 95°F requires medical attention</p>
-                <p><strong>Medical storage:</strong> Vaccines often require specific temperatures</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#ef4444' }}>
+                  <FiSun className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Body Temperature</h4>
+              </div>
+              <div className="space-y-2 text-sm text-gray-600">
+                <p><strong>Normal:</strong> 37°C = 98.6°F = 310.15K</p>
+                <p><strong>Fever:</strong> 38°C = 100.4°F = 311.15K</p>
+                <p><strong>High fever:</strong> 40°C = 104°F = 313.15K</p>
+                <p><strong>Hypothermia:</strong> 35°C = 95°F = 308.15K</p>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">�️ Everyday Applications</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Weather monitoring:</strong> Convert temperature readings between different scales</p>
-                <p><strong>Health monitoring:</strong> Body temperature readings in different units</p>
-                <p><strong>Industrial processes:</strong> Manufacturing requires precise temperature control</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#10b981' }}>
+                  <FiDroplet className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Water States</h4>
               </div>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">🔬 Science & Engineering</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Chemistry:</strong> Reaction rates depend on absolute temperature (Kelvin)</p>
-                <p><strong>Physics:</strong> Thermodynamic calculations require Kelvin</p>
-                <p><strong>Engineering:</strong> Material properties change with temperature</p>
-                <p><strong>Space:</strong> Extreme temperature variations in space applications</p>
+              <div className="space-y-2 text-sm text-gray-600">
+                <p><strong>Freezes:</strong> 0°C = 32°F = 273.15K</p>
+                <p><strong>Cold water:</strong> 4°C = 39.2°F = 277.15K</p>
+                <p><strong>Warm water:</strong> 40°C = 104°F = 313.15K</p>
+                <p><strong>Boils:</strong> 100°C = 212°F = 373.15K</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Frequently Asked Questions
-          </h2>
+        {/* Practical Applications */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Practical Applications</h3>
+            <p className="section-subtitle">Where temperature conversion is essential</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#ef4444' }}>
+                  <FiSun className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Daily Life</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>Weather forecasting:</strong> Converting between Celsius and Fahrenheit for international travel</p>
+                <p><strong>Cooking:</strong> Oven temperatures and food safety guidelines</p>
+                <p><strong>Clothing:</strong> Understanding weather conditions for appropriate attire</p>
+                <p><strong>Home heating:</strong> Thermostat settings and energy efficiency</p>
+              </div>
+            </div>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#8b5cf6' }}>
+                  <FiThermometer className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Scientific & Medical</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>Medicine:</strong> Body temperature monitoring and fever detection</p>
+                <p><strong>Laboratory:</strong> Scientific experiments and research</p>
+                <p><strong>Engineering:</strong> Material properties and thermal expansion</p>
+                <p><strong>Astronomy:</strong> Stellar temperatures and cosmic phenomena</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Step-by-Step Guide */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">How to Convert Temperature</h3>
+            <p className="section-subtitle">Simple steps for accurate temperature conversion</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto">
+                <span className="text-2xl font-bold text-white">1</span>
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Enter Temperature</h4>
+              <p className="text-sm text-gray-600">Input the temperature value you want to convert</p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#ef4444' }}>
+                <span className="text-2xl font-bold text-white">2</span>
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Select Scale</h4>
+              <p className="text-sm text-gray-600">Choose from Celsius, Fahrenheit, or Kelvin</p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#3b82f6' }}>
+                <span className="text-2xl font-bold text-white">3</span>
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Target Scale</h4>
+              <p className="text-sm text-gray-600">Select the temperature scale to convert to</p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#8b5cf6' }}>
+                <span className="text-2xl font-bold text-white">4</span>
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Get Result</h4>
+              <p className="text-sm text-gray-600">View instant, accurate conversion results</p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Frequently Asked Questions</h3>
+            <p className="section-subtitle">Common questions about temperature conversion</p>
+          </div>
+          
           <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">What is the easiest way to convert Celsius to Fahrenheit?</h3>
-              <p className="text-gray-600 dark:text-gray-300">A quick approximation: double the Celsius temperature and add 30. For exact conversion, use (°C × 9/5) + 32.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">What is absolute zero?</h4>
+              <p className="text-sm text-gray-600">Absolute zero is 0 Kelvin (-273.15°C or -459.67°F), the lowest possible temperature where all molecular motion stops.</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Why is 0K called absolute zero?</h3>
-              <p className="text-gray-600 dark:text-gray-300">At 0 Kelvin (-273.15°C or -459.67°F), all molecular motion stops. It's the lowest possible temperature in the universe.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Why does the US use Fahrenheit?</h4>
+              <p className="text-sm text-gray-600">The US retained Fahrenheit due to historical reasons and established infrastructure. The scale was developed by Daniel Gabriel Fahrenheit in 1724.</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">At what temperature do Celsius and Fahrenheit equal?</h3>
-              <p className="text-gray-600 dark:text-gray-300">-40°: -40°C equals -40°F. This is the only temperature where both scales have the same numerical value.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">What's the difference between heat and temperature?</h4>
+              <p className="text-sm text-gray-600">Temperature measures the average kinetic energy of particles, while heat is the total thermal energy transferred between objects.</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Why doesn't Kelvin use degrees?</h3>
-              <p className="text-gray-600 dark:text-gray-300">Kelvin is an absolute scale based on absolute zero, not relative to freezing/boiling points like Celsius and Fahrenheit.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">How accurate is this temperature converter?</h4>
+              <p className="text-sm text-gray-600">Our converter uses precise mathematical formulas and provides results with up to 10 decimal places for scientific accuracy.</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Ready to Convert More Units?</h2>
-          <p className="text-xl mb-8 text-gray-600 dark:text-gray-400">Explore our other free conversion tools for all your measurement needs</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/length-converter/" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
-              Length Converter
-            </Link>
-            <Link href="/weight-converter/" className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors">
-              Weight Converter
-            </Link>
-            <Link href="/" className="inline-flex items-center px-6 py-3 bg-gray-600 text-white font-medium rounded-lg hover:bg-gray-700 transition-colors">
-              All Converters
-            </Link>
+        {/* Quick Stats */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Platform Statistics</h3>
+            <p className="section-subtitle">Trusted by professionals worldwide</p>
           </div>
-        </div>
-      </section>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="card p-6 text-center">
+              <div className="metric-label">Temperature Scales</div>
+              <div className="metric-value">3</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>C, F, K</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Precision</div>
+              <div className="metric-value">10</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Decimal Places</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Applications</div>
+              <div className="metric-value">25+</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Use Cases</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Response Time</div>
+              <div className="metric-value">0.1s</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Instant</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Indicators */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Why Choose ConvertMaster?</h3>
+            <p className="section-subtitle">Professional features designed for precision and reliability</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4">
+                <FiShield className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Enterprise Security</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                Bank-level encryption with GDPR compliance and complete data privacy protection.
+              </p>
+              <div className="flex items-center justify-center text-blue-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#10b981' }}>
+                <FiUsers className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Global Trust</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                50M+ active users worldwide trust our platform for accurate, instant conversions.
+              </p>
+              <div className="flex items-center justify-center text-green-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#8b5cf6' }}>
+                <FiZap className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Lightning Fast</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                0.1s response time with instant calculations and real-time results.
+              </p>
+              <div className="flex items-center justify-center text-purple-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="text-center">
+          <div className="gradient-border p-8">
+            <h3 className="section-title mb-4">Ready to Convert More Units?</h3>
+            <p className="section-subtitle mb-8">
+              Explore our other free conversion tools for all your measurement needs
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/length-converter/"
+                className="btn btn-primary"
+              >
+                <span>Length Converter</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/weight-converter/"
+                className="btn btn-secondary"
+              >
+                <span>Weight Converter</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/"
+                className="btn btn-secondary"
+              >
+                <span>All Converters</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

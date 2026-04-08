@@ -13,7 +13,6 @@ export const categories = [
   { key: 'speed', label: 'Speed', icon: FiTrendingUp, color: 'text-orange-400' },
   { key: 'time', label: 'Time', icon: FiClock, color: 'text-teal-400' },
   { key: 'data', label: 'Data', icon: FiDatabase, color: 'text-indigo-400' },
-  { key: 'analytics', label: 'Analytics', icon: FiBarChart2, color: 'text-green-600' },
   // New Developer Tools Category
   { key: 'dev-tools', label: 'Developer Tools', icon: FiCode, color: 'text-cyan-500' },
   // New Utilities Category

@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConvertMaster - Professional UI Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f9fafb;
+            color: #111827;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px 0 rgb(0 0 0 / 0.06);
+            border: 1px solid #e5e7eb;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
+            transform: translateY(-4px);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+            line-height: 1;
+            text-decoration: none;
+            border: 1px solid transparent;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-primary {
+            background: #6366f1;
+            color: white;
+            border-color: #6366f1;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: #4f46e5;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #374151;
+            border-color: #d1d5db;
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            background: #f9fafb;
+            border-color: #9ca3af;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+        }
+
+        .input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            background: white;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .input:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgb(99 102 241 / 0.1);
+        }
+
+        .select {
+            width: 100%;
+            padding: 0.75rem 2.5rem 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            background: white;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4 4-4 4z'/%3e%3c/svg%3e");
+            background-position: right 0.75rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        .select:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgb(99 102 241 / 0.1);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .badge-primary {
+            background: #6366f1;
+            color: white;
+        }
+
+        .badge-success {
+            background: #10b981;
+            color: white;
+        }
+
+        .badge-secondary {
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .icon-box {
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            background: #f3f4f6;
+            color: #6b7280;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .icon-box-primary {
+            background: #6366f1;
+            color: white;
+        }
+
+        .icon-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+        }
+
+        .nav-item {
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            color: #6b7280;
+            text-decoration: none;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-item:hover {
+            color: #111827;
+            background: #f3f4f6;
+        }
+
+        .nav-item.active {
+            color: #6366f1;
+            background: #818cf8;
+        }
+
+        .metric-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .metric-card:hover {
+            border-color: #6366f1;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+            transform: translateY(-4px);
+        }
+
+        .metric-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-change {
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .metric-change.positive {
+            color: #10b981;
+        }
+
+        .metric-change.negative {
+            color: #ef4444;
+        }
+
+        .divider {
+            height: 1px;
+            background: #e5e7eb;
+            margin: 2rem 0;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+
+        .section-subtitle {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        /* Enhanced Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        .animate-slide-in-left {
+            animation: slideInLeft 0.5s ease-out;
+        }
+
+        .animate-slide-in-up {
+            animation: slideInUp 0.5s ease-out;
+        }
+
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Loading States */
+        .skeleton {
+            background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        /* Premium Features */
+        .premium-badge {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            box-shadow: 0 2px 4px rgba(251, 191, 36, 0.3);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gradient-border {
+            position: relative;
+            background: white;
+            border-radius: 1rem;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+            border-radius: 1rem;
+            z-index: -1;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+
+        .gradient-border:hover::before {
+            opacity: 1;
+        }
+
+        /* Enhanced Sidebar */
+        .sidebar-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sidebar-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .sidebar-item:hover::before {
+            left: 100%;
+        }
+
+        /* Tooltips */
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1f2937;
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+            margin-bottom: 0.25rem;
+        }
+
+        .tooltip:hover::after {
+            opacity: 1;
+        }
+
+        /* Progress Indicators */
+        .progress-bar {
+            width: 100%;
+            height: 0.5rem;
+            background: #e5e7eb;
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            border-radius: 9999px;
+            transition: width 0.3s ease;
+        }
+
+        /* Status Indicators */
+        .status-dot {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .status-online {
+            background: #10b981;
+            box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+        }
+
+        .status-busy {
+            background: #f59e0b;
+            box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+        }
+
+        .status-offline {
+            background: #6b7280;
+            box-shadow: 0 0 0 2px rgba(107, 114, 128, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Professional Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="container">
+            <div class="flex h-16 items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="icon-box icon-box-primary animate-pulse">
+                        <i class="fas fa-layer-group text-lg"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">ConvertMaster</h1>
+                        <div class="flex items-center gap-2">
+                            <p class="text-xs text-gray-500">Professional Unit Conversion</p>
+                            <div class="premium-badge">
+                                <i class="fas fa-crown text-xs"></i>
+                                <span>PRO</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-1">
+                    <a href="#" class="nav-item active">Dashboard</a>
+                    <a href="#" class="nav-item">Converters</a>
+                    <a href="#" class="nav-item">Analytics</a>
+                    <a href="#" class="nav-item">Settings</a>
+                </div>
+
+                <!-- Mobile Menu & Profile -->
+                <div class="flex items-center gap-3">
+                    <button class="md:hidden p-2 text-gray-600 hover:text-gray-900 tooltip" data-tooltip="Menu">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                    <div class="hidden md:flex items-center gap-3">
+                        <div class="tooltip" data-tooltip="Notifications">
+                            <button class="relative p-2 text-gray-600 hover:text-gray-900">
+                                <i class="fas fa-bell text-xl"></i>
+                                <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                            </button>
+                        </div>
+                        <div class="tooltip" data-tooltip="Profile">
+                            <button class="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 relative">
+                                <img src="https://picsum.photos/seed/user/32/32" alt="User" class="rounded-full">
+                                <span class="status-dot status-online absolute bottom-0 right-0"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Layout with Sidebar -->
+    <div class="flex">
+        <!-- Sidebar Menu -->
+        <aside class="w-64 bg-gray-900 min-h-screen border-r border-gray-200 hidden lg:block">
+            <div class="p-6">
+                <!-- User Profile Section -->
+                <div class="mb-8 animate-slide-in-left">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="relative">
+                            <img src="https://picsum.photos/seed/user/40/40" alt="User" class="rounded-full">
+                            <span class="status-dot status-online absolute bottom-0 right-0"></span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="font-semibold text-white">John Doe</div>
+                            <div class="flex items-center gap-2">
+                                <div class="text-xs text-gray-400">Premium Account</div>
+                                <div class="premium-badge">
+                                    <i class="fas fa-crown text-xs"></i>
+                                    <span>PRO</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%"></div>
+                    </div>
+                    <div class="text-xs text-gray-400 mt-2">750 / 1000 conversions this month</div>
+                </div>
+
+                <!-- Main Navigation -->
+                <div class="mb-8">
+                    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Main</h3>
+                    <nav class="space-y-1">
+                        <a href="#" class="flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                            <i class="fas fa-home w-4"></i>
+                            <span>Dashboard</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 px-3 py-2 text-sm text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors sidebar-item">
+                            <i class="fas fa-exchange-alt w-4"></i>
+                            <span>Converters</span>
+                            <span class="ml-auto bg-white text-blue-600 text-xs px-2 py-1 rounded-full font-semibold">Active</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                            <i class="fas fa-chart-line w-4"></i>
+                            <span>Analytics</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                            <i class="fas fa-history w-4"></i>
+                            <span>History</span>
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Categories Section -->
+                <div class="mb-8">
+                    <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Categories</h3>
+                    <nav class="space-y-1">
+                        <a href="#" class="flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                            <i class="fas fa-ruler w-4 text-blue-400"></i>
+                            <span>Length</span>
+                            <span class="ml-auto bg-blue-500 text-white text-xs px-2 py-1 rounded-full">12</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                            <i class="fas fa-weight w-4 text-green-400"></i>
+                            <span>Weight</span>
+                            <span class="ml-auto bg-green-500 text-white text-xs px-2 py-1 rounded-full">8</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition-colors">
+                            <i class="fas fa-temperature-high w-4 text-orange-400"></i>
+                            <span>Temperature</span>
+                            <span class="ml-auto bg-orange-500 text-white text-xs px-2 py-1 rounded-full">3</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 min-h-screen bg-gray-50">
+            <!-- Main Content -->
+            <div class="container py-8">
+                <!-- Hero Section -->
+                <section class="mb-12 animate-slide-in-up">
+                    <div class="text-center mb-8">
+                        <h2 class="hero-gradient text-2xl font-bold mb-4">Length Converter</h2>
+                        <p class="text-base text-gray-600 max-w-2xl mx-auto">Convert between different units of length with precision and ease</p>
+                        <div class="flex items-center justify-center gap-4 mt-6">
+                            <div class="premium-badge">
+                                <i class="fas fa-rocket text-xs"></i>
+                                <span>AI-Powered</span>
+                            </div>
+                            <div class="badge badge-success">
+                                <i class="fas fa-check text-xs"></i>
+                                <span>99.8% Accurate</span>
+                            </div>
+                            <div class="badge badge-secondary">
+                                <i class="fas fa-bolt text-xs"></i>
+                                <span>Instant</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="metric-card">
+                            <div class="metric-label">Today's Conversions</div>
+                            <div class="metric-value">1,247</div>
+                            <div class="metric-change positive">
+                                <i class="fas fa-arrow-up text-xs"></i>
+                                <span>+12.5%</span>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Most Popular</div>
+                            <div class="metric-value">Meter → Foot</div>
+                            <div class="metric-change positive">
+                                <i class="fas fa-arrow-up text-xs"></i>
+                                <span>+8.2%</span>
+                            </div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Accuracy Rate</div>
+                            <div class="metric-value">99.8%</div>
+                            <div class="metric-change positive">
+                                <i class="fas fa-arrow-up text-xs"></i>
+                                <span>+0.3%</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Converter Interface -->
+                <section class="mb-12 animate-slide-in-up">
+                    <div class="gradient-border p-8">
+                        <h3 class="section-title">Unit Conversion</h3>
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                            <!-- Input Section -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Value</label>
+                                <div class="relative">
+                                    <i class="fas fa-calculator absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                                    <input type="number" class="input pl-10" placeholder="Enter value" value="100">
+                                </div>
+                                
+                                <label class="block text-sm font-medium text-gray-700 mb-2 mt-6">From Unit</label>
+                                <select class="select">
+                                    <option>Meters</option>
+                                    <option>Kilometers</option>
+                                    <option>Centimeters</option>
+                                    <option>Miles</option>
+                                    <option>Yards</option>
+                                    <option>Feet</option>
+                                    <option>Inches</option>
+                                </select>
+                            </div>
+
+                            <!-- Output Section -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Result</label>
+                                <div class="relative">
+                                    <input type="text" class="input pr-10" value="328.084" readonly>
+                                    <i class="fas fa-check-circle absolute right-3 top-1/2 -translate-y-1/2 text-green-500"></i>
+                                </div>
+                                
+                                <label class="block text-sm font-medium text-gray-700 mb-2 mt-6">To Unit</label>
+                                <select class="select">
+                                    <option selected>Feet</option>
+                                    <option>Meters</option>
+                                    <option>Kilometers</option>
+                                    <option>Centimeters</option>
+                                    <option>Miles</option>
+                                    <option>Yards</option>
+                                    <option>Inches</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap gap-4 justify-center">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-exchange-alt"></i>
+                                Swap Units
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-copy"></i>
+                                Copy Result
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-share"></i>
+                                Share
+                            </button>
+                            <button class="btn btn-secondary">
+                                <i class="fas fa-history"></i>
+                                History
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

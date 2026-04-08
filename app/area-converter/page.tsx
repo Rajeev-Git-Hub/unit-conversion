@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import ConverterCard from '../../components/ConverterCard';
+import { FiArrowRight, FiMaximize, FiCheckCircle, FiActivity, FiZap, FiShield, FiUsers, FiTrendingUp, FiHome, FiMap, FiCrop } from 'react-icons/fi';
 
 export const metadata: Metadata = {
   title: 'Area Converter - Free Online Tool | Convert Square Meters, Square Feet, Acres',
@@ -15,252 +16,452 @@ export const metadata: Metadata = {
 
 export default function AreaConverterLandingPage() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* Hero Section */}
-      <section className="bg-white dark:bg-gray-800 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Area Converter - Free Online Tool
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-400">
-              Convert between square meters, square feet, acres, hectares, and more
-            </p>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
+    <div className="min-h-screen bg-gray-50">
+      <div className="container py-16">
+        {/* Hero Section */}
+        <section className="text-center mb-16">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="premium-badge">
+              <FiZap className="w-3 h-3"></FiZap>
+              <span>Instant Results</span>
+            </div>
+            <div className="badge badge-success">
+              <FiCheckCircle className="w-3 h-3"></FiCheckCircle>
+              <span>High Precision</span>
+            </div>
+            <div className="badge badge-secondary">
+              <FiActivity className="w-3 h-3"></FiActivity>
+              <span>15+ Units</span>
+            </div>
+          </div>
+          
+          <h1 className="hero-gradient text-4xl font-bold mb-4">Area Converter</h1>
+          <p className="text-base text-gray-600 max-w-2xl mx-auto">
+            Convert between square meters, square feet, acres, hectares, and more
+          </p>
+          
+          <div className="max-w-2xl mx-auto mt-8">
+            <div className="card p-6">
               <ConverterCard category="area" />
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Understanding Area Conversion */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Understanding Area Conversion
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="bg-blue-100 dark:bg-blue-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">m²</span>
+        {/* Understanding Area Conversion */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Understanding Area Conversion</h3>
+            <p className="section-subtitle">Common area measurement systems and their applications</p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto">
+                <FiMaximize className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Square Meters</h3>
-              <div className="text-gray-600 dark:text-gray-300">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Square Meters</h4>
+              <div className="text-sm text-gray-600">
                 <p className="mb-2">International standard unit</p>
                 <p className="mb-2">Used in most countries worldwide</p>
-                <p className="mb-2">Common in construction and real estate</p>
-                <p>1 m² = 10.76 ft²</p>
+                <p>Base unit for metric area measurements</p>
               </div>
             </div>
-            <div className="text-center">
-              <div className="bg-green-100 dark:bg-green-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">ft²</span>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#10b981' }}>
+                <FiHome className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Square Feet</h3>
-              <div className="text-gray-600 dark:text-gray-300">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Square Feet</h4>
+              <div className="text-sm text-gray-600">
                 <p className="mb-2">Common in US and UK real estate</p>
-                <p className="mb-2">Used for residential properties</p>
-                <p className="mb-2">Standard for room measurements</p>
-                <p>1 ft² = 0.093 m²</p>
+                <p className="mb-2">Used for residential and commercial</p>
+                <p>Standard for interior measurements</p>
               </div>
             </div>
-            <div className="text-center">
-              <div className="bg-yellow-100 dark:bg-yellow-900 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">ac</span>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#8b5cf6' }}>
+                <FiCrop className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Acres</h3>
-              <div className="text-gray-600 dark:text-gray-300">
-                <p className="mb-2">Used for large land areas</p>
-                <p className="mb-2">Common in agriculture and farming</p>
-                <p className="mb-2">US customary unit for land</p>
-                <p>1 acre = 43,560 ft²</p>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Acres & Hectares</h4>
+              <div className="text-sm text-gray-600">
+                <p className="mb-2">Large land measurements</p>
+                <p className="mb-2">Used in agriculture and real estate</p>
+                <p>Standard for property transactions</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Metric Area Unit Definitions */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Area Unit Definitions
-          </h2>
+        {/* Common Area Conversions */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Common Area Conversions</h3>
+            <p className="section-subtitle">Quick reference for everyday measurements</p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Square Meter (m²)</h3>
-              <p className="text-gray-600 dark:text-gray-300">The SI unit of area. Defined as the area of a square with sides of one meter. Widely used in construction, real estate, and land measurement worldwide.</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary">
+                  <FiMaximize className="w-5 h-5" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Square Meters to Square Feet</h4>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>1 m² = 10.764 ft²</li>
+                <li>10 m² = 107.64 ft²</li>
+                <li>50 m² = 538.2 ft²</li>
+                <li>100 m² = 1,076.4 ft²</li>
+                <li>500 m² = 5,382 ft²</li>
+              </ul>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Square Kilometer (km²)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to 1,000,000 square meters or 100 hectares. Used for measuring large geographical areas, city sizes, and country territories.</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#10b981' }}>
+                  <FiHome className="w-5 h-5" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Square Feet to Square Meters</h4>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>1 ft² = 0.0929 m²</li>
+                <li>100 ft² = 9.29 m²</li>
+                <li>500 ft² = 46.45 m²</li>
+                <li>1,000 ft² = 92.9 m²</li>
+                <li>2,000 ft² = 185.8 m²</li>
+              </ul>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Hectare (ha)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to 10,000 square meters or 100 ares. Commonly used in agriculture, forestry, and land management for measuring plots of land.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Square Centimeter (cm²)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to 0.0001 square meters. Used for small area measurements such as paper sizes, fabric samples, and precise engineering drawings.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Square Millimeter (mm²)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to 0.000001 square meters or one millionth of a square meter. Used in precision engineering, electronics, and microfabrication.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Square Inch (in²)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to 6.45 square centimeters. Commonly used in the United States for measuring small areas, screen sizes, and construction materials.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Square Foot (ft²)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to 929 square centimeters or 144 square inches. Widely used in the US and UK for measuring room sizes, floor areas, and real estate.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Square Yard (yd²)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to 9 square feet or approximately 0.836 square meters. Used for measuring larger areas such as carpets, land, and construction sites.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Square Mile (mi²)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to 2.59 square kilometers or 640 acres. Used for measuring large land areas, cities, and geographical regions in the US and UK.</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">Acre</h3>
-              <p className="text-gray-600 dark:text-gray-300">Equal to 4,047 square meters or approximately 0.405 hectares. Commonly used in the United States and UK for measuring land, especially in agriculture and real estate.</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#8b5cf6' }}>
+                  <FiCrop className="w-5 h-5" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Acres to Hectares</h4>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>1 acre = 0.4047 hectares</li>
+                <li>5 acres = 2.023 hectares</li>
+                <li>10 acres = 4.047 hectares</li>
+                <li>50 acres = 20.23 hectares</li>
+                <li>100 acres = 40.47 hectares</li>
+              </ul>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Common Area Conversions */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Common Area Conversions
-          </h2>
+        {/* Area Unit Definitions */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Area Unit Definitions</h3>
+            <p className="section-subtitle">Understanding measurement standards and applications</p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Real Estate</h3>
-              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                <p>1,000 ft² = 92.9 m²</p>
-                <p>2,000 ft² = 185.8 m²</p>
-                <p>0.25 acre = 10,890 ft²</p>
-                <p>1 hectare = 2.47 acres</p>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Square Meter (m²)</h5>
+              <p className="text-sm text-gray-600">The SI unit of area. Equal to the area of a square with sides of 1 meter. Used worldwide for scientific and commercial measurements.</p>
+            </div>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Square Foot (ft²)</h5>
+              <p className="text-sm text-gray-600">Imperial unit equal to the area of a square with sides of 1 foot. Commonly used in US real estate and construction.</p>
+            </div>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Square Kilometer (km²)</h5>
+              <p className="text-sm text-gray-600">Equal to 1,000,000 square meters. Used for measuring large geographical areas like cities and regions.</p>
+            </div>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Square Centimeter (cm²)</h5>
+              <p className="text-sm text-gray-600">Equal to 0.0001 square meters. Used for small measurements in science and engineering.</p>
+            </div>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Square Millimeter (mm²)</h5>
+              <p className="text-sm text-gray-600">Equal to 0.000001 square meters. Used for precise measurements in manufacturing and microscopy.</p>
+            </div>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Square Inch (in²)</h5>
+              <p className="text-sm text-gray-600">Equal to 6.452 square centimeters. Used in the US for small area measurements.</p>
+            </div>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Square Yard (yd²)</h5>
+              <p className="text-sm text-gray-600">Equal to 9 square feet or 0.836 square meters. Used in UK and US for larger measurements.</p>
+            </div>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Square Mile (mi²)</h5>
+              <p className="text-sm text-gray-600">Equal to 640 acres or 2.59 square kilometers. Used for measuring large land areas.</p>
+            </div>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Hectare (ha)</h5>
+              <p className="text-sm text-gray-600">Equal to 10,000 square meters or 2.471 acres. Used in agriculture and land measurement worldwide.</p>
+            </div>
+            <div className="card p-6">
+              <h5 className="text-lg font-semibold text-gray-900 mb-3">Acre</h5>
+              <p className="text-sm text-gray-600">Equal to 43,560 square feet or 4,047 square meters. Common in US real estate and agriculture.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Real-World Applications */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Real-World Applications</h3>
+            <p className="section-subtitle">Where area conversion is essential</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#3b82f6' }}>
+                  <FiHome className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Real Estate & Construction</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>House sizes:</strong> 2,000 ft² = 185.8 m²</p>
+                <p><strong>Apartment:</strong> 800 ft² = 74.3 m²</p>
+                <p><strong>Land plots:</strong> 0.25 acre = 1,011.7 m²</p>
+                <p><strong>Commercial space:</strong> 5,000 ft² = 464.5 m²</p>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Construction</h3>
-              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                <p>100 m² = 1,076 ft²</p>
-                <p>500 m² = 5,382 ft²</p>
-                <p>1,000 m² = 0.247 acres</p>
-                <p>5,000 m² = 1.24 acres</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#10b981' }}>
+                  <FiCrop className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Agriculture & Land</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>Farms:</strong> 100 acres = 40.47 hectares</p>
+                <p><strong>Orchards:</strong> 50 acres = 20.23 hectares</p>
+                <p><strong>Vineyards:</strong> 10 acres = 4.047 hectares</p>
+                <p><strong>Gardens:</strong> 0.1 acre = 404.7 m²</p>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Agriculture</h3>
-              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                <p>1 acre = 4,047 m²</p>
-                <p>10 acres = 4.047 hectares</p>
-                <p>100 hectares = 247 acres</p>
-                <p>1 km² = 247.1 acres</p>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#8b5cf6' }}>
+                  <FiMap className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Geography & Mapping</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>City area:</strong> 100 km² = 38.6 mi²</p>
+                <p><strong>Parks:</strong> 5 km² = 1.93 mi²</p>
+                <p><strong>Lakes:</strong> 50 km² = 19.3 mi²</p>
+                <p><strong>Islands:</strong> 10 km² = 3.86 mi²</p>
+              </div>
+            </div>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#f59e0b' }}>
+                  <FiMaximize className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Interior Design</h4>
+              </div>
+              <div className="space-y-3 text-sm text-gray-600">
+                <p><strong>Living room:</strong> 300 ft² = 27.9 m²</p>
+                <p><strong>Bedroom:</strong> 150 ft² = 13.9 m²</p>
+                <p><strong>Kitchen:</strong> 200 ft² = 18.6 m²</p>
+                <p><strong>Office:</strong> 120 ft² = 11.1 m²</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Practical Applications */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Practical Applications
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">🏠 Real Estate</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Property Listings:</strong> Convert between square feet and square meters for international buyers</p>
-                <p><strong>Home Size:</strong> Understand room sizes in different measurement systems</p>
-                <p><strong>Land Measurement:</strong> Compare lot sizes in acres vs hectares</p>
-                <p><strong>Floor Plans:</strong> Convert architectural measurements for global clients</p>
+        {/* Step-by-Step Guide */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">How to Convert Area Units</h3>
+            <p className="section-subtitle">Simple steps for accurate area conversion</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto">
+                <span className="text-2xl font-bold text-white">1</span>
               </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Enter Area Value</h4>
+              <p className="text-sm text-gray-600">Input the area measurement you want to convert</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">🏗️ Construction</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Material Estimation:</strong> Calculate flooring, paint, and roofing materials</p>
-                <p><strong>Building Codes:</strong> Comply with local area measurement requirements</p>
-                <p><strong>Project Planning:</strong> Estimate construction costs by area</p>
-                <p><strong>International Projects:</strong> Work with metric and imperial measurements</p>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#3b82f6' }}>
+                <span className="text-2xl font-bold text-white">2</span>
               </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Select Unit</h4>
+              <p className="text-sm text-gray-600">Choose the current area unit (m², ft², acres, etc.)</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">🌾 Agriculture</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Farm Planning:</strong> Calculate field sizes for crop planning</p>
-                <p><strong>Yield Calculation:</strong> Determine production per hectare or acre</p>
-                <p><strong>Irrigation:</strong> Plan water distribution by area</p>
-                <p><strong>Land Purchase:</strong> Compare agricultural land values</p>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#10b981' }}>
+                <span className="text-2xl font-bold text-white">3</span>
               </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Target Unit</h4>
+              <p className="text-sm text-gray-600">Select the area unit to convert to</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">📊 Business</h3>
-              <div className="space-y-3 text-gray-600 dark:text-gray-300">
-                <p><strong>Rental Properties:</strong> Calculate commercial space per square foot/meter</p>
-                <p><strong>Warehouse Planning:</strong> Optimize storage space utilization</p>
-                <p><strong>Retail Layout:</strong> Plan store floor space efficiently</p>
-                <p><strong>Office Space:</strong> Allocate workspace per employee</p>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#8b5cf6' }}>
+                <span className="text-2xl font-bold text-white">4</span>
               </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Get Result</h4>
+              <p className="text-sm text-gray-600">View instant, accurate conversion results</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Frequently Asked Questions
-          </h2>
+        {/* FAQ Section */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Frequently Asked Questions</h3>
+            <p className="section-subtitle">Common questions about area conversion</p>
+          </div>
+          
           <div className="max-w-3xl mx-auto space-y-6">
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">How do I calculate square feet from room dimensions?</h3>
-              <p className="text-gray-600 dark:text-gray-300">Multiply length by width. For a 12ft × 15ft room: 12 × 15 = 180 square feet. For irregular rooms, break them into rectangles and add the areas.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">How many square feet are in a square meter?</h4>
+              <p className="text-sm text-gray-600">There are 10.764 square feet in one square meter. This is the standard conversion used worldwide.</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">What's the difference between square meters and square feet?</h3>
-              <p className="text-gray-600 dark:text-gray-300">Square meters (m²) are used in most countries and follow the metric system. Square feet (ft²) are used primarily in the US and UK. 1 square meter equals 10.764 square feet.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">What's the difference between an acre and a hectare?</h4>
+              <p className="text-sm text-gray-600">One acre equals 43,560 square feet, while one hectare equals 10,000 square meters (2.471 acres). Hectares are used in most countries, while acres are common in the US.</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">How big is an acre in football fields?</h3>
-              <p className="text-gray-600 dark:text-gray-300">One acre is approximately 0.756 American football fields (including end zones). An acre is 43,560 square feet or about 90% of a football field.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Why do different countries use different area units?</h4>
+              <p className="text-sm text-gray-600">Historical reasons and established systems. The metric system is used globally, while imperial units persist in the US and UK for traditional reasons.</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">How do I convert hectares to acres?</h3>
-              <p className="text-gray-600 dark:text-gray-300">Multiply hectares by 2.471. For example: 10 hectares × 2.471 = 24.71 acres. One hectare equals 10,000 square meters.</p>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">How accurate is this area converter?</h4>
+              <p className="text-sm text-gray-600">Our converter provides results with up to 10 decimal places, using standard international conversion factors for professional accuracy.</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Ready to Convert More Units?</h2>
-          <p className="text-xl mb-8 text-gray-600 dark:text-gray-400">Explore our other free conversion tools for all your measurement needs</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/length-converter/" className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors">
-              Length Converter
-            </Link>
-            <Link href="/weight-converter/" className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors">
-              Weight Converter
-            </Link>
-            <Link href="/" className="inline-flex items-center px-6 py-3 bg-gray-600 text-white font-medium rounded-lg hover:bg-gray-700 transition-colors">
-              All Converters
-            </Link>
+        {/* Quick Stats */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Platform Statistics</h3>
+            <p className="section-subtitle">Trusted by professionals worldwide</p>
           </div>
-        </div>
-      </section>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="card p-6 text-center">
+              <div className="metric-label">Area Units</div>
+              <div className="metric-value">15+</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Available</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Systems</div>
+              <div className="metric-value">2</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Metric & Imperial</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Precision</div>
+              <div className="metric-value">10</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Decimal Places</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Applications</div>
+              <div className="metric-value">30+</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Use Cases</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Indicators */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Why Choose ConvertMaster?</h3>
+            <p className="section-subtitle">Professional features designed for precision and reliability</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4">
+                <FiShield className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Enterprise Security</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                Bank-level encryption with GDPR compliance and complete data privacy protection.
+              </p>
+              <div className="flex items-center justify-center text-blue-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#10b981' }}>
+                <FiUsers className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Global Trust</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                50M+ active users worldwide trust our platform for accurate, instant conversions.
+              </p>
+              <div className="flex items-center justify-center text-green-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#8b5cf6' }}>
+                <FiZap className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Lightning Fast</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                0.1s response time with instant calculations and real-time results.
+              </p>
+              <div className="flex items-center justify-center text-purple-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="text-center">
+          <div className="gradient-border p-8">
+            <h3 className="section-title mb-4">Ready to Convert More Units?</h3>
+            <p className="section-subtitle mb-8">
+              Explore our other free conversion tools for all your measurement needs
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/length-converter/"
+                className="btn btn-primary"
+              >
+                <span>Length Converter</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/weight-converter/"
+                className="btn btn-secondary"
+              >
+                <span>Weight Converter</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/"
+                className="btn btn-secondary"
+              >
+                <span>All Converters</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

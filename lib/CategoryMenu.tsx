@@ -8,12 +8,11 @@ import { CategoryKey } from './types';
 import { useLocalization, Language } from './LocalizationContext';
 
 // Define logical groups for the converters
-export type GroupName = 'Common' | 'Professional' | 'Lifestyle' | 'developer' | 'utilities';
+export type GroupName = 'Common' | 'Professional' | 'developer' | 'utilities';
 
 export const CATEGORY_GROUPS: Record<GroupName, CategoryKey[]> = {
   Common: ['length', 'weight', 'temperature', 'area', 'volume', 'time', 'speed'],
-  Professional: ['data', 'analytics'],
-  Lifestyle: [],
+  Professional: ['data'],
   developer: ['dev-tools'],
   utilities: ['utilities'],
 };

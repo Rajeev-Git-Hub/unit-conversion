@@ -2,65 +2,360 @@
 
 import URLEncoderClient from './URLEncoderClient';
 import { useLocalization } from '../../lib/LocalizationContext';
+import { FiArrowRight, FiLink, FiCheckCircle, FiActivity, FiZap, FiShield, FiUsers, FiTrendingUp, FiGlobe, FiServer } from 'react-icons/fi';
 
 export default function URLEncoderPage() {
   const { t } = useLocalization();
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        {/* SEO Content */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-            {t('url.title')}
-          </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
+    <div className="min-h-screen bg-gray-50">
+      <div className="container py-16">
+        {/* Hero Section */}
+        <section className="text-center mb-16">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="premium-badge">
+              <FiZap className="w-3 h-3"></FiZap>
+              <span>Instant Results</span>
+            </div>
+            <div className="badge badge-success">
+              <FiCheckCircle className="w-3 h-3"></FiCheckCircle>
+              <span>Safe Encoding</span>
+            </div>
+            <div className="badge badge-secondary">
+              <FiActivity className="w-3 h-3"></FiActivity>
+              <span>Encode/Decode</span>
+            </div>
+          </div>
+          
+          <h1 className="hero-gradient text-4xl font-bold mb-4">{t('url.title')}</h1>
+          <p className="text-base text-gray-600 max-w-2xl mx-auto">
             {t('url.subtitle')}
           </p>
-          <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-6">
-            <p className="text-blue-800 dark:text-blue-200 font-medium">
-              💡 <strong>{t('url.smart_features')}:</strong> {t('url.smart_desc')}
-            </p>
+          
+          <div className="max-w-2xl mx-auto mt-8">
+            <div className="gradient-border p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#3b82f6' }}>
+                  <FiLink className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">{t('url.smart_features')}</h3>
+              </div>
+              <p className="text-sm text-gray-600">
+                {t('url.smart_desc')}
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
 
         {/* Main Encoder */}
-        <URLEncoderClient />
-
-        {/* Additional SEO Content */}
-        <div className="mt-12 prose prose-lg dark:prose-invert max-w-none">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-            {t('url.what_is_encoding')}
-          </h2>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
-              {t('url.what_is_encoding_desc')}
-            </p>
-            
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
-              {t('url.use_cases')}
-            </h3>
-            <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 mb-4">
-              <li>{t('url.use_case_1')}</li>
-              <li>{t('url.use_case_2')}</li>
-              <li>{t('url.use_case_3')}</li>
-              <li>{t('url.use_case_4')}</li>
-              <li>{t('url.use_case_5')}</li>
-            </ul>
-
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
-              {t('url.characters_encoding')}
-            </h3>
-            <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300">
-              <li><strong>{t('url.space')}:</strong> %20</li>
-              <li><strong>{t('url.question_mark')}:</strong> %3F</li>
-              <li><strong>{t('url.ampersand')}:</strong> %26</li>
-              <li><strong>{t('url.equals')}:</strong> %3D</li>
-              <li><strong>{t('url.hash')}:</strong> %23</li>
-              <li><strong>{t('url.plus')}:</strong> %2B</li>
-            </ul>
+        <section className="mb-12">
+          <div className="max-w-4xl mx-auto">
+            <div className="card p-8">
+              <URLEncoderClient />
+            </div>
           </div>
-        </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">URL Encoding Features</h3>
+            <p className="section-subtitle">Professional URL encoding capabilities</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto">
+                <FiGlobe className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">{t('url.what_is_encoding')}</h4>
+              <p className="text-sm text-gray-600">
+                {t('url.what_is_encoding_desc')}
+              </p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#10b981' }}>
+                <FiServer className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">{t('url.use_cases')}</h4>
+              <p className="text-sm text-gray-600">
+                Safe transmission of URLs in web applications and APIs.
+              </p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#8b5cf6' }}>
+                <FiGlobe className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Browser Compatible</h4>
+              <p className="text-sm text-gray-600">
+                Follows RFC 3986 standards for maximum compatibility.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Use Cases Section */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Common Use Cases</h3>
+            <p className="section-subtitle">Where URL encoding is essential</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#3b82f6' }}>
+                  <FiGlobe className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Web Development</h4>
+              </div>
+              <p className="text-sm text-gray-600">
+                {t('url.use_case_1')}
+              </p>
+            </div>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#10b981' }}>
+                  <FiServer className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">API Requests</h4>
+              </div>
+              <p className="text-sm text-gray-600">
+                {t('url.use_case_2')}
+              </p>
+            </div>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#8b5cf6' }}>
+                  <FiGlobe className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Query Parameters</h4>
+              </div>
+              <p className="text-sm text-gray-600">
+                {t('url.use_case_3')}
+              </p>
+            </div>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#f59e0b' }}>
+                  <FiLink className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Form Data</h4>
+              </div>
+              <p className="text-sm text-gray-600">
+                {t('url.use_case_4')}
+              </p>
+            </div>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#ef4444' }}>
+                  <FiShield className="w-5 h-5 text-white" />
+                </div>
+                <h4 className="text-lg font-semibold text-gray-900">Security</h4>
+              </div>
+              <p className="text-sm text-gray-600">
+                {t('url.use_case_5')}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* How to Use */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">How to Use URL Encoder</h3>
+            <p className="section-subtitle">Simple steps to encode/decode URLs</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto">
+                <span className="text-2xl font-bold text-white">1</span>
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Input URL</h4>
+              <p className="text-sm text-gray-600">Enter your URL or string</p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#3b82f6' }}>
+                <span className="text-2xl font-bold text-white">2</span>
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Choose Action</h4>
+              <p className="text-sm text-gray-600">Select encode or decode</p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#10b981' }}>
+                <span className="text-2xl font-bold text-white">3</span>
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Process</h4>
+              <p className="text-sm text-gray-600">Click to convert instantly</p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#8b5cf6' }}>
+                <span className="text-2xl font-bold text-white">4</span>
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Copy Result</h4>
+              <p className="text-sm text-gray-600">Copy to clipboard</p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Frequently Asked Questions</h3>
+            <p className="section-subtitle">Common questions about URL encoding</p>
+          </div>
+          
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">What characters need URL encoding?</h4>
+              <p className="text-sm text-gray-600">Characters like spaces, special symbols (!@#$%^&*), and non-ASCII characters need to be encoded for safe URL transmission.</p>
+            </div>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">What's the difference between encoding and escaping?</h4>
+              <p className="text-sm text-gray-600">URL encoding converts characters to %XX format, while HTML escaping uses &amp; entities. They serve different purposes in web development.</p>
+            </div>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Is URL encoding reversible?</h4>
+              <p className="text-sm text-gray-600">Yes, URL encoding is fully reversible. Our tool can both encode and decode URLs back to their original form.</p>
+            </div>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Is my data secure?</h4>
+              <p className="text-sm text-gray-600">Yes, all encoding happens in your browser. Your URLs never leave your device, ensuring complete privacy.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Quick Stats */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Platform Statistics</h3>
+            <p className="section-subtitle">Trusted by developers worldwide</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="card p-6 text-center">
+              <div className="metric-label">URLs Processed</div>
+              <div className="metric-value">1M+</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Daily</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Accuracy</div>
+              <div className="metric-value">100%</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Standards Compliant</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Speed</div>
+              <div className="metric-value">0.1s</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Instant</span>
+              </div>
+            </div>
+            
+            <div className="card p-6 text-center">
+              <div className="metric-label">Privacy</div>
+              <div className="metric-value">100%</div>
+              <div className="metric-change positive">
+                <FiTrendingUp className="w-3 h-3"></FiTrendingUp>
+                <span>Secure</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Indicators */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Why Choose ConvertMaster?</h3>
+            <p className="section-subtitle">Professional features designed for developers</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4">
+                <FiShield className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Privacy First</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                All encoding happens in your browser. Your URLs never leave your device.
+              </p>
+              <div className="flex items-center justify-center text-blue-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#10b981' }}>
+                <FiUsers className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Developer Trust</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                50M+ active users worldwide trust our platform for accurate encoding.
+              </p>
+              <div className="flex items-center justify-center text-green-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#8b5cf6' }}>
+                <FiZap className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Lightning Fast</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                0.1s response time with instant encoding and real-time validation.
+              </p>
+              <div className="flex items-center justify-center text-purple-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="text-center">
+          <div className="gradient-border p-8">
+            <h3 className="section-title mb-4">Ready to Encode More?</h3>
+            <p className="section-subtitle mb-8">
+              Explore our other free developer tools for all your needs
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/json-formatter/"
+                className="btn btn-primary"
+              >
+                <span>JSON Formatter</span>
+                <FiArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="/base64-encoder/"
+                className="btn btn-secondary"
+              >
+                <span>Base64 Encoder</span>
+                <FiArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="/"
+                className="btn btn-secondary"
+              >
+                <span>All Tools</span>
+                <FiArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );

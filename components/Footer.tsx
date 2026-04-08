@@ -10,43 +10,48 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-gray-300 border-t border-gray-800">
-      {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand Column */}
+    <footer className="bg-gray-50 border-t border-gray-200">
+      <div className="container py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+          {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 group mb-4">
-              <div className="flex items-center justify-center h-10 w-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-md">
-                <FiLayers className="h-6 w-6" />
+            <Link href="/" className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                <FiLayers className="w-5 h-5 text-white" />
               </div>
-              <span className="font-bold text-xl text-white">
-                {t('app.title')}
-              </span>
+              <span className="font-bold text-xl text-gray-900">ConvertMaster</span>
             </Link>
-            <p className="text-sm text-gray-400 leading-relaxed mb-4">
-              The most powerful free unit converter. Convert length, weight, temperature, and more — instantly and accurately.
+            <p className="text-gray-600 leading-relaxed mb-6">
+              The most powerful free unit converter. Convert anything, instantly and accurately.
             </p>
+            <div className="flex items-center gap-4">
+              <div className="w-8 h-8 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-gray-300 transition-colors cursor-pointer">
+                <FiMail className="w-4 h-4 text-gray-600" />
+              </div>
+              <div className="w-8 h-8 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-gray-300 transition-colors cursor-pointer">
+                <FiMail className="w-4 h-4 text-gray-600" />
+              </div>
+              <div className="w-8 h-8 bg-gray-200 rounded-lg flex items-center justify-center hover:bg-gray-300 transition-colors cursor-pointer">
+                <FiMail className="w-4 h-4 text-gray-600" />
+              </div>
+            </div>
           </div>
 
-          {/* Popular Converters */}
+          {/* Product */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-              Popular Converters
-            </h3>
-            <ul className="space-y-2">
+            <h4 className="text-sm font-semibold text-gray-900 mb-6">Product</h4>
+            <ul className="space-y-3">
               {[
                 { href: '/length-converter', label: 'Length Converter' },
                 { href: '/weight-converter', label: 'Weight Converter' },
                 { href: '/temperature-converter', label: 'Temperature Converter' },
                 { href: '/area-converter', label: 'Area Converter' },
                 { href: '/volume-converter', label: 'Volume Converter' },
-                { href: '/speed-converter', label: 'Speed Converter' },
               ].map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                    className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -55,82 +60,65 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Tools */}
+          {/* Company */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-              Tools & Utilities
-            </h3>
-            <ul className="space-y-2">
-              {[
-                { href: '/json-formatter', label: 'JSON Formatter' },
-                { href: '/base64-encoder', label: 'Base64 Encoder' },
-                { href: '/timestamp-converter', label: 'Timestamp Converter' },
-                { href: '/percentage-calculator', label: 'Percentage Calculator' },
-                { href: '/age-calculator', label: 'Age Calculator' },
-                { href: '/analytics-converter', label: 'Analytics Dashboard' },
-              ].map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal & Company */}
-          <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-              Company & Legal
-            </h3>
-            <ul className="space-y-2">
+            <h4 className="text-sm font-semibold text-gray-900 mb-6">Company</h4>
+            <ul className="space-y-3">
               {[
                 { href: '/about', label: 'About Us' },
-                { href: '/privacy-policy', label: 'Privacy Policy' },
-                { href: '/terms', label: 'Terms of Service' },
+                { href: '/blog', label: 'Blog' },
+                { href: '/careers', label: 'Careers' },
+                { href: '/contact', label: 'Contact' },
+                { href: '/help', label: 'Help Center' },
               ].map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-gray-400 hover:text-white transition-colors duration-200"
+                    className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
                   >
                     {item.label}
                   </Link>
                 </li>
               ))}
             </ul>
+          </div>
 
-            <div className="mt-6">
-              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-3">
-                Contact
-              </h3>
-              <a
-                href="mailto:contact@convertmaster.com"
-                className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors duration-200"
-              >
-                <FiMail className="h-4 w-4" />
-                contact@convertmaster.com
-              </a>
-            </div>
+          {/* Legal */}
+          <div>
+            <h4 className="text-sm font-semibold text-gray-900 mb-6">Legal</h4>
+            <ul className="space-y-3">
+              {[
+                { href: '/privacy-policy', label: 'Privacy Policy' },
+                { href: '/terms', label: 'Terms of Service' },
+                { href: '/cookies', label: 'Cookie Policy' },
+                { href: '/licensing', label: 'Licensing' },
+              ].map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-gray-500">
+      <div className="border-t border-gray-200 bg-white">
+        <div className="container py-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+            <p className="text-sm text-gray-600">
               &copy; {currentYear} ConvertMaster. All rights reserved.
             </p>
-            <div className="flex items-center gap-6">
-              <Link href="/privacy-policy" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
+            <div className="flex items-center gap-8">
+              <Link href="/privacy-policy" className="text-sm text-gray-600 hover:text-blue-600 transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
+              <Link href="/terms" className="text-sm text-gray-600 hover:text-blue-600 transition-colors">
                 Terms of Service
               </Link>
             </div>
