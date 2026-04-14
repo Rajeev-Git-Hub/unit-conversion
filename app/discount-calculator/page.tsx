@@ -96,10 +96,10 @@ export default function DiscountCalculatorPage() {
               { price: '$100', discount: '75%', save: '$75', pay: '$25' },
             ].map((item, index) => (
               <div key={index} className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center">
-                <p className="font-semibold text-red-600">{item.discount} off</p>
+                <p className="font-semibold text-gray-700">{item.discount} off</p>
                 <p className="text-gray-600 dark:text-gray-400">Original: {item.price}</p>
-                <p className="text-green-600">Save: {item.save}</p>
-                <p className="text-blue-600 font-bold">Pay: {item.pay}</p>
+                <p className="text-gray-600">Save: {item.save}</p>
+                <p className="text-gray-900 font-bold">Pay: {item.pay}</p>
               </div>
             ))}
           </div>

@@ -9,8 +9,8 @@ const converterCategories = [
     title: 'Length Converters',
     description: 'Convert between meters, kilometers, feet, inches, yards, and more instantly.',
     icon: FiMaximize,
-    color: 'text-blue-600',
-    bgColor: 'bg-blue-50 dark:bg-blue-900/20',
+    color: 'text-gray-600',
+    bgColor: 'bg-gray-50 dark:bg-gray-900/20',
     converters: [
       { name: 'CM to Inches', href: '/cm-to-inches', popular: true },
       { name: 'Inches to CM', href: '/inches-to-cm' },
@@ -173,8 +173,8 @@ const converterCategories = [
     title: 'Weight Converters',
     description: 'Convert kilograms, pounds, ounces, grams, stones, and tons easily.',
     icon: FiPackage,
-    color: 'text-green-600',
-    bgColor: 'bg-green-50 dark:bg-green-900/20',
+    color: 'text-gray-600',
+    bgColor: 'bg-gray-50 dark:bg-gray-900/20',
     converters: [
       { name: 'KG to Pound/LBS', href: '/kg-to-lbs', popular: true },
       { name: 'Pound/LBS to KG', href: '/lbs-to-kg', popular: true },
@@ -262,8 +262,8 @@ const converterCategories = [
     title: 'Area Converters',
     description: 'Convert square meters, hectares, acres, square feet, and more area units.',
     icon: FiPackage,
-    color: 'text-emerald-600',
-    bgColor: 'bg-emerald-50 dark:bg-emerald-900/20',
+    color: 'text-gray-600',
+    bgColor: 'bg-gray-50 dark:bg-gray-900/20',
     converters: [
       { name: 'm² to km²', href: '/m2-to-km2' },
       { name: 'm² to cm²', href: '/m2-to-cm2' },
@@ -361,8 +361,8 @@ const converterCategories = [
     title: 'Volume Converters',
     description: 'Convert liters, gallons, cubic meters, fluid ounces, and more volume units.',
     icon: FiDroplet,
-    color: 'text-cyan-600',
-    bgColor: 'bg-cyan-50 dark:bg-cyan-900/20',
+    color: 'text-gray-600',
+    bgColor: 'bg-gray-50 dark:bg-gray-900/20',
     converters: [
       { name: 'L to mL', href: '/liter-to-ml' },
       { name: 'L to m³', href: '/liter-to-m3' },
@@ -426,8 +426,8 @@ const converterCategories = [
     title: 'Temperature Converters',
     description: 'Convert between Celsius, Fahrenheit, Kelvin, Rankine, and Réaumur temperature scales.',
     icon: FiThermometer,
-    color: 'text-red-600',
-    bgColor: 'bg-red-50 dark:bg-red-900/20',
+    color: 'text-gray-600',
+    bgColor: 'bg-gray-50 dark:bg-gray-900/20',
     converters: [
       // Celsius conversions
       { name: 'Celsius to Fahrenheit', href: '/celsius-to-fahrenheit', popular: true },
@@ -555,8 +555,8 @@ const converterCategories = [
     title: 'Speed Converters',
     description: 'Convert km/h, mph, m/s, and speed of light measurements.',
     icon: FiTrendingUp,
-    color: 'text-orange-600',
-    bgColor: 'bg-orange-50 dark:bg-orange-900/20',
+    color: 'text-gray-600',
+    bgColor: 'bg-gray-50 dark:bg-gray-900/20',
     converters: [
       { name: 'KM/H to MPH', href: '/kmh-to-mph', popular: true },
       { name: 'MPH to KM/H', href: '/mph-to-kmh', popular: true },
@@ -584,8 +584,8 @@ const converterCategories = [
     title: 'Data Storage Converters',
     description: 'Convert bytes, KB, MB, GB, TB, PB, EB, bits, Kb, Mb, Gb for files, storage, and memory sizes.',
     icon: FiDatabase,
-    color: 'text-indigo-600',
-    bgColor: 'bg-indigo-50 dark:bg-indigo-900/20',
+    color: 'text-gray-600',
+    bgColor: 'bg-gray-50 dark:bg-gray-900/20',
     converters: [
       // Byte conversions
       { name: 'Bytes to KB', href: '/bytes-to-kb' },
@@ -713,8 +713,8 @@ const converterCategories = [
     title: 'Finance & Percentage Calculators',
     description: 'Calculate interest, ROI, profit margins, discounts, and percentage changes.',
     icon: FiPercent,
-    color: 'text-green-600',
-    bgColor: 'bg-green-50 dark:bg-green-900/20',
+    color: 'text-gray-600',
+    bgColor: 'bg-gray-50 dark:bg-gray-900/20',
     converters: [
       { name: '% Increase Calculator', href: '/percentage-increase-calculator', popular: true },
       { name: '% Decrease Calculator', href: '/percentage-decrease-calculator' },
@@ -796,7 +796,7 @@ export default function AllConvertersPage() {
           <section className="mb-12">
             <div className="gradient-border p-8">
               <h3 className="section-title flex items-center justify-center gap-2">
-                <FiActivity className="text-orange-500"></FiActivity>
+                <FiActivity className="text-gray-500"></FiActivity>
                 Popular Converters
               </h3>
               
@@ -807,43 +807,43 @@ export default function AllConvertersPage() {
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">KG to LBS</h3>
                   <p className="text-sm text-gray-600">Weight Conversion</p>
-                  <div className="flex items-center justify-center text-blue-600 font-medium">
+                  <div className="flex items-center justify-center text-gray-600 font-medium">
                     <span>Convert now</span>
                     <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
                 
                 <Link href="/cm-to-inches" className="card p-6 text-center group">
-                  <div className="icon-box icon-box-primary mb-4" style={{ background: '#10b981' }}>
-                    <FiGitCommit className="w-10 h-10" />
+                  <div className="icon-box icon-box-primary mb-4">
+                    <FiMaximize className="w-10 h-10" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">CM to Inches</h3>
                   <p className="text-sm text-gray-600">Length Conversion</p>
-                  <div className="flex items-center justify-center text-green-600 font-medium">
+                  <div className="flex items-center justify-center text-gray-600 font-medium">
                     <span>Convert now</span>
                     <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
                 
                 <Link href="/celsius-to-fahrenheit" className="card p-6 text-center group">
-                  <div className="icon-box icon-box-primary mb-4" style={{ background: '#ef4444' }}>
+                  <div className="icon-box icon-box-primary mb-4">
                     <FiThermometer className="w-10 h-10" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">°C to °F</h3>
                   <p className="text-sm text-gray-600">Temperature</p>
-                  <div className="flex items-center justify-center text-red-600 font-medium">
+                  <div className="flex items-center justify-center text-gray-600 font-medium">
                     <span>Convert now</span>
                     <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
                 
                 <Link href="/mb-to-gb" className="card p-6 text-center group">
-                  <div className="icon-box icon-box-primary mb-4" style={{ background: '#8b5cf6' }}>
-                    <FiSave className="w-10 h-10" />
+                  <div className="icon-box icon-box-primary mb-4">
+                    <FiDatabase className="w-10 h-10" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">MB to GB</h3>
                   <p className="text-sm text-gray-600">Data Storage</p>
-                  <div className="flex items-center justify-center text-purple-600 font-medium">
+                  <div className="flex items-center justify-center text-gray-600 font-medium">
                     <span>Convert now</span>
                     <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -880,11 +880,11 @@ export default function AllConvertersPage() {
                           : 'bg-gray-50 hover:bg-blue-50'
                       }`}
                     >
-                      <span className="font-medium text-gray-900 group-hover:text-blue-600 flex items-center gap-2">
-                        {converter.popular && <FiStar className="w-4 h-4 text-orange-500"></FiStar>}
+                      <span className="font-medium text-gray-900 group-hover:text-gray-600 flex items-center gap-2">
+                        {converter.popular && <FiStar className="w-4 h-4 text-gray-500"></FiStar>}
                         {converter.name}
                       </span>
-                      <FiArrowRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transform group-hover:translate-x-1 transition-all" />
+                      <FiArrowRight className="w-4 h-4 text-gray-400 group-hover:text-gray-500 transform group-hover:translate-x-1 transition-all" />
                     </Link>
                   ))}
                 </div>
@@ -955,35 +955,35 @@ export default function AllConvertersPage() {
               <p className="text-sm text-gray-600 mb-4">
                 Bank-level encryption with GDPR compliance and complete data privacy protection.
               </p>
-              <div className="flex items-center justify-center text-blue-600 font-medium">
+              <div className="flex items-center justify-center text-gray-600 font-medium">
                 <span>Learn more</span>
                 <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
 
             <div className="card p-6 text-center group">
-              <div className="icon-box icon-box-primary mb-4" style={{ background: '#10b981' }}>
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#6b7280' }}>
                 <FiUsers className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3">Global Trust</h3>
               <p className="text-sm text-gray-600 mb-4">
                 50M+ active users worldwide trust our platform for accurate, instant conversions.
               </p>
-              <div className="flex items-center justify-center text-green-600 font-medium">
+              <div className="flex items-center justify-center text-gray-600 font-medium">
                 <span>Learn more</span>
                 <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
 
             <div className="card p-6 text-center group">
-              <div className="icon-box icon-box-primary mb-4" style={{ background: '#8b5cf6' }}>
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#6b7280' }}>
                 <FiZap className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3">Lightning Fast</h3>
               <p className="text-sm text-gray-600 mb-4">
                 0.1s response time with instant calculations and real-time results.
               </p>
-              <div className="flex items-center justify-center text-purple-600 font-medium">
+              <div className="flex items-center justify-center text-gray-600 font-medium">
                 <span>Learn more</span>
                 <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </div>

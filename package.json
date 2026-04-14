@@ -2,6 +2,7 @@
   "name": "unit-conversion",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "db:up": "docker-compose up -d db",

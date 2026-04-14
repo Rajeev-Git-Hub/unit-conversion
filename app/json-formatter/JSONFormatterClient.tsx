@@ -182,9 +182,9 @@ export default function JSONFormatterClient() {
         <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
           {t('json.subtitle')}
         </p>
-        <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-6">
-          <p className="text-blue-800 dark:text-blue-200 font-medium">
-            💡 <strong>{t('json.smart_features')}:</strong> {t('json.smart_desc')}
+        <div className="bg-gray-50 dark:bg-gray-900/20 border border-gray-200 dark:border-gray-700 rounded-lg p-4 mb-6">
+          <p className="text-gray-800 dark:text-gray-200 font-medium">
+            {t('json.smart_features')}: {t('json.smart_desc')}
           </p>
         </div>
       </div>
@@ -216,7 +216,7 @@ export default function JSONFormatterClient() {
             className="w-full h-96 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-gray-100 font-mono text-sm resize-none"
           />
           {error && (
-            <div className="text-sm text-red-600 dark:text-red-400">
+            <div className="text-sm text-gray-700 dark:text-gray-300">
               Error at line {error.line}, column {error.column}: {error.message}
             </div>
           )}
@@ -328,8 +328,8 @@ export default function JSONFormatterClient() {
 
       {/* Copy Success Message */}
       {copySuccess && (
-        <div className="p-3 bg-green-100 dark:bg-green-900/20 border border-green-300 dark:border-green-700 rounded-lg mt-4">
-          <p className="text-green-800 dark:text-green-200 text-sm">
+        <div className="p-3 bg-gray-100 dark:bg-gray-900/20 border border-gray-300 dark:border-gray-700 rounded-lg mt-4">
+          <p className="text-gray-800 dark:text-gray-200 text-sm">
             {t('json.copy_success')}
           </p>
         </div>

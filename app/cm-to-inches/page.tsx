@@ -23,7 +23,7 @@ export default function CmToInchesPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               CM to Inches Converter
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">
+            <p className="text-xl md:text-2xl mb-8 text-gray-100">
               Convert centimeters to inches instantly. 1 cm = 0.3937 inches.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
@@ -99,7 +99,7 @@ export default function CmToInchesPage() {
               { cm: '250 cm', inch: '98.43 in' },
             ].map((item, index) => (
               <div key={index} className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center">
-                <p className="font-semibold text-blue-600">{item.cm}</p>
+                <p className="font-semibold text-gray-700">{item.cm}</p>
                 <p className="text-gray-600 dark:text-gray-400">=</p>
                 <p className="font-semibold text-gray-900 dark:text-white">{item.inch}</p>
               </div>

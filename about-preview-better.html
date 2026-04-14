@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About ConvertMaster - Better Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .py-20 { padding: 5rem 0; }
+        .py-16 { padding: 4rem 0; }
+        .mb-20 { margin-bottom: 5rem; }
+        .mb-16 { margin-bottom: 4rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .text-center { text-align: center; }
+        .text-5xl { font-size: 3rem; font-weight: 800; line-height: 1.2; }
+        .text-4xl { font-size: 2.25rem; font-weight: 700; line-height: 1.2; }
+        .text-3xl { font-size: 1.875rem; font-weight: 600; line-height: 1.3; }
+        .text-2xl { font-size: 1.5rem; font-weight: 600; }
+        .text-xl { font-size: 1.25rem; font-weight: 500; }
+        .text-lg { font-size: 1.125rem; font-weight: 500; }
+        .text-base { font-size: 1rem; }
+        .text-sm { font-size: 0.875rem; }
+        .hero-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .text-gray-600 { color: #6b7280; }
+        .text-gray-700 { color: #374151; }
+        .text-gray-900 { color: #111827; }
+        .text-blue-600 { color: #2563eb; }
+        .text-white { color: white; }
+        .bg-white { background: white; }
+        .bg-gray-50 { background: #f9fafb; }
+        .bg-blue-50 { background: #eff6ff; }
+        .bg-gradient-to-r {
+            background: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
+        }
+        .from-blue-600 { --tw-gradient-from: #2563eb; }
+        .to-purple-600 { --tw-gradient-to: #7c3aed; }
+        .rounded-2xl { border-radius: 1rem; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .feature-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .stat-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            border: 2px solid #e5e7eb;
+        }
+        .p-8 { padding: 2rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-4 { padding: 1rem; }
+        .grid { display: grid; }
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        .md\\:grid-cols-2 { @media (min-width: 768px) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        .md\\:grid-cols-3 { @media (min-width: 768px) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        .lg\\:grid-cols-2 { @media (min-width: 1024px) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        .lg\\:grid-cols-3 { @media (min-width: 1024px) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        .gap-8 { gap: 2rem; }
+        .gap-6 { gap: 1.5rem; }
+        .gap-4 { gap: 1rem; }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .justify-between { justify-content: space-between; }
+        .space-y-6 > * + * { margin-top: 1.5rem; }
+        .space-y-4 > * + * { margin-top: 1rem; }
+        .max-w-3xl { max-width: 48rem; margin: 0 auto; }
+        .max-w-4xl { max-width: 56rem; margin: 0 auto; }
+        .max-w-6xl { max-width: 72rem; margin: 0 auto; }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin: 0 0.5rem;
+        }
+        .badge-blue {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        .badge-green {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .badge-purple {
+            background: #e9d5ff;
+            color: #6b21a8;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+        }
+        .btn-secondary {
+            background: white;
+            color: #374151;
+            border: 2px solid #e5e7eb;
+        }
+        .btn-secondary:hover {
+            background: #f9fafb;
+            border-color: #d1d5db;
+        }
+        .icon-large {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .icon-blue { background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%); color: white; }
+        .icon-green { background: linear-gradient(135deg, #10b981 0%, #34d399 100%); color: white; }
+        .icon-purple { background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%); color: white; }
+        .stat-number { font-size: 3rem; font-weight: 800; color: #1f2937; line-height: 1; }
+        .stat-label { font-size: 1rem; color: #6b7280; font-weight: 500; }
+        .section-subtitle { font-size: 1.25rem; color: #6b7280; margin-bottom: 3rem; }
+    </style>
+</head>
+<body>
+    <div class="bg-white">
+        <div class="container py-20">
+            <!-- Hero Section -->
+            <section class="text-center mb-20">
+                <div class="max-w-4xl mx-auto">
+                    <div class="mb-8">
+                        <span class="badge badge-blue">Trusted by 50M+ Users</span>
+                        <span class="badge badge-green">99.9% Accurate</span>
+                        <span class="badge badge-purple">Instant Results</span>
+                    </div>
+                    
+                    <h1 class="hero-gradient text-5xl mb-6">ConvertMaster</h1>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        The world's most trusted unit conversion platform. We make accurate conversions simple, fast, and reliable for everyone.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Core Problem -->
+            <section class="mb-20">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl text-gray-900 mb-4">Why Accurate Conversions Matter</h2>
+                        <p class="section-subtitle">Real problems we solve every day</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="feature-card">
+                            <div class="icon-large icon-blue">ð</div>
+                            <h3 class="text-2xl text-gray-900 mb-4">Precision Critical</h3>
+                            <p class="text-gray-600">
+                                From engineering projects to medical dosages, small conversion errors can have serious consequences. We eliminate that risk.
+                            </p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="icon-large icon-green">ð</div>
+                            <h3 class="text-2xl text-gray-900 mb-4">Global Standardization</h3>
+                            <p class="text-gray-600">
+                                Different countries, different systems. We bridge metric and imperial units seamlessly for international work and travel.
+                            </p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="icon-large icon-purple">â¡</div>
+                            <h3 class="text-2xl text-gray-900 mb-4">Time Efficiency</h3>
+                            <p class="text-gray-600">
+                                Manual calculations are slow and error-prone. Get instant, accurate results in 0.1 seconds and focus on what matters.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Who We Help -->
+            <section class="mb-20">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl text-gray-900 mb-4">Who We Help</h2>
+                        <p class="section-subtitle">Serving diverse conversion needs worldwide</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <div class="bg-blue-50 rounded-2xl p-8">
+                            <h3 class="text-3xl text-gray-900 mb-8">Professionals</h3>
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="text-xl text-gray-900 mb-2">Engineers & Scientists</h4>
+                                    <p class="text-gray-600">Critical calculations with 10-decimal precision for research, development, and testing.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl text-gray-900 mb-2">Healthcare Workers</h4>
+                                    <p class="text-gray-600">Medical conversions, drug dosages, and body temperature calculations with absolute accuracy.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl text-gray-900 mb-2">Construction & Manufacturing</h4>
+                                    <p class="text-gray-600">Project planning, material estimates, and international specification conversions.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-2xl p-8">
+                            <h3 class="text-3xl text-gray-900 mb-8">Everyday Users</h3>
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="text-xl text-gray-900 mb-2">Home & Cooking</h4>
+                                    <p class="text-gray-600">Recipe conversions, kitchen measurements, and cooking temperature adjustments.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl text-gray-900 mb-2">Travel & Shopping</h4>
+                                    <p class="text-gray-600">Currency conversions, temperature differences, and distance calculations while abroad.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl text-gray-900 mb-2">Fitness & Health</h4>
+                                    <p class="text-gray-600">Weight tracking, height measurements, and body composition monitoring.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Approach -->
+            <section class="mb-20">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl text-gray-900 mb-4">Our Approach</h2>
+                        <p class="section-subtitle">Simple principles, powerful results</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="stat-card">
+                            <div class="icon-large icon-blue mx-auto">â</div>
+                            <h3 class="text-2xl text-gray-900 mb-4">Absolute Accuracy</h3>
+                            <p class="text-gray-600 mb-6">
+                                Built on international standards with 99.9% accuracy. Every conversion is verified against SI units and IEEE standards.
+                            </p>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>â SI unit compliance</li>
+                                <li>â IEEE 754 precision</li>
+                                <li>â Regular validation</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="icon-large icon-green mx-auto">â¡</div>
+                            <h3 class="text-2xl text-gray-900 mb-4">Instant Speed</h3>
+                            <p class="text-gray-600 mb-6">
+                                Lightning-fast 0.1 second response time. Optimized algorithms and global infrastructure for immediate results.
+                            </p>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>â Optimized algorithms</li>
+                                <li>â Global CDN</li>
+                                <li>â Real-time processing</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="icon-large icon-purple mx-auto">ð</div>
+                            <h3 class="text-2xl text-gray-900 mb-4">Complete Simplicity</h3>
+                            <p class="text-gray-600 mb-6">
+                                Intuitive design for everyone. No registration, no ads, no complexity. Just accurate conversions when you need them.
+                            </p>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>â No signup required</li>
+                                <li>â Mobile optimized</li>
+                                <li>â Ad-free experience</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Impact Numbers -->
+            <section class="mb-20">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl text-gray-900 mb-4">Real Impact</h2>
+                        <p class="section-subtitle">Numbers that speak for themselves</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="stat-card">
+                            <div class="stat-number">50M+</div>
+                            <div class="stat-label">Active Users</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">100M+</div>
+                            <div class="stat-label">Monthly Conversions</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">180+</div>
+                            <div class="stat-label">Countries</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">Accuracy Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="text-center">
+                <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12">
+                    <h2 class="text-4xl text-white mb-6">Ready to Convert with Confidence?</h2>
+                    <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                        Join millions who trust ConvertMaster for accurate, instant conversions every single day.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#" class="btn btn-primary">
+                            Start Converting Now
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            Explore All Tools
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

@@ -340,9 +340,9 @@ export default function ConverterCard({ category, defaultFrom, defaultTo }: Prop
         <span className="text-gray-500 dark:text-gray-400 text-sm font-bold uppercase tracking-wider">Result</span>
         <div className={`text-2xl md:text-3xl font-extrabold mt-2 wrap-break-word min-h-12.5 flex items-center justify-center`}>
           {result !== null ? (
-            <span className="text-blue-600">{result}</span>
+            <span className="text-gray-900 dark:text-gray-100">{result}</span>
           ) : validationError ? (
-            <span className="text-red-500 text-lg">{validationError}</span>
+            <span className="text-gray-700 dark:text-gray-300 text-lg">{validationError}</span>
           ) : (
             <span className="text-gray-400 text-sm md:text-base font-normal italic">
               {t('converter.result_placeholder')}
@@ -379,41 +379,41 @@ export default function ConverterCard({ category, defaultFrom, defaultTo }: Prop
                     href={`https://wa.me/?text=${encodeURIComponent(`I converted ${value} ${from} to ${result} ${to}!\n\n${typeof window !== 'undefined' ? window.location.origin + window.location.pathname + '?value=' + value + '&from=' + from + '&to=' + to : ''}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-col items-center gap-1 p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-colors"
+                    className="flex flex-col items-center gap-1 p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
                     aria-label="Share on WhatsApp"
                   >
-                    <FaWhatsapp className="w-6 h-6 text-green-600" />
-                    <span className="text-xs text-green-700">WhatsApp</span>
+                    <FaWhatsapp className="w-6 h-6 text-gray-600" />
+                    <span className="text-xs text-gray-700">WhatsApp</span>
                   </a>
                   <a
                     href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(typeof window !== 'undefined' ? window.location.origin + window.location.pathname + '?value=' + value + '&from=' + from + '&to=' + to : '')}&quote=${encodeURIComponent(`I converted ${value} ${from} to ${result} ${to}!`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-col items-center gap-1 p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors"
+                    className="flex flex-col items-center gap-1 p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
                     aria-label="Share on Facebook"
                   >
-                    <FaFacebook className="w-6 h-6 text-blue-600" />
-                    <span className="text-xs text-blue-700">Facebook</span>
+                    <FaFacebook className="w-6 h-6 text-gray-600" />
+                    <span className="text-xs text-gray-700">Facebook</span>
                   </a>
                   <a
                     href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`I converted ${value} ${from} to ${result} ${to}!`)}&url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.origin + window.location.pathname + '?value=' + value + '&from=' + from + '&to=' + to : '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-col items-center gap-1 p-3 bg-sky-50 hover:bg-sky-100 rounded-lg transition-colors"
+                    className="flex flex-col items-center gap-1 p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
                     aria-label="Share on Twitter"
                   >
-                    <FaTwitter className="w-6 h-6 text-sky-500" />
-                    <span className="text-xs text-sky-600">Twitter</span>
+                    <FaTwitter className="w-6 h-6 text-gray-600" />
+                    <span className="text-xs text-gray-700">Twitter</span>
                   </a>
                   <a
                     href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.origin + window.location.pathname + '?value=' + value + '&from=' + from + '&to=' + to : '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-col items-center gap-1 p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors"
+                    className="flex flex-col items-center gap-1 p-3 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
                     aria-label="Share on LinkedIn"
                   >
-                    <FaLinkedin className="w-6 h-6 text-blue-700" />
-                    <span className="text-xs text-blue-800">LinkedIn</span>
+                    <FaLinkedin className="w-6 h-6 text-gray-600" />
+                    <span className="text-xs text-gray-700">LinkedIn</span>
                   </a>
                   <a
                     href={`mailto:?subject=${encodeURIComponent('Check out this conversion')}&body=${encodeURIComponent(`I converted ${value} ${from} to ${result} ${to}!\n\n${typeof window !== 'undefined' ? window.location.origin + window.location.pathname + '?value=' + value + '&from=' + from + '&to=' + to : ''}`)}`}
@@ -431,15 +431,15 @@ export default function ConverterCard({ category, defaultFrom, defaultTo }: Prop
 
         {result !== null && meta && (
           <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700 text-left">
-            <h3 className="flex items-center text-lg font-bold text-blue-800 dark:text-blue-300 mb-4">
-              <FaInfoCircle className="mr-2 text-blue-600 dark:text-blue-400" />
+            <h3 className="flex items-center text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">
+              <FaInfoCircle className="mr-2 text-gray-600 dark:text-gray-400" />
               Conversion Information
             </h3>
             <dl className="space-y-3">
               {meta.formula && (
                 <div>
                   <dt className="font-semibold text-gray-700 dark:text-gray-200 text-sm">Formula:</dt>
-                  <dd className="mt-1 text-gray-800 dark:text-gray-100 bg-blue-100 dark:bg-gray-700 p-2 rounded-md font-mono text-xs">{meta.formula}</dd>
+                  <dd className="mt-1 text-gray-800 dark:text-gray-100 bg-gray-100 dark:bg-gray-700 p-2 rounded-md font-mono text-xs">{meta.formula}</dd>
                 </div>
               )}
               {meta.constants && (

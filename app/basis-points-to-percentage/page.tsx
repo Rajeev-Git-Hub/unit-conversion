@@ -43,9 +43,9 @@ export default function BasisPointsToPercentagePage() {
                     Convert to %
                   </button>
                   {result !== null && (
-                    <div className="mt-4 p-4 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                    <div className="mt-4 p-4 bg-gray-100 dark:bg-gray-900/30 rounded-lg">
                       <p className="text-lg text-gray-700 dark:text-gray-300">Percentage:</p>
-                      <p className="text-3xl font-bold text-blue-600">{result.toFixed(2)}%</p>
+                      <p className="text-3xl font-bold text-gray-900">{result.toFixed(2)}%</p>
                     </div>
                   )}
                 </div>
@@ -59,12 +59,12 @@ export default function BasisPointsToPercentagePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">What are Basis Points?</h2>
           <div className="max-w-3xl mx-auto">
-            <div className="bg-blue-50 dark:bg-blue-900/20 p-8 rounded-xl">
+            <div className="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl">
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
                 A basis point (bp or bps) is a unit of measure used in finance to describe the percentage change in the value or rate of a financial instrument.
               </p>
-              <p className="text-xl font-bold text-center text-blue-600">1 basis point = 0.01% = 0.0001 in decimal</p>
-              <p className="text-xl font-bold text-center text-blue-600 mt-2">100 basis points = 1%</p>
+              <p className="text-xl font-bold text-center text-gray-900">1 basis point = 0.01% = 0.0001 in decimal</p>
+              <p className="text-xl font-bold text-center text-gray-900 mt-2">100 basis points = 1%</p>
             </div>
           </div>
         </div>
@@ -73,19 +73,16 @@ export default function BasisPointsToPercentagePage() {
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Common Conversions</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { bps: '1 bp', percent: '0.01%' },
-              { bps: '10 bps', percent: '0.10%' },
               { bps: '25 bps', percent: '0.25%' },
               { bps: '50 bps', percent: '0.50%' },
-              { bps: '75 bps', percent: '0.75%' },
               { bps: '100 bps', percent: '1.00%' },
               { bps: '150 bps', percent: '1.50%' },
               { bps: '200 bps', percent: '2.00%' },
             ].map((item, index) => (
               <div key={index} className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center">
-                <p className="font-semibold text-blue-600">{item.bps}</p>
+                <p className="font-semibold text-gray-700">{item.bps}</p>
                 <p className="text-gray-600 dark:text-gray-400">=</p>
                 <p className="font-bold text-gray-900 dark:text-white">{item.percent}</p>
               </div>

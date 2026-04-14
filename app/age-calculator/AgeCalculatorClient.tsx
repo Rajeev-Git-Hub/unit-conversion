@@ -171,9 +171,9 @@ export default function AgeCalculatorClient() {
         <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
           {t('age.subtitle')}
         </p>
-        <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-6">
-          <p className="text-blue-800 dark:text-blue-200 font-medium">
-            💡 <strong>{t('age.smart_features')}:</strong> {t('age.smart_desc')}
+        <div className="bg-gray-50 dark:bg-gray-900/20 border border-gray-200 dark:border-gray-700 rounded-lg p-4 mb-6">
+          <p className="text-gray-800 dark:text-gray-200 font-medium">
+            {t('age.smart_features')}: {t('age.smart_desc')}
           </p>
         </div>
       </div>
@@ -221,11 +221,11 @@ export default function AgeCalculatorClient() {
       {result && (
         <div className="mt-8">
           {result.isBirthday && (
-            <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 mb-6 text-center">
+            <div className="bg-gray-50 dark:bg-gray-900/20 border border-gray-200 dark:border-gray-700 rounded-lg p-4 mb-6 text-center">
               <div className="flex items-center justify-center space-x-2">
-                <FiGift className="w-6 h-6 text-yellow-600 dark:text-yellow-400" />
-                <p className="text-yellow-800 dark:text-yellow-200 font-medium">
-                  🎉 Happy Birthday! You're {result.years} years old today!
+                <FiGift className="w-6 h-6 text-gray-600 dark:text-gray-400" />
+                <p className="text-gray-800 dark:text-gray-200 font-medium">
+                  {t('age.birthday_message').replace('{age}', result.years.toString())}
                 </p>
               </div>
             </div>
@@ -237,20 +237,20 @@ export default function AgeCalculatorClient() {
             </h3>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-              <div className="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{result.years}</div>
+              <div className="text-center p-4 bg-gray-50 dark:bg-gray-900/20 rounded-lg">
+                <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">{result.years}</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">{t('age.years')}</div>
               </div>
-              <div className="text-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
-                <div className="text-2xl font-bold text-green-600 dark:text-green-400">{result.months}</div>
+              <div className="text-center p-4 bg-gray-50 dark:bg-gray-900/20 rounded-lg">
+                <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">{result.months}</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">{t('age.months')}</div>
               </div>
-              <div className="text-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
-                <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">{result.days}</div>
+              <div className="text-center p-4 bg-gray-50 dark:bg-gray-900/20 rounded-lg">
+                <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">{result.days}</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">{t('age.days')}</div>
               </div>
-              <div className="text-center p-4 bg-orange-50 dark:bg-orange-900/20 rounded-lg">
-                <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">{result.totalDays}</div>
+              <div className="text-center p-4 bg-gray-50 dark:bg-gray-900/20 rounded-lg">
+                <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">{result.totalDays}</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Total Days</div>
               </div>
             </div>
@@ -267,8 +267,8 @@ export default function AgeCalculatorClient() {
             </div>
 
             {!result.isBirthday && (
-              <div className="mt-6 text-center p-4 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg">
-                <div className="text-indigo-800 dark:text-indigo-200">
+              <div className="mt-6 text-center p-4 bg-gray-50 dark:bg-gray-900/20 rounded-lg">
+                <div className="text-gray-800 dark:text-gray-200">
                   <div className="font-medium">Next Birthday</div>
                   <div className="text-sm">In {result.nextBirthdayDays} days ({result.nextBirthdayDate})</div>
                 </div>
@@ -296,7 +296,7 @@ export default function AgeCalculatorClient() {
             
             <button
               onClick={handleClear}
-              className="px-4 py-2 bg-red-100 dark:bg-red-900/20 hover:bg-red-200 dark:hover:bg-red-900/40 text-red-700 dark:text-red-300 rounded-lg transition-colors"
+              className="px-4 py-2 bg-gray-100 dark:bg-gray-900/20 hover:bg-gray-200 dark:hover:bg-gray-900/40 text-gray-700 dark:text-gray-300 rounded-lg transition-colors"
             >
               {t('age.clear')}
             </button>
@@ -343,17 +343,17 @@ export default function AgeCalculatorClient() {
 
       {/* Success Messages */}
       {copySuccess && (
-        <div className="p-3 bg-green-100 dark:bg-green-900/20 border border-green-300 dark:border-green-700 rounded-lg mt-6">
-          <p className="text-green-800 dark:text-green-200 text-sm">
-            ✅ Age copied to clipboard!
+        <div className="p-3 bg-gray-100 dark:bg-gray-900/20 border border-gray-300 dark:border-gray-700 rounded-lg mt-6">
+          <p className="text-gray-800 dark:text-gray-200 text-sm">
+            {t('age.copied')}
           </p>
         </div>
       )}
 
       {shareSuccess && (
-        <div className="p-3 bg-green-100 dark:bg-green-900/20 border border-green-300 dark:border-green-700 rounded-lg mt-6">
-          <p className="text-green-800 dark:text-green-200 text-sm">
-            ✅ Share link copied to clipboard!
+        <div className="p-3 bg-gray-100 dark:bg-gray-900/20 border border-gray-300 dark:border-gray-700 rounded-lg mt-6">
+          <p className="text-gray-800 dark:text-gray-200 text-sm">
+            {t('age.share_copied')}
           </p>
         </div>
       )}

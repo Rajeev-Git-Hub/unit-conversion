@@ -112,20 +112,20 @@ export default function CompoundInterestCalculatorPage() {
             <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
               <p className="font-semibold text-gray-900 dark:text-white">$10,000 at 7%</p>
               <p className="text-sm text-gray-600 dark:text-gray-400">for 10 years</p>
-              <p className="text-blue-600 font-bold text-2xl mt-2">$19,672</p>
-              <p className="text-green-600">+96.7% gain</p>
+              <p className="text-gray-900 font-bold text-2xl mt-2">$19,672</p>
+              <p className="text-gray-600">+96.7% gain</p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
               <p className="font-semibold text-gray-900 dark:text-white">$10,000 at 7%</p>
               <p className="text-sm text-gray-600 dark:text-gray-400">for 20 years</p>
-              <p className="text-blue-600 font-bold text-2xl mt-2">$38,697</p>
-              <p className="text-green-600">+287% gain</p>
+              <p className="text-gray-900 font-bold text-2xl mt-2">$38,697</p>
+              <p className="text-gray-600">+287% gain</p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
               <p className="font-semibold text-gray-900 dark:text-white">$10,000 at 7%</p>
               <p className="text-sm text-gray-600 dark:text-gray-400">for 30 years</p>
-              <p className="text-blue-600 font-bold text-2xl mt-2">$76,123</p>
-              <p className="text-green-600">+661% gain</p>
+              <p className="text-gray-900 font-bold text-2xl mt-2">$76,123</p>
+              <p className="text-gray-600">+661% gain</p>
             </div>
           </div>
         </div>

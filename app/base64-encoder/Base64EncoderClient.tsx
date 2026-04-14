@@ -149,9 +149,9 @@ export default function Base64EncoderClient() {
         <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
           {t('base64.subtitle')}
         </p>
-        <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-6">
-          <p className="text-blue-800 dark:text-blue-200 font-medium">
-            💡 <strong>{t('base64.smart_features')}:</strong> {t('base64.smart_desc')}
+        <div className="bg-gray-50 dark:bg-gray-900/20 border border-gray-200 dark:border-gray-700 rounded-lg p-4 mb-6">
+          <p className="text-gray-800 dark:text-gray-200 font-medium">
+            {t('base64.smart_features')}: {t('base64.smart_desc')}
           </p>
         </div>
       </div>
@@ -315,7 +315,7 @@ export default function Base64EncoderClient() {
         
         <button
           onClick={handleClear}
-          className="px-4 py-2 bg-red-100 dark:bg-red-900/20 hover:bg-red-200 dark:hover:bg-red-900/40 text-red-700 dark:text-red-300 rounded-lg transition-colors"
+          className="px-4 py-2 bg-gray-100 dark:bg-gray-900/20 hover:bg-gray-200 dark:hover:bg-gray-900/40 text-gray-700 dark:text-gray-300 rounded-lg transition-colors"
         >
           {t('base64.clear_button')}
         </button>
@@ -362,9 +362,9 @@ export default function Base64EncoderClient() {
 
       {/* Copy Success Message */}
       {copySuccess && (
-        <div className="p-3 bg-green-100 dark:bg-green-900/20 border border-green-300 dark:border-green-700 rounded-lg">
-          <p className="text-green-800 dark:text-green-200 text-sm">
-            ✅ Base64 {mode === 'encode' ? t('base64.encoded').toLowerCase() : t('base64.decoded').toLowerCase()} text copied to clipboard!
+        <div className="p-3 bg-gray-100 dark:bg-gray-900/20 border border-gray-300 dark:border-gray-700 rounded-lg">
+          <p className="text-gray-800 dark:text-gray-200 text-sm">
+            {t('base64.copy_success')}
           </p>
         </div>
       )}

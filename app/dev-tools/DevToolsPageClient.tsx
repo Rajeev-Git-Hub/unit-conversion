@@ -6,36 +6,36 @@ import { useLocalization } from '../../lib/LocalizationContext';
 
 const developerTools = [
   {
-    titleKey: 'devtools.json_formatter',
+    titleKey: 'devtools.json_formatter.title',
     descriptionKey: 'devtools.json_formatter.desc',
     icon: FiFileText,
     href: '/json-formatter',
-    color: 'text-blue-600',
-    bgColor: 'bg-blue-100',
+    color: 'text-gray-600',
+    bgColor: 'bg-gray-100',
   },
   {
-    titleKey: 'devtools.base64_encoder',
+    titleKey: 'devtools.base64_encoder.title',
     descriptionKey: 'devtools.base64_encoder.desc',
     icon: FiLock,
     href: '/base64-encoder',
-    color: 'text-green-600',
-    bgColor: 'bg-green-100',
+    color: 'text-gray-600',
+    bgColor: 'bg-gray-100',
   },
   {
-    titleKey: 'devtools.url_encoder',
+    titleKey: 'devtools.url_encoder.title',
     descriptionKey: 'devtools.url_encoder.desc',
     icon: FiLink,
     href: '/url-encoder',
-    color: 'text-purple-600',
-    bgColor: 'bg-purple-100',
+    color: 'text-gray-600',
+    bgColor: 'bg-gray-100',
   },
   {
-    titleKey: 'devtools.timestamp_converter',
+    titleKey: 'devtools.timestamp_converter.title',
     descriptionKey: 'devtools.timestamp_converter.desc',
     icon: FiClock,
     href: '/timestamp-converter',
-    color: 'text-orange-600',
-    bgColor: 'bg-orange-100',
+    color: 'text-gray-600',
+    bgColor: 'bg-gray-100',
   },
 ];
 
@@ -58,9 +58,9 @@ export default function DevToolsPageClient() {
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
             {t('devtools.subtitle')}
           </p>
-          <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-6">
-            <p className="text-blue-800 dark:text-blue-200 font-medium">
-              💡 <strong>{t('devtools.smart_features')}:</strong> {t('devtools.smart_desc')}
+          <div className="bg-gray-50 dark:bg-gray-900/20 border border-gray-200 dark:border-gray-700 rounded-lg p-4 mb-6">
+            <p className="text-gray-800 dark:text-gray-200 font-medium">
+              {t('devtools.smart_features')}: {t('devtools.smart_desc')}
             </p>
           </div>
         </div>
@@ -80,13 +80,13 @@ export default function DevToolsPageClient() {
                     <Icon className={`w-6 h-6 ${tool.color} dark:group-hover:scale-110 transition-all duration-300`} />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
                       {t(tool.titleKey)}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
                       {t(tool.descriptionKey)}
                     </p>
-                    <div className="flex items-center text-blue-600 dark:text-blue-400 font-medium group-hover:translate-x-1 transition-transform duration-300">
+                    <div className="flex items-center text-gray-600 dark:text-gray-400 font-medium group-hover:translate-x-1 transition-transform duration-300">
                       <span>{t('devtools.use_tool')}</span>
                       <FiChevronRight className="w-4 h-4 ml-1" />
                     </div>
@@ -104,8 +104,8 @@ export default function DevToolsPageClient() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-blue-600 dark:text-blue-400 font-bold">⚡</span>
+              <div className="w-12 h-12 bg-gray-100 dark:bg-gray-900/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-gray-600 dark:text-gray-400 font-bold">?</span>
               </div>
               <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('devtools.fast_title')}</h3>
               <p className="text-gray-600 dark:text-gray-400 text-sm">
@@ -113,8 +113,8 @@ export default function DevToolsPageClient() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-green-600 dark:text-green-400 font-bold">🔒</span>
+              <div className="w-12 h-12 bg-gray-100 dark:bg-gray-900/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-gray-600 dark:text-gray-400 font-bold">?</span>
               </div>
               <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('devtools.secure_title')}</h3>
               <p className="text-gray-600 dark:text-gray-400 text-sm">
@@ -122,8 +122,8 @@ export default function DevToolsPageClient() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                <span className="text-purple-600 dark:text-purple-400 font-bold">🎯</span>
+              <div className="w-12 h-12 bg-gray-100 dark:bg-gray-900/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-gray-600 dark:text-gray-400 font-bold">?</span>
               </div>
               <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">{t('devtools.professional_title')}</h3>
               <p className="text-gray-600 dark:text-gray-400 text-sm">

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About ConvertMaster - Updated Preview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f9fafb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .py-16 { padding: 4rem 0; }
+        .mb-16 { margin-bottom: 4rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .text-center { text-align: center; }
+        .text-4xl { font-size: 2.25rem; font-weight: bold; }
+        .text-3xl { font-size: 1.875rem; font-weight: 600; }
+        .text-xl { font-size: 1.25rem; font-weight: 500; }
+        .text-lg { font-size: 1.125rem; }
+        .text-base { font-size: 1rem; }
+        .text-sm { font-size: 0.875rem; }
+        .hero-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .text-gray-600 { color: #6b7280; }
+        .text-gray-700 { color: #374151; }
+        .text-gray-900 { color: #111827; }
+        .text-blue-600 { color: #2563eb; }
+        .text-white { color: white; }
+        .bg-white { background: white; }
+        .bg-gray-50 { background: #f9fafb; }
+        .bg-blue-50 { background: #eff6ff; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+        .card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+        }
+        .p-8 { padding: 2rem; }
+        .p-6 { padding: 1.5rem; }
+        .grid { display: grid; }
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .lg\\:grid-cols-2 { @media (min-width: 1024px) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        .gap-12 { gap: 3rem; }
+        .gap-6 { gap: 1.5rem; }
+        .gap-4 { gap: 1rem; }
+        .gap-3 { gap: 0.75rem; }
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .space-y-4 > * + * { margin-top: 1rem; }
+        .max-w-2xl { max-width: 42rem; margin: 0 auto; }
+        .max-w-4xl { max-width: 56rem; margin: 0 auto; }
+        .premium-badge {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        .badge {
+            background: #f3f4f6;
+            color: #374151;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        .badge-success { background: #10b981; color: white; }
+        .badge-secondary { background: #6b7280; color: white; }
+        .section-title { font-size: 2rem; font-weight: 600; color: #111827; margin-bottom: 0.5rem; }
+        .section-subtitle { color: #6b7280; font-size: 1.125rem; margin-bottom: 2rem; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+        }
+        .btn-primary:hover { transform: translateY(-1px); }
+        .btn-secondary {
+            background: white;
+            color: #374151;
+            border: 1px solid #d1d5db;
+        }
+        .btn-secondary:hover { background: #f9fafb; }
+        .gradient-border {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            padding: 0.25rem;
+            border-radius: 0.75rem;
+        }
+        .gradient-border > div {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 2rem;
+        }
+        .icon-check { color: #10b981; }
+        .icon-users { color: #3b82f6; }
+        .leading-relaxed { line-height: 1.625; }
+        .font-semibold { font-weight: 600; }
+        .font-medium { font-weight: 500; }
+        .hover\\:underline:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen bg-gray-50">
+        <div class="container py-16">
+            <!-- Hero Section -->
+            <section class="text-center mb-16">
+                <div class="max-w-2xl mx-auto">
+                    <div class="flex items-center justify-center gap-4 mb-8">
+                        <div class="premium-badge">
+                            <span>Industry Leading</span>
+                        </div>
+                        <div class="badge badge-success">
+                            <span>99.9% Accurate</span>
+                        </div>
+                        <div class="badge badge-secondary">
+                            <span>Instant</span>
+                        </div>
+                    </div>
+                    
+                    <h1 class="hero-gradient text-4xl font-bold mb-4">About ConvertMaster</h1>
+                    <p class="text-base text-gray-600 max-w-2xl mx-auto">ConvertMaster is a simple tool built to make unit conversion fast, accurate, and easy for everyone.</p>
+                    <p class="text-base text-gray-600 max-w-2xl mx-auto">Whether you're a student, developer, professional, or just need a quick calculation, our goal is to give you instant results without complexity.</p>
+                </div>
+            </section>
+
+            <!-- Main Content -->
+            <section class="mb-12">
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <!-- Our Goal Section -->
+                        <div class="bg-white rounded-xl shadow-sm p-8">
+                            <h2 class="section-title">Our Goal</h2>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                To provide a clean and reliable conversion experience that works anytime, on any device.
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <div class="text-sm text-gray-500 font-medium">Focus</div>
+                                <div class="text-2xl font-bold text-gray-900">Simple</div>
+                                <div class="text-sm text-green-600 font-medium">Reliable</div>
+                            </div>
+                        </div>
+
+                        <!-- How It Works Section -->
+                        <div class="bg-white rounded-xl shadow-sm p-8">
+                            <h2 class="section-title">How It Works</h2>
+                            <p class="text-gray-600 leading-relaxed mb-6">
+                                All conversions are calculated using standard formulas and run directly in your browser. This means:
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-3">
+                                    <span class="icon-check">â</span>
+                                    <span class="text-gray-700">Fast performance</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="icon-check">â</span>
+                                    <span class="text-gray-700">No installation required</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="icon-check">â</span>
+                                    <span class="text-gray-700">No unnecessary data collection</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Who It's For Section -->
+            <section class="mb-12">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h3 class="section-title">Who It's For</h3>
+                        <p class="section-subtitle">Built for everyone who needs accurate conversions</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-sm p-8">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span class="icon-users">ð</span>
+                                <span class="text-gray-700">Students solving problems</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="icon-users">ð</span>
+                                <span class="text-gray-700">Developers working with data</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="icon-users">ð</span>
+                                <span class="text-gray-700">Professionals in engineering, finance, or daily work</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="icon-users">ð</span>
+                                <span class="text-gray-700">Anyone needing quick and accurate conversions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why This Exists Section -->
+            <section class="mb-12">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h3 class="section-title">Why This Exists</h3>
+                        <p class="section-subtitle">Simple solution to a common problem</p>
+                    </div>
+                    
+                    <div class="bg-blue-50 rounded-xl shadow-sm p-8">
+                        <p class="text-gray-700 leading-relaxed text-center">
+                            Many conversion tools are slow, cluttered, or filled with distractions.
+                            ConvertMaster is built to keep things simple <span class="font-semibold">focus on the result, not the process.</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="mb-12">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h3 class="section-title">Contact</h3>
+                        <p class="section-subtitle">We'd love to hear from you</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-sm p-8 text-center">
+                        <p class="text-gray-700 mb-6">
+                            Have a suggestion or want a new converter added?
+                            Reach out through the <a href="/contact" class="text-blue-600 hover:underline font-medium">contact page</a> <span class="text-gray-600">feedback is always welcome.</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Looking Ahead Section -->
+            <section class="mb-12">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-8">
+                        <h3 class="section-title">Looking Ahead</h3>
+                        <p class="section-subtitle">Continuous improvement based on your needs</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-sm p-8 text-center">
+                        <p class="text-gray-700">
+                            More converters and improvements will continue to be added based on real user needs.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="text-center">
+                <div class="gradient-border">
+                    <div>
+                        <h3 class="section-title mb-4">Start Converting with Confidence</h3>
+                        <p class="section-subtitle mb-8">
+                            Experience clean, fast, and accurate unit conversions
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="/" class="btn btn-primary">
+                                <span>Try ConvertMaster Now</span>
+                                <span>â</span>
+                            </a>
+                            <a href="/all-converters" class="btn btn-secondary">
+                                <span>Explore All Converters</span>
+                                <span>â</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

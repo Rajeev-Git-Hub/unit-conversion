@@ -23,7 +23,7 @@ export default function CmToDmPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Centimeters to Decimeters Converter
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">
+            <p className="text-xl md:text-2xl mb-8 text-gray-100">
               Convert centimeters to decimeters instantly. 10 cm = 1 dm.
             </p>
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
@@ -89,7 +89,7 @@ export default function CmToDmPage() {
               { cm: '500 cm', dm: '50 dm' },
             ].map((item, index) => (
               <div key={index} className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center">
-                <p className="font-semibold text-blue-600">{item.cm}</p>
+                <p className="font-semibold text-gray-700">{item.cm}</p>
                 <p className="text-gray-600 dark:text-gray-400">=</p>
                 <p className="font-semibold text-gray-900 dark:text-white">{item.dm}</p>
               </div>

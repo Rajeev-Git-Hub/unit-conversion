@@ -1,96 +1,290 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import ConverterCard from '../../components/ConverterCard';
+import { FiArrowRight, FiMaximize, FiBook, FiCheckCircle, FiActivity, FiZap, FiShield, FiUsers } from 'react-icons/fi';
 
 export const metadata: Metadata = {
-  title: '37 Celsius to Fahrenheit - Body Temperature Conversion',
-  description: 'Convert 37°C to Fahrenheit. 37 degrees Celsius equals 98.6°F - normal human body temperature. Learn about body temperature scales.',
-  keywords: '37 celsius to fahrenheit, 37 c to f, body temperature celsius to fahrenheit, 37 degrees celsius, normal body temperature',
+  title: '37°C to Fahrenheit Converter - Convert 37°C to °F | Free Tool',
+  description: 'Convert 37 degrees Celsius to Fahrenheit instantly. 37°C equals 98.6°F - Normal human body temperature. Free online converter with accurate results.',
+  keywords: '37 celsius to fahrenheit, 37c to f, convert 37c to f, 37celsius to fahrenheit, body temperature converter',
   openGraph: {
-    title: '37°C to Fahrenheit - Body Temperature',
-    description: 'Convert 37°C to Fahrenheit - Normal body temperature',
+    title: '37°C to Fahrenheit Converter - Convert 37°C to °F',
+    description: 'Convert 37 degrees Celsius to Fahrenheit instantly with accurate results',
     type: 'website',
   },
 };
 
 export default function Celsius37ToFahrenheitPage() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <section className="bg-white dark:bg-gray-800 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">37°C to Fahrenheit</h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-400">
-              37 degrees Celsius equals 98.6°F - Normal human body temperature
+    <div className="min-h-screen bg-gray-50">
+      <div className="container py-16">
+        {/* Hero Section */}
+        <section className="text-center mb-16">
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="premium-badge">
+              <FiZap className="w-3 h-3"></FiZap>
+              <span>Instant Results</span>
+            </div>
+            <div className="badge badge-success">
+              <FiCheckCircle className="w-3 h-3"></FiCheckCircle>
+              <span>High Precision</span>
+            </div>
+            <div className="badge badge-secondary">
+              <FiActivity className="w-3 h-3"></FiActivity>
+              <span>Temperature Units</span>
+            </div>
+          </div>
+          
+          <h1 className="hero-gradient text-4xl font-bold mb-4">37°C to Fahrenheit Converter</h1>
+          <p className="text-base text-gray-600 max-w-2xl mx-auto">
+            Convert 37 degrees Celsius to Fahrenheit instantly. 37°C equals 98.6°F - Normal human body temperature
+          </p>
+          
+          <div className="max-w-2xl mx-auto mt-8">
+            <div className="card p-6">
+              <ConverterCard category="temperature" defaultFrom="celsius" defaultTo="fahrenheit" />
+            </div>
+          </div>
+        </section>
+
+        {/* Conversion Examples */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Common Temperature Conversions</h3>
+            <p className="section-subtitle">Quick reference for everyday temperature measurements</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary">
+                  <FiMaximize className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">37°C to Fahrenheit</h3>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>37°C = 98.6°F</li>
+                <li>20°C = 68°F (Room temp)</li>
+                <li>0°C = 32°F (Freezing point)</li>
+              </ul>
+            </div>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#10b981' }}>
+                  <FiMaximize className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">Quick Formula</h3>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>°F = (°C × 9/5) + 32</li>
+                <li>Works for all temperatures</li>
+                <li>Example: 37°C × 9/5 + 32 = 98.6°F</li>
+                <li>Simple conversion</li>
+              </ul>
+            </div>
+            <div className="card p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-box icon-box-primary" style={{ background: '#8b5cf6' }}>
+                  <FiMaximize className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">Common Uses</h3>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li>37°C - Normal body temp</li>
+                <li>20°C - Room temperature</li>
+                <li>0°C - Water freezing point</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* How to Guide */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">How to Use the 37°C to Fahrenheit Converter</h3>
+            <p className="section-subtitle">Simple steps to get accurate conversions</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto">
+                <span className="text-2xl font-bold text-white">1</span>
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Enter Value</h4>
+              <p className="text-sm text-gray-600">Type the temperature value you want to convert in the input field</p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#10b981' }}>
+                <span className="text-2xl font-bold text-white">2</span>
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Select Units</h4>
+              <p className="text-sm text-gray-600">Choose the from and to units from the dropdown menus</p>
+            </div>
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4 mx-auto" style={{ background: '#8b5cf6' }}>
+                <span className="text-2xl font-bold text-white">3</span>
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Get Result</h4>
+              <p className="text-sm text-gray-600">View your converted result instantly with high precision</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Temperature Unit Definitions */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Temperature Unit Definitions</h3>
+            <p className="section-subtitle">Understanding measurement systems and standards</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Celsius (°C)</h4>
+              <p className="text-sm text-gray-600">Metric temperature scale where 0°C is freezing point and 100°C is boiling point of water at standard atmospheric pressure.</p>
+            </div>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Fahrenheit (°F)</h4>
+              <p className="text-sm text-gray-600">Imperial temperature scale primarily used in the United States. Water freezes at 32°F and boils at 212°F.</p>
+            </div>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Kelvin (K)</h4>
+              <p className="text-sm text-gray-600">SI base unit of temperature. 0 K = -273.15°C. Used in scientific contexts.</p>
+            </div>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Rankine (°R)</h4>
+              <p className="text-sm text-gray-600">Temperature scale where 0°R = -273.15°C. Used in some engineering applications.</p>
+            </div>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Newton Scale</h4>
+              <p className="text-sm text-gray-600">Temperature scale where 0°N = 0°C and 100°N = 100°C. Used in some European countries.</p>
+            </div>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Réaumur (°Ré)</h4>
+              <p className="text-sm text-gray-600">Temperature scale where 0°Ré = 0°C and 100°Ré = 100°C. Used in some European countries.</p>
+            </div>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Rømer Scale</h4>
+              <p className="text-sm text-gray-600">Temperature scale where 0°Rø = 0°C and 100°Rø = 100°C. Used in some European countries.</p>
+            </div>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Romans</h4>
+              <p className="text-sm text-gray-600">Temperature scale where 0°Ro = 0°C and 100°Ro = 100°C. Used in some European countries.</p>
+            </div>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Delisle (°De)</h4>
+              <p className="text-sm text-gray-600">Temperature scale where 0°De = 0°C and 100°De = 100°C. Used in some scientific applications.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Frequently Asked Questions</h3>
+            <p className="section-subtitle">Common questions about temperature conversions</p>
+          </div>
+          
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">What is 37°C in Fahrenheit?</h4>
+              <p className="text-sm text-gray-600">37 degrees Celsius equals exactly 98.6 degrees Fahrenheit. This is the normal human body temperature.</p>
+            </div>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Why is 37°C significant?</h4>
+              <p className="text-sm text-gray-600">37°C is significant because it's close to normal human body temperature, making it a key reference in medical and biological contexts.</p>
+            </div>
+            <div className="card p-6">
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">How to convert Celsius to Fahrenheit?</h4>
+              <p className="text-sm text-gray-600">Use the formula F = (°C × 9/5) + 32. For 37°C: F = (37 × 9/5) + 32 = 66.6 + 32 = 98.6°F.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Trust Indicators */}
+        <section className="mb-12">
+          <div className="text-center mb-8">
+            <h3 className="section-title">Why Choose ConvertMaster?</h3>
+            <p className="section-subtitle">Professional features designed for precision and reliability</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4">
+                <FiShield className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Enterprise Security</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                Bank-level encryption with GDPR compliance and complete data privacy protection.
+              </p>
+              <div className="flex items-center justify-center text-blue-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#10b981' }}>
+                  <FiUsers className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Global Trust</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                50M+ active users worldwide trust our platform for accurate, instant conversions.
+              </p>
+              <div className="flex items-center justify-center text-green-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+
+            <div className="card p-6 text-center group">
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#8b5cf6' }}>
+                  <FiZap className="w-5 h-5" />
+              </div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-3">Lightning Fast</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                0.1s response time with instant calculations and real-time results.
+              </p>
+              <div className="flex items-center justify-center text-purple-600 font-medium">
+                <span>Learn more</span>
+                <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="text-center">
+          <div className="gradient-border p-8">
+            <h3 className="section-title mb-4">Ready to Convert More Units?</h3>
+            <p className="section-subtitle mb-8">
+              Explore our other free conversion tools for all your measurement needs
             </p>
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-2xl max-w-2xl mx-auto">
-              <ConverterCard category="temperature" />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/temperature-converter/"
+                className="btn btn-primary"
+              >
+                <span>Temperature Converter</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/celsius-to-fahrenheit/"
+                className="btn btn-secondary"
+              >
+                <span>°C to °F</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/"
+                className="btn btn-secondary"
+              >
+                <span>All Converters</span>
+                <FiArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Body Temperature Guide</h2>
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-red-50 dark:bg-red-900/20 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">🌡️ Normal Temperature</h3>
-                <p className="text-gray-600 dark:text-gray-300">37°C (98.6°F) is considered normal body temperature. This can vary slightly from person to person.</p>
-              </div>
-              <div className="bg-orange-50 dark:bg-orange-900/20 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">🤒 Fever Range</h3>
-                <p className="text-gray-600 dark:text-gray-300">38°C (100.4°F) and above indicates fever. Seek medical attention if temperature exceeds 39.4°C (103°F).</p>
-              </div>
-              <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">🧊 Low Temperature</h3>
-                <p className="text-gray-600 dark:text-gray-300">Below 36°C (96.8°F) may indicate hypothermia. Consult a doctor if body temperature drops significantly.</p>
-              </div>
-              <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl">
-                <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">⏰ Best Time to Check</h3>
-                <p className="text-gray-600 dark:text-gray-300">Body temperature is lowest in the morning and highest in the late afternoon/evening.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Common Body Temperatures</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            {[
-              { c: '36°C', f: '96.8°F', note: 'Low normal' },
-              { c: '36.5°C', f: '97.7°F', note: 'Normal' },
-              { c: '37°C', f: '98.6°F', note: 'Normal' },
-              { c: '37.5°C', f: '99.5°F', note: 'Elevated' },
-              { c: '38°C', f: '100.4°F', note: 'Fever' },
-              { c: '38.5°C', f: '101.3°F', note: 'Fever' },
-              { c: '39°C', f: '102.2°F', note: 'High fever' },
-              { c: '40°C', f: '104°F', note: 'Very high' },
-            ].map((item, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow text-center">
-                <p className="font-semibold text-red-600">{item.c}</p>
-                <p className="text-gray-600 dark:text-gray-400">=</p>
-                <p className="font-semibold text-gray-900 dark:text-white">{item.f}</p>
-                <p className="text-sm text-gray-500 mt-1">{item.note}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Related Converters</h2>
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <Link href="/celsius-to-fahrenheit/" className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700">Celsius to Fahrenheit</Link>
-            <Link href="/100-celsius-to-fahrenheit/" className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700">100°C to Fahrenheit</Link>
-            <Link href="/temperature-converter/" className="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700">All Converters</Link>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }

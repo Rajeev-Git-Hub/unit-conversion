@@ -330,35 +330,35 @@ export default function DataConverterLandingPage() {
               <p className="text-sm text-gray-600 mb-4">
                 Bank-level encryption with GDPR compliance and complete data privacy protection.
               </p>
-              <div className="flex items-center justify-center text-blue-600 font-medium">
+              <div className="flex items-center justify-center text-gray-600 font-medium">
                 <span>Learn more</span>
                 <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
 
             <div className="card p-6 text-center group">
-              <div className="icon-box icon-box-primary mb-4" style={{ background: '#10b981' }}>
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#6b7280' }}>
                 <FiUsers className="w-5 h-5" />
               </div>
               <h4 className="text-lg font-semibold text-gray-900 mb-3">Global Trust</h4>
               <p className="text-sm text-gray-600 mb-4">
                 50M+ active users worldwide trust our platform for accurate, instant conversions.
               </p>
-              <div className="flex items-center justify-center text-green-600 font-medium">
+              <div className="flex items-center justify-center text-gray-600 font-medium">
                 <span>Learn more</span>
                 <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
 
             <div className="card p-6 text-center group">
-              <div className="icon-box icon-box-primary mb-4" style={{ background: '#8b5cf6' }}>
+              <div className="icon-box icon-box-primary mb-4" style={{ background: '#6b7280' }}>
                 <FiZap className="w-5 h-5" />
               </div>
               <h4 className="text-lg font-semibold text-gray-900 mb-3">Lightning Fast</h4>
               <p className="text-sm text-gray-600 mb-4">
                 0.1s response time with instant calculations and real-time results.
               </p>
-              <div className="flex items-center justify-center text-purple-600 font-medium">
+              <div className="flex items-center justify-center text-gray-600 font-medium">
                 <span>Learn more</span>
                 <FiArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </div>
